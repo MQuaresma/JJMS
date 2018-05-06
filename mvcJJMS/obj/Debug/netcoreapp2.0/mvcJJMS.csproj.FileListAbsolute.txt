@@ -1,0 +1,10 @@
+/home/jcm300/mvcJJMS/bin/Debug/netcoreapp2.0/mvcJJMS.deps.json
+/home/jcm300/mvcJJMS/bin/Debug/netcoreapp2.0/mvcJJMS.runtimeconfig.json
+/home/jcm300/mvcJJMS/bin/Debug/netcoreapp2.0/mvcJJMS.runtimeconfig.dev.json
+/home/jcm300/mvcJJMS/bin/Debug/netcoreapp2.0/mvcJJMS.dll
+/home/jcm300/mvcJJMS/bin/Debug/netcoreapp2.0/mvcJJMS.pdb
+/home/jcm300/mvcJJMS/obj/Debug/netcoreapp2.0/mvcJJMS.csproj.CoreCompileInputs.cache
+/home/jcm300/mvcJJMS/obj/Debug/netcoreapp2.0/mvcJJMS.AssemblyInfoInputs.cache
+/home/jcm300/mvcJJMS/obj/Debug/netcoreapp2.0/mvcJJMS.AssemblyInfo.cs
+/home/jcm300/mvcJJMS/obj/Debug/netcoreapp2.0/mvcJJMS.dll
+/home/jcm300/mvcJJMS/obj/Debug/netcoreapp2.0/mvcJJMS.pdb

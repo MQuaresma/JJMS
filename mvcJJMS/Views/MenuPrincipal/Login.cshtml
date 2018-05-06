@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>@ViewBag.Title</title>
+    </head>
+    <body>
+       <div>
+            @using (Html.BeginForm("RealizarLogin", "MenuPrincipal", FormMethod.Post))
+            {
+                @Html.ValidationSummary(true)
+                <fieldset>
+                    Nome: <input type="text" name="email" id="email" required />
+                    <br>
+                    Data de Nascimento: <input type="text" name="password" id="password" required />
+                </fieldset>
+                <input type="submit" value="Ok" />
+            }
+        </div> 
+    </body>
+</html>
