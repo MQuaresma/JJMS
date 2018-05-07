@@ -5,3 +5,6 @@
 ## Others
 **/*.swp
 *.out
+
+## VSCode
+.vscode/**
