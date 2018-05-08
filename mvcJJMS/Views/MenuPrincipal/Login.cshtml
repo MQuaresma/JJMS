@@ -5,6 +5,7 @@
     </head>
     <body>
        <div>
+           <h1>@ViewBag.Title</h1>
             @using (Html.BeginForm("RealizarLogin", "MenuPrincipal", FormMethod.Post))
             {
                 @Html.ValidationSummary(true)
