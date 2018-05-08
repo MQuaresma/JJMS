@@ -1,3 +1,4 @@
+using System.Data.Entity;
 using FILE = System.String;
 using Date = System.String;
 using Time = System.String;
@@ -20,4 +21,8 @@ namespace mvcJJMS.Models{
 			throw new System.Exception("Not implemented");
 		}
 	}
+
+	public class EncomendaDBContext : DbContext{
+		public DbSet<Encomenda> Encomendas { get; set; }
+    }
 }

@@ -1,3 +1,5 @@
+using System.Data.Entity;
+
 namespace mvcJJMS.Models{
 	public class Funcionario : Utilizador  {
 		private int zonaTrabalho;
@@ -9,4 +11,8 @@ namespace mvcJJMS.Models{
 			throw new System.Exception("Not implemented");
 		}
 	}
+
+	public class FuncionarioDBContext : DbContext{
+		public DbSet<Funcionario> Funcionarios { get; set; }
+    }
 }

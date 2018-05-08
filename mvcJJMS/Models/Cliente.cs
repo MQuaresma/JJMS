@@ -1,4 +1,6 @@
 using System.Collections.Generic;
+using System.Data.Entity;
+
 namespace mvcJJMS.Models{
 	public class Cliente : Utilizador  {
 		private string morada;
@@ -14,4 +16,7 @@ namespace mvcJJMS.Models{
 			throw new System.Exception("Not implemented");
 		}
 	}
+	public class ClienteDBContext : DbContext{
+		        public DbSet<Cliente> Clientes { get; set; }
+    }
 }

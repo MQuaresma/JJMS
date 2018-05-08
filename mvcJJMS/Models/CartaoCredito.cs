@@ -1,3 +1,5 @@
+using System.Data.Entity;
+
 namespace mvcJJMS.Models{
 	public class CartaoCredito {
 		private int num;
@@ -10,4 +12,8 @@ namespace mvcJJMS.Models{
 			throw new System.Exception("Not implemented");
 		}
 	}
+
+	public class CartaoCreditoDBContext : DbContext{
+		        public DbSet<CartaoCredito> Cartoes { get; set; }
+    }
 }

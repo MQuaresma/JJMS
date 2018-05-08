@@ -18,3 +18,13 @@
 /home/jcm300/JJMS/mvcJJMS/bin/Debug/netcoreapp2.0/mvcJJMS.runtimeconfig.dev.json
 /home/jcm300/JJMS/mvcJJMS/bin/Debug/netcoreapp2.0/mvcJJMS.dll
 /home/jcm300/JJMS/mvcJJMS/bin/Debug/netcoreapp2.0/mvcJJMS.pdb
+/Users/miguel/Documents/Dev/JJMS/mvcJJMS/bin/Debug/netcoreapp2.0/mvcJJMS.deps.json
+/Users/miguel/Documents/Dev/JJMS/mvcJJMS/bin/Debug/netcoreapp2.0/mvcJJMS.runtimeconfig.json
+/Users/miguel/Documents/Dev/JJMS/mvcJJMS/bin/Debug/netcoreapp2.0/mvcJJMS.runtimeconfig.dev.json
+/Users/miguel/Documents/Dev/JJMS/mvcJJMS/bin/Debug/netcoreapp2.0/mvcJJMS.dll
+/Users/miguel/Documents/Dev/JJMS/mvcJJMS/bin/Debug/netcoreapp2.0/mvcJJMS.pdb
+/Users/miguel/Documents/Dev/JJMS/mvcJJMS/obj/Debug/netcoreapp2.0/mvcJJMS.csproj.CoreCompileInputs.cache
+/Users/miguel/Documents/Dev/JJMS/mvcJJMS/obj/Debug/netcoreapp2.0/mvcJJMS.AssemblyInfoInputs.cache
+/Users/miguel/Documents/Dev/JJMS/mvcJJMS/obj/Debug/netcoreapp2.0/mvcJJMS.AssemblyInfo.cs
+/Users/miguel/Documents/Dev/JJMS/mvcJJMS/obj/Debug/netcoreapp2.0/mvcJJMS.dll
+/Users/miguel/Documents/Dev/JJMS/mvcJJMS/obj/Debug/netcoreapp2.0/mvcJJMS.pdb
