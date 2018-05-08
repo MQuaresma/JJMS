@@ -20,7 +20,7 @@ namespace mvcJJMS
                 SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
                 builder.DataSource = "localhost";
                 builder.UserID = "sa";
-                builder.Password = ""; //TODO: insert password
+                builder.Password = ""; //TODO: inserqt password
                 builder.InitialCatalog = "master";
 
                 // Connect to SQL
@@ -37,19 +37,7 @@ namespace mvcJJMS
             Console.WriteLine("All done. Press any key to finish...");
             Console.ReadKey(true);
 
-
-
-            SqlConnection sqlCon = new SqlConnection();
-            SecureString safePwd=new SecureString();
-            String pwd="pwd";
-            String userId="user";
-
-            foreach(char s in pwd)
-                safePwd.AppendChar(s);
-
-            SqlCredential cred = new SqlCredential(userId,safePwd);
-
-            
+        
             BuildWebHost(args).Run();
         }
 
