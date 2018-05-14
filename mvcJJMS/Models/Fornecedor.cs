@@ -2,12 +2,10 @@ using System.Data.Entity;
 
 namespace mvcJJMS.Models{
 	public class Fornecedor {
-		private int id;
-		private string nome;
-		private string morada;
-	}
+		private int FornecedorID{get;set;}
+		private string nome{get;set;}
+		private string morada{get;set;}
 
-	public class FornecedorDBContext : DbContext{
-		public DbSet<Fornecedor> Fornecedores { get; set; }
-    }
+		private ICollection<Encomenda> encomendas{get;set};
+	}
 }

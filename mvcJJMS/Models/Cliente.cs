@@ -3,11 +3,12 @@ using System.Data.Entity;
 
 namespace mvcJJMS.Models{
 	public class Cliente : Utilizador  {
-		private string morada;
-		private string telefone;
-		private bool bloqueado;
+		private int ClienteID{get;set;}
+		private String morada{get;set;}
+		private String telefone{get;set;}
+		private bool bloqueado{get;set;}
 
-		private Dictionary<int,Encomenda> encomendas;
+		private ICollection<Encomenda> encomendas{get;set};
 
 		public bool TemEncomenda(int idEncomenda) {
 			throw new System.Exception("Not implemented");
@@ -16,7 +17,4 @@ namespace mvcJJMS.Models{
 			throw new System.Exception("Not implemented");
 		}
 	}
-	public class ClienteDBContext : DbContext{
-		        public DbSet<Cliente> Clientes { get; set; }
-    }
 }

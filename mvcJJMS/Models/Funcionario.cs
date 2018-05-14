@@ -2,17 +2,15 @@ using System.Data.Entity;
 
 namespace mvcJJMS.Models{
 	public class Funcionario : Utilizador  {
-		private int zonaTrabalho;
-		private int nroEnc;
+		private int FuncionarioID{get;set;}
+		private int zonaTrabalho{get;set;}
+		private int nroEnc{get;set;}
 
 		private Avaliacao avaliacao;
+		private ICollection<Encomenda> encomendas{get;set};
 
 		public void AtualizaAvaliacao(int classFuncionario) {
 			throw new System.Exception("Not implemented");
 		}
 	}
-
-	public class FuncionarioDBContext : DbContext{
-		public DbSet<Funcionario> Funcionarios { get; set; }
-    }
 }

@@ -2,14 +2,14 @@ using System.Data.Entity;
 
 namespace mvcJJMS.Models{
 	public class Utilizador {
-		private int id;
-		private string email;
-		private string password;
-		private string nome;
-	}
+		private int UtilizadorID{get;set;}
+		private String Email{get;set;}
+		private String Password{get;set;}
+		private String Nome{get;set;}
+		private int FuncionarioID{get;set;};
+		private int ClienteID{get;set;};
 
-	public class UtilizadorDBContext : DbContext{
-		public DbSet<Utilizador> Utilizadores { get; set; }
-    }
-	
+		public Funcionario? Funcionario{get;set;} 	//Nullable value
+		public Cliente? Cliente{get;set;} 			//Nullable value
+	}
 }

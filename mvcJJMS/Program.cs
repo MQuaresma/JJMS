@@ -5,8 +5,10 @@ using System.Threading.Tasks;
 using System.Security;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Micrsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
+using mvcJJMS.Data;
 
 namespace mvcJJMS
 {
@@ -14,27 +16,18 @@ namespace mvcJJMS
     {
         public static void Main(string[] args)
         {
-            
-            try{
-                // Connection string specifies the settings for connecting to the database
-                SqlConnectionStringBuilder builder = new SqlConnectionStringBuilder();
-                builder.DataSource = "localhost";
-                builder.UserID = "sa";
-                builder.Password = "%mWv%xhJ/ce?"; //TODO: insert password
-                builder.InitialCatalog = "master";
+            var host = BuildWebHost(args);
+            using(var scope=host.Services.CreateScope()){
+                var services= scope.ServiceProvider;
+                try{
+                    var context = services.GetRequiredService<JJMSContext>();
+                    DbInitializer.Initialize(context);
 
-                // Connect to SQL
-                Console.Write("Connecting to SQL Server ... ");
-                using (SqlConnection connection = new SqlConnection(builder.ConnectionString))
-                {
-                    connection.Open();
-                    Console.WriteLine("Connection sucessful!"); //For debugging purposes
+                }catch (SqlException e){
+                    Console.WriteLine(e.ToString());
                 }
-            }catch (SqlException e){
-                Console.WriteLine(e.ToString());
-            }
-        
-            BuildWebHost(args).Run();
+            }    
+            host.Run();
         }
 
         public static IWebHost BuildWebHost(string[] args) =>

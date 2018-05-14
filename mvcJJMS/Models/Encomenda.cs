@@ -5,24 +5,27 @@ using Time = System.String;
 
 namespace mvcJJMS.Models{
 	public class Encomenda {
-		private int id;
-		private int estado;
-		private string destino;
-		private FILE fatura;
-		private int avaliação;
-		private float custo;
-		private Date dia;
-		private Time hora;
-		private int idFornecedor;
-		private int funcResp;
-		private CartaoCredito cartão;
+		private int EncomendaID{get;set;}
+		private int estado{get;set;}
+		private String destino{get;set;}
+		private FILE fatura{get;set;}
+		private int avaliação{get;set;}
+		private float custo{get;set;}
+		private Date dia{get;set;}
+		private Time hora{get;set;}
+		
+		private int FornecedorID{get;set;}
+		private int ClienteID{get;set;}
+		private int FuncionarioID{get;set;}
+		private int CartaoCreditoID{get;set};
+
+		public Cliente Cliente{get;set;}
+		public Funcionario Funcionario{get;set;}
+		public Fornecedor Fornecedor{get;set;}
+		private CartaoCredito CartaoCredito;
 
 		public void GerarFatura(Cliente cliente) {
 			throw new System.Exception("Not implemented");
 		}
 	}
-
-	public class EncomendaDBContext : DbContext{
-		public DbSet<Encomenda> Encomendas { get; set; }
-    }
 }
