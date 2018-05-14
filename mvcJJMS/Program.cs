@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 using System.Security;
 using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
-using Micrsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using mvcJJMS.Data;

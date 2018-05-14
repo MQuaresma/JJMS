@@ -1,4 +1,4 @@
-using System.Data.Entity;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace mvcJJMS.Models{
 	public class CartaoCredito {

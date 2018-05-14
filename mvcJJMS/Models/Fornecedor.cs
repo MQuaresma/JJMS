@@ -1,4 +1,4 @@
-using System.Data.Entity;
+using System.Collections.Generic;
 
 namespace mvcJJMS.Models{
 	public class Fornecedor {
@@ -6,6 +6,6 @@ namespace mvcJJMS.Models{
 		private string nome{get;set;}
 		private string morada{get;set;}
 
-		private ICollection<Encomenda> encomendas{get;set};
+		private ICollection<Encomenda> encomendas{get;set;}
 	}
 }
