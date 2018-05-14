@@ -10,12 +10,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using mvcJJMS.Data;
 
-namespace mvcJJMS
-{
-    public class Program
-    {
-        public static void Main(string[] args)
-        {
+namespace mvcJJMS{
+    public class Program{
+        public static void Main(string[] args){
             var host = BuildWebHost(args);
             using(var scope=host.Services.CreateScope()){
                 var services= scope.ServiceProvider;

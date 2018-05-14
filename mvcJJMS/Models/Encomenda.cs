@@ -4,7 +4,7 @@ using Time = System.String;
 
 namespace mvcJJMS.Models{
 	public class Encomenda {
-		private int EncomendaID{get;set;}
+		public int EncomendaID{get;set;}
 		private int estado{get;set;}
 		private string destino{get;set;}
 		private FILE fatura{get;set;}

@@ -29,3 +29,4 @@
 /Users/miguel/Documents/Dev/JJMS/mvcJJMS/obj/Debug/netcoreapp2.0/mvcJJMS.dll
 /Users/miguel/Documents/Dev/JJMS/mvcJJMS/obj/Debug/netcoreapp2.0/mvcJJMS.pdb
 /Users/miguel/Documents/Dev/JJMS/mvcJJMS/obj/Debug/netcoreapp2.0/mvcJJMS.csprojResolveAssemblyReference.cache
+/Users/miguel/Documents/Dev/JJMS/mvcJJMS/bin/Debug/netcoreapp2.0/mvcJJMS.dll.config

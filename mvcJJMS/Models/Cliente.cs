@@ -2,7 +2,7 @@ using System.Collections.Generic;
 
 namespace mvcJJMS.Models{
 	public class Cliente : Utilizador  {
-		private int ClienteID{get;set;}
+		public int ClienteID{get;set;}
 		private string morada{get;set;}
 		private string telefone{get;set;}
 		private bool bloqueado{get;set;}
