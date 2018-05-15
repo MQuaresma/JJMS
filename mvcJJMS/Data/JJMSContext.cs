@@ -15,5 +15,12 @@ namespace mvcJJMS.Data{
 		public DbSet<Fornecedor> Fornecedores { get; set; }
         public DbSet<Encomenda> Encomendas { get; set; }
         public DbSet<CartaoCredito> Cartoes { get; set; }
+    
+        public Fornecedor newFornecedor(string nome, string morada){
+            Fornecedor nFornecedor=new Fornecedor();
+            nFornecedor.setNome(nome);
+            nFornecedor.setMorada(morada);
+            return nFornecedor;
+        }
     }
 }

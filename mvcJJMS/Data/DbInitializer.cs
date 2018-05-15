@@ -23,6 +23,15 @@ namespace mvcJJMS.Data{
                 context.Utilizadores.Add(s);
             }
             context.SaveChanges();
+
+            var fornecedores = new Fornecedor[]{
+                context.newFornecedor("nome","morada")
+            };
+
+            foreach(Fornecedor f in fornecedores){
+                context.Fornecedores.Add(f);
+            }
+            context.SaveChanges();
         }
     }
 }
