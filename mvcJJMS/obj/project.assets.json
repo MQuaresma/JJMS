@@ -12537,8 +12537,13 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
     "/home/jcm300/.nuget/packages/": {},
     "/opt/dotnet/sdk/NuGetFallbackFolder": {}
+=======
+    "/home/jonasv/.nuget/packages/": {},
+    "/usr/share/dotnet/sdk/NuGetFallbackFolder": {}
+>>>>>>> origin
   },
   "project": {
     "version": "1.0.0",

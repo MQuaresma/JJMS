@@ -4,6 +4,23 @@
         <title>@ViewBag.Title</title>
     </head>
     <body>
-        
+        <h1>@ViewBag.Title</h1>
+            @using (Html.BeginForm("RealizarRegisto", "MenuPrincipal", FormMethod.Post))
+            {
+                @Html.ValidationSummary(true)
+                <fieldset>
+                    User: <input type="text" name="user" id="user" required />
+                    <br>
+                    Password: <input type="text" name="password" id="password" required />
+                    <br>
+                    Email: <input type="text" name="email" id="email" required />
+                    <br>
+                    Morada: <input type="text" name="morada" id="morada" required />
+                    <br>
+                    Telefone: <input type="text" name="telefone" id="telefone" required />
+                </fieldset>
+                <input type="submit" value="Ok" />
+            }
+        </div> 
     </body>
 </html>
