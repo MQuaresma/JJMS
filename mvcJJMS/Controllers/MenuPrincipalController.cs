@@ -21,13 +21,13 @@ namespace mvcJJMS.Controllers{
         [HttpPost]
         public ActionResult RealizarLogin(string email, string password){
             string action="Login";
-            int isAuth = SysFacade.Login(email,password); 
+            int login = SysFacade.Login(email,password); 
             
-            if(isAuth==0){
+            if(login==0){
                 action="Sucesso";
-            }else if(isAuth==1){
+            }else if(login==1){
                 action="EmailInexistente";
-            }else if(isAuth==2){
+            }else if(login==2){
                 action="PasswordInvalida";
             }
             return RedirectToAction(action); 
