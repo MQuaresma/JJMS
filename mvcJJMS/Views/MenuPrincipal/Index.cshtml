@@ -6,8 +6,8 @@
     <body>
         <h1>@ViewBag.Title</h1>
         <ol>
-            <li>@Html.ActionLink((String)@ViewBag.ListElem1, (String)@ViewBag.ListElem1, (String)@ViewBag.To)</li>
-            <li>@Html.ActionLink((String)@ViewBag.ListElem2, (String)@ViewBag.ListElem2, (String)@ViewBag.To)</li>
+            <li><button type="button" onclick="location.href='@Url.Action((string)@ViewBag.ListElem1,(string)@ViewBag.To)'">@ViewBag.ListElem1</button></li>
+            <li><button type="button" onclick="location.href='@Url.Action((string)@ViewBag.ListElem2,(string)@ViewBag.To)'">@ViewBag.ListElem2</button></li>
         </ol> 
     </body>
 </html>

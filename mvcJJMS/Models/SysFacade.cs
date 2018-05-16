@@ -19,6 +19,7 @@ namespace mvcJJMS.Models{
         static public void iniciar(string mCD){
 			SysFacade.moradaCD=mCD;
 			//TODO: buscar os restos dos valores à BD
+			utilizadores = new Dictionary<int,Utilizador>();
 		}
 		static public bool ExisteEncomenda( int idEncomenda) {
 			throw new System.Exception("Not implemented");
@@ -161,9 +162,9 @@ namespace mvcJJMS.Models{
 			throw new System.Exception("Not implemented");
 		}
 
-		static private byte[] hashFunction(string input){
+		static private string hashFunction(string input){
 			var sha384 = new SHA384CryptoServiceProvider();
-			return sha384.ComputeHash(Encoding.UTF8.GetBytes(input));
+			return sha384.ComputeHash(Encoding.UTF8.GetBytes(input)).ToString();
 		}
 	}
 }

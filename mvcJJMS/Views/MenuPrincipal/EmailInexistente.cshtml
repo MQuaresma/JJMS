@@ -4,7 +4,7 @@
         <title>@ViewBag.Title</title>
     </head>
     <body>
-       @ViewBag.Msg
-       @Html.ActionLink("Voltar", "Login", "MenuPrincipal") 
+       @ViewBag.Msg<br>
+       <button type="button" onclick="location.href='@Url.Action("Login","MenuPrincipal")'">Voltar</button>
     </body>
 </html>
