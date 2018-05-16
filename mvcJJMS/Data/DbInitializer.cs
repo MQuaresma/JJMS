@@ -31,6 +31,7 @@ namespace mvcJJMS.Data{
             foreach(Fornecedor f in fornecedores){
                 context.Fornecedores.Add(f);
             }
+            
             context.SaveChanges();
         }
     }

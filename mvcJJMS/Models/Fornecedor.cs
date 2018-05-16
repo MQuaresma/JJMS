@@ -3,8 +3,8 @@ using System.Collections.Generic;
 namespace mvcJJMS.Models{
 	public class Fornecedor {
 		public int FornecedorID{get;set;}
-		private string nome{get;set;}
-		private string morada{get;set;}
+		public string nome{get;set;}
+		public string morada{get;set;}
 
 		private ICollection<Encomenda> encomendas{get;set;}
 	
@@ -13,6 +13,10 @@ namespace mvcJJMS.Models{
 		}
 		public void setMorada(string morada){
 			this.morada=morada;
+		}
+
+		public string getNome(){
+			return this.nome;
 		}
 	}
 }

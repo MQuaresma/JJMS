@@ -1,10 +1,10 @@
 namespace mvcJJMS.Models{
 	public class Utilizador {
 		public int UtilizadorID{get;set;}
-		private string Email{get;set;}
-		private string Password{get;set;}
-		private string Nome{get;set;}
-		private int FuncionarioID{get;set;}
-		private int ClienteID{get;set;}
+		public string Email{get;set;}
+		public string Password{get;set;}
+		public string Nome{get;set;}
+		public int FuncionarioID{get;set;}
+		public int ClienteID{get;set;}
 	}
 }

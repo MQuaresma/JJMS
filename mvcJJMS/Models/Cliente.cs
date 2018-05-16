@@ -3,9 +3,9 @@ using System.Collections.Generic;
 namespace mvcJJMS.Models{
 	public class Cliente : Utilizador  {
 		public int ClienteID{get;set;}
-		private string morada{get;set;}
-		private string telefone{get;set;}
-		private bool bloqueado{get;set;}
+		public string morada{get;set;}
+		public string telefone{get;set;}
+		public bool bloqueado{get;set;}
 
 		private ICollection<Encomenda> encomendas{get;set;}
 
