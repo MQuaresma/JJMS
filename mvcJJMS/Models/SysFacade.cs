@@ -1,5 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 using FILE = System.String;
 using Date = System.String;
 using Time = System.String;
@@ -117,8 +119,10 @@ namespace mvcJJMS.Models{
 		static public int GetEstadoEnc( int idEncomenda) {
 			throw new System.Exception("Not implemented");
 		}
-		static public void Registar( string nome,  string password,  string email,  string morada,  string telefone) {
+		static public int Registar( string nome,  string password,  string email,  string morada,  string telefone) {
 			
+			
+			return 1;
 		}
 		static public string GetLocalizacaoEncomenda( int idEncomenda) {
 			throw new System.Exception("Not implemented");
@@ -155,6 +159,11 @@ namespace mvcJJMS.Models{
 		}
 		static public bool EstaBloqueado( int idCliente) {
 			throw new System.Exception("Not implemented");
+		}
+
+		static private byte[] hashFunction(string input){
+			var sha384 = new SHA384CryptoServiceProvider();
+			return sha384.ComputeHash(Encoding.UTF8.GetBytes(input));
 		}
 	}
 }

@@ -22,5 +22,10 @@ namespace mvcJJMS.Data{
             nFornecedor.setMorada(morada);
             return nFornecedor;
         }
+
+        public Utilizador newUtilizador(string nome, string passwordH, string email, string morada){
+            Utilizador nUtilizador=new Utilizador();
+            return nUtilizador;
+        }
     }
 }

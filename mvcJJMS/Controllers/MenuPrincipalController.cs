@@ -56,8 +56,33 @@ namespace mvcJJMS.Controllers{
             return View(); 
         }
 
-        public ViewResult RealizarRegisto(string user,string password, string email, string morada, string telefone){
-            SysFacade.Registar(user,password,email,morada,telefone);
+        public ActionResult RealizarRegisto(string user,string password, string email, string morada, string telefone){
+            string action="Registar";
+            int result=SysFacade.Registar(user,password,email,morada,telefone);
+
+            switch(result){
+                case 1:             //username repetido
+
+                    break;
+                case 2:             //email repetido
+
+                    break;
+                case 3:             //email inválido
+
+                    break;
+                case 4:             //telefone inválido
+
+                    break;
+                case 5:             //password insegura
+
+                    break;
+                case 0:             //sucesso
+                    action="sucesso";
+                    break;   
+            }
+
+            return RedirectToAction(action);
         }
+
     }
 }
