@@ -13,14 +13,14 @@ namespace mvcJJMS.Models{
 		public Date dia{get;set;}
 		public Time hora{get;set;}
 		
-		public int FornecedorID{get;set;}
-		public int ClienteID{get;set;}
-		public int FuncionarioID{get;set;}
-		public int CartaoCreditoID{get;set;}
+		private int FornecedorID{get;set;}
+		private int ClienteID{get;set;}
+		private int FuncionarioID{get;set;}
+		private int CartaoCreditoID{get;set;}
 
-		public Cliente Cliente{get;set;}
-		public Funcionario Funcionario{get;set;}
-		public Fornecedor Fornecedor{get;set;}
+		private Cliente Cliente{get;set;}
+		private Funcionario Funcionario{get;set;}
+		private Fornecedor Fornecedor{get;set;}
 		private CartaoCredito CartaoCredito;
 
 		public void GerarFatura(Cliente cliente) {

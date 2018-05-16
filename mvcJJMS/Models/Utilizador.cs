@@ -4,7 +4,7 @@ namespace mvcJJMS.Models{
 		public string Email{get;set;}
 		public string Password{get;set;}
 		public string Nome{get;set;}
-		public int FuncionarioID{get;set;}
-		public int ClienteID{get;set;}
+		private int FuncionarioID{get;set;}
+		private int ClienteID{get;set;}
 	}
 }

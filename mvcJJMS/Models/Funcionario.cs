@@ -6,7 +6,7 @@ namespace mvcJJMS.Models{
 		public int zonaTrabalho{get;set;}
 		public int nroEnc{get;set;}
 
-		public Avaliacao avaliacao;
+		private Avaliacao avaliacao;
 		private ICollection<Encomenda> encomendas{get;set;}
 
 		public void AtualizaAvaliacao(int classFuncionario) {
