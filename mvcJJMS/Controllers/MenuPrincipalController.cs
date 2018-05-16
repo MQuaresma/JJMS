@@ -52,7 +52,39 @@ namespace mvcJJMS.Controllers{
         }
 
         public ViewResult Registar(){
-            ViewBag.Title="Registar"; 
+            ViewBag.Title = "Registar"; 
+            return View(); 
+        }
+
+        public ViewResult Registar_Cancelar(){
+            ViewBag.Title = "Cancelar";
+            ViewBag.Msg = "Operação cancelada"; 
+            return View(); 
+        }
+
+        public ViewResult Registar_EmailEmUso(){
+            ViewBag.Title = "Email em uso";
+            ViewBag.Msg = "O email inserido já se encontra associado a outro cliente"; 
+            return View(); 
+        }
+
+        public ViewResult Registar_PasswordInsegura(){
+            ViewBag.Title = "Password Insegura";
+            ViewBag.Msg = "A password não cumpre requisitos mínimos de segurança"; 
+            ViewBag.Item1 = "* 8 ou mais carateres";
+            ViewBag.Item2 = "* possuir números, letras e símbolos";
+            return View(); 
+        }
+
+        public ViewResult Registar_Sucesso(){
+            ViewBag.Title = "Sucesso";
+            ViewBag.Msg = "Registo efetuado com sucesso"; 
+            return View(); 
+        }
+
+        public ViewResult Registar_TelefoneInvalido(){
+            ViewBag.Title = "Telefone inválido";
+            ViewBag.Msg = "O telefone inserido não é válido"; 
             return View(); 
         }
 
