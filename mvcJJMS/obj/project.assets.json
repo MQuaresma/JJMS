@@ -12537,23 +12537,28 @@
     ]
   },
   "packageFolders": {
+<<<<<<< HEAD
+    "/home/jcm300/.nuget/packages/": {},
+    "/opt/dotnet/sdk/NuGetFallbackFolder": {}
+=======
     "/home/jonasv/.nuget/packages/": {},
     "/usr/share/dotnet/sdk/NuGetFallbackFolder": {}
+>>>>>>> origin
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/jonasv/3º Ano 2º Semestre/LI 4/Trabalhos Práticos/JJMS/mvcJJMS/mvcJJMS.csproj",
+      "projectUniqueName": "/home/jcm300/JJMS/mvcJJMS/mvcJJMS.csproj",
       "projectName": "mvcJJMS",
-      "projectPath": "/home/jonasv/3º Ano 2º Semestre/LI 4/Trabalhos Práticos/JJMS/mvcJJMS/mvcJJMS.csproj",
-      "packagesPath": "/home/jonasv/.nuget/packages/",
-      "outputPath": "/home/jonasv/3º Ano 2º Semestre/LI 4/Trabalhos Práticos/JJMS/mvcJJMS/obj/",
+      "projectPath": "/home/jcm300/JJMS/mvcJJMS/mvcJJMS.csproj",
+      "packagesPath": "/home/jcm300/.nuget/packages/",
+      "outputPath": "/home/jcm300/JJMS/mvcJJMS/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
-        "/usr/share/dotnet/sdk/NuGetFallbackFolder"
+        "/opt/dotnet/sdk/NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "/home/jonasv/.nuget/NuGet/NuGet.Config"
+        "/home/jcm300/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "netcoreapp2.0"

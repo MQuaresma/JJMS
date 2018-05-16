@@ -13,7 +13,7 @@ namespace mvcJJMS.Models{
 		static private Dictionary<int,Fornecedor> fornecedores;
 		static private Dictionary<int,Encomenda> encomendas;
 
-		static public void iniciar(string mCD){
+        static public void iniciar(string mCD){
 			SysFacade.moradaCD=mCD;
 			//TODO: buscar os restos dos valores à BD
 		}
@@ -72,7 +72,25 @@ namespace mvcJJMS.Models{
 			throw new System.Exception("Not implemented");
 		}
 		static public int Login(string email, string pass) {
-			throw new System.Exception("Not implemented");
+			Dictionary<int, Utilizador>.ValueCollection uts = utilizadores.Values;
+			Dictionary<int, Utilizador>.ValueCollection.Enumerator it = uts.GetEnumerator();
+			bool found = false;
+			int ret = 1;
+			string password = hashFunction(pass);
+
+			while(it.MoveNext() && !found){
+				Utilizador u = it.Current;
+				string e = u.Email;
+				
+				if(email.Equals(e)){
+					found = true;
+					ret = 2;
+					string p = u.Password;
+					
+					if(password.Equals(p)) ret = 0;
+				}
+			}
+			return ret;
 		}
 		static public int IdForn( string nomeForn) {
 			throw new System.Exception("Not implemented");

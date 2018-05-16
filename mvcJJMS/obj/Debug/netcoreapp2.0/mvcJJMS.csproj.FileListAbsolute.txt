@@ -30,6 +30,10 @@
 /Users/miguel/Documents/Dev/JJMS/mvcJJMS/obj/Debug/netcoreapp2.0/mvcJJMS.pdb
 /Users/miguel/Documents/Dev/JJMS/mvcJJMS/obj/Debug/netcoreapp2.0/mvcJJMS.csprojResolveAssemblyReference.cache
 /Users/miguel/Documents/Dev/JJMS/mvcJJMS/bin/Debug/netcoreapp2.0/mvcJJMS.dll.config
+<<<<<<< HEAD
+/home/jcm300/JJMS/mvcJJMS/bin/Debug/netcoreapp2.0/mvcJJMS.dll.config
+/home/jcm300/JJMS/mvcJJMS/obj/Debug/netcoreapp2.0/mvcJJMS.csprojAssemblyReference.cache
+=======
 /home/jonasv/3º Ano 2º Semestre/LI 4/Trabalhos Práticos/JJMS/mvcJJMS/bin/Debug/netcoreapp2.0/mvcJJMS.dll.config
 /home/jonasv/3º Ano 2º Semestre/LI 4/Trabalhos Práticos/JJMS/mvcJJMS/bin/Debug/netcoreapp2.0/mvcJJMS.deps.json
 /home/jonasv/3º Ano 2º Semestre/LI 4/Trabalhos Práticos/JJMS/mvcJJMS/bin/Debug/netcoreapp2.0/mvcJJMS.runtimeconfig.json
@@ -42,3 +46,4 @@
 /home/jonasv/3º Ano 2º Semestre/LI 4/Trabalhos Práticos/JJMS/mvcJJMS/obj/Debug/netcoreapp2.0/mvcJJMS.AssemblyInfo.cs
 /home/jonasv/3º Ano 2º Semestre/LI 4/Trabalhos Práticos/JJMS/mvcJJMS/obj/Debug/netcoreapp2.0/mvcJJMS.dll
 /home/jonasv/3º Ano 2º Semestre/LI 4/Trabalhos Práticos/JJMS/mvcJJMS/obj/Debug/netcoreapp2.0/mvcJJMS.pdb
+>>>>>>> origin
