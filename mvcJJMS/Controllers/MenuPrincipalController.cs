@@ -55,5 +55,9 @@ namespace mvcJJMS.Controllers{
             ViewBag.Title="Registar"; 
             return View(); 
         }
+
+        public ViewResult RealizarRegisto(string user,string password, string email, string morada, string telefone){
+            SysFacade.Registar(user,password,email,morada,telefone);
+        }
     }
 }

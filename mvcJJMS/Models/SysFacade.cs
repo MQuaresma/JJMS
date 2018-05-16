@@ -99,7 +99,7 @@ namespace mvcJJMS.Models{
 			throw new System.Exception("Not implemented");
 		}
 		static public void Registar( string nome,  string password,  string email,  string morada,  string telefone) {
-			throw new System.Exception("Not implemented");
+			
 		}
 		static public string GetLocalizacaoEncomenda( int idEncomenda) {
 			throw new System.Exception("Not implemented");
