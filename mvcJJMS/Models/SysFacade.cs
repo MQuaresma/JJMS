@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using FILE = System.String;
 using Date = System.String;
 using Time = System.String;
@@ -72,8 +73,8 @@ namespace mvcJJMS.Models{
 			throw new System.Exception("Not implemented");
 		}
 		static public int Login(string email, string pass) {
-			Dictionary<int, Utilizador>.ValueCollection uts = utilizadores.Values;
-			Dictionary<int, Utilizador>.ValueCollection.Enumerator it = uts.GetEnumerator();
+			List<Utilizador> uts = utilizadores.Values.ToList();
+			List<Utilizador>.Enumerator it = uts.GetEnumerator();
 			bool found = false;
 			int ret = 1;
 			string password = hashFunction(pass);
