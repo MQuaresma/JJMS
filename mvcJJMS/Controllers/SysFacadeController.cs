@@ -12,9 +12,6 @@ using Time = System.String;
 namespace mvcJJMS.Controllers{
 	public class SysFacadeController : Controller {
 		static private string moradaCD;
-		static private int numFornecedores;
-		static private int numUtilizadores;
-		static private int numEncomendas;
 		static private JJMSContext _context;
 
 		public SysFacadeController(JJMSContext context){
@@ -26,16 +23,21 @@ namespace mvcJJMS.Controllers{
 			//TODO: buscar os restos dos valores à BD
 		}
 
-		static public bool ExisteEncomenda( int idEncomenda) {
-			throw new System.Exception("Not implemented");
+		static public bool ExisteEncomenda(int idEncomenda) {
+			return SysFacadeController._context.Encomendas.Find(idEncomenda)!=null;
 		}
 
 		static public bool EmailAssociado( string email) {
-			throw new System.Exception("Not implemented");
+			return SysFacadeController._context
+									  .Utilizadores
+									  .Where(ut => ut.Email.Equals(email))
+									  .FirstOrDefault() != default(Utilizador);
 		}
 
 		static public string GetUserNome( int idCliente) {
-			throw new System.Exception("Not implemented");
+			Cliente cli=SysFacadeController._context.Clientes.Find(idCliente);
+			if(cli!=null) return cli.Nome;
+			else return null;
 		}
 
 		static public string GetUserPassword( int idCliente) {
