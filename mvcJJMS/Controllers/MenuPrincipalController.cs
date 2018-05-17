@@ -13,24 +13,9 @@ namespace mvcJJMS.Controllers{
             return View(); 
         }
 
-        public ViewResult Login(){
-            ViewBag.Title="Autenticar";
+		public ActionResult Login(){
+			ViewBag.Title = "Autenticar";
             return View(); 
-        }
-        
-        [HttpPost]
-        public ActionResult RealizarLogin(string email, string password){
-            string action="Login";
-            int login = SysFacadeController.Login(email,password); 
-            
-            if(login==0){
-                action="Sucesso";
-            }else if(login==1){
-                action="EmailInexistente";
-            }else if(login==2){
-                action="PasswordInvalida";
-            }
-            return RedirectToAction(action); 
         }
 
         public ViewResult Sucesso(){

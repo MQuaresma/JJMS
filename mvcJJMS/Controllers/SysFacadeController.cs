@@ -1,5 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using System.Text.Encodings.Web;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
@@ -11,7 +10,7 @@ using Date = System.String;
 using Time = System.String;
 
 namespace mvcJJMS.Controllers{
-	public class SysFacadeController {
+	public class SysFacadeController : Controller {
 		static private string moradaCD;
 		static private int numFornecedores;
 		static private int numUtilizadores;
@@ -25,7 +24,6 @@ namespace mvcJJMS.Controllers{
         static public void iniciar(string mCD){
 			SysFacadeController.moradaCD=mCD;
 			//TODO: buscar os restos dos valores à BD
-			utilizadores = new Dictionary<int,Utilizador>();
 		}
 
 		static public bool ExisteEncomenda( int idEncomenda) {
@@ -100,25 +98,17 @@ namespace mvcJJMS.Controllers{
 			throw new System.Exception("Not implemented");
 		}
 
-		static public int Login(string email, string pass) {
-			List<Utilizador> uts = _context.Utilizadores.ToList();
-			List<Utilizador>.Enumerator it = uts.GetEnumerator();
-			bool found = false;
-			int ret = 1;
-			string password = hashFunction(pass);
+		public ActionResult Login(string email, string password) {
+			Utilizador u = SysFacadeController._context.Utilizadores.Where(ut => ut.Email.Equals(email)).FirstOrDefault();
+			ActionResult ret;
 
-			while(it.MoveNext() && !found){
-				Utilizador u = it.Current;
-				string e = u.Email;
-				
-				if(email.Equals(e)){
-					found = true;
-					ret = 2;
-					string p = u.Password;
-					
-					if(password.Equals(p)) ret = 0;
-				}
-			}
+			if (u != default(Utilizador)){
+				byte[] passwordH = hashFunction(password);
+				if (passwordH.SequenceEqual(hashFunction(u.Password)))
+					ret=RedirectToAction("Sucesso", "MenuPrincipal");
+				else ret=RedirectToAction("PasswordInvalida","MenuPrincipal");
+			}else ret=RedirectToAction("EmailInexistente", "MenuPrincipal");
+
 			return ret;
 		}
 
@@ -158,7 +148,7 @@ namespace mvcJJMS.Controllers{
             Utilizador nUser=_context.newUtilizador(user, password, email);
             _context.Utilizadores.Add(nUser);
             _context.SaveChanges();
-            return RedirectToAction("Index", "MenuPrincipal");
+			return RedirectToAction("Index", "MenuPrincipal");
         }
 		
 		static public int Registar( string nome,  string password,  string email,  string morada,  string telefone) {
@@ -215,9 +205,9 @@ namespace mvcJJMS.Controllers{
 			throw new System.Exception("Not implemented");
 		}
 
-		static private string hashFunction(string input){
+		static private byte[] hashFunction(string input){
 			var sha384 = new SHA384CryptoServiceProvider();
-			return sha384.ComputeHash(Encoding.UTF8.GetBytes(input)).ToString();
+			return sha384.ComputeHash(Encoding.UTF8.GetBytes(input));
 		}
 	}
 }
