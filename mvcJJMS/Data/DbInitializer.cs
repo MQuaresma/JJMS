@@ -19,18 +19,16 @@ namespace mvcJJMS.Data{
                 new Utilizador(),
             };
 
-            foreach (Utilizador s in utilizadores){
-                context.Utilizadores.Add(s);
-            }
+            foreach (Utilizador s in utilizadores) context.Utilizadores.Add(s);
+
             context.SaveChanges();
 
+            
             var fornecedores = new Fornecedor[]{
                 context.newFornecedor("nome","morada")
             };
 
-            foreach(Fornecedor f in fornecedores){
-                context.Fornecedores.Add(f);
-            }
+            foreach(Fornecedor f in fornecedores) context.Fornecedores.Add(f);
             
             context.SaveChanges();
         }

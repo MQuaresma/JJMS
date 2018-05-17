@@ -11,3 +11,5 @@
 
 ## Project Related
 **/appsettings.json
+**/obj/**
+**/bin/**

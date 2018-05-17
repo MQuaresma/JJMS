@@ -22,3 +22,15 @@
 /home/jonasv/3º Ano 2º Semestre/LI 4/Trabalhos Práticos/JJMS/mvcJJMS/obj/Debug/netcoreapp2.0/mvcJJMS.AssemblyInfo.cs
 /home/jonasv/3º Ano 2º Semestre/LI 4/Trabalhos Práticos/JJMS/mvcJJMS/obj/Debug/netcoreapp2.0/mvcJJMS.dll
 /home/jonasv/3º Ano 2º Semestre/LI 4/Trabalhos Práticos/JJMS/mvcJJMS/obj/Debug/netcoreapp2.0/mvcJJMS.pdb
+/Users/miguel/Documents/Dev/JJMS/mvcJJMS/obj/Debug/netcoreapp2.0/mvcJJMS.csprojResolveAssemblyReference.cache
+/Users/miguel/Documents/Dev/JJMS/mvcJJMS/obj/Debug/netcoreapp2.0/mvcJJMS.csproj.CoreCompileInputs.cache
+/Users/miguel/Documents/Dev/JJMS/mvcJJMS/obj/Debug/netcoreapp2.0/mvcJJMS.AssemblyInfoInputs.cache
+/Users/miguel/Documents/Dev/JJMS/mvcJJMS/obj/Debug/netcoreapp2.0/mvcJJMS.AssemblyInfo.cs
+/Users/miguel/Documents/Dev/JJMS/mvcJJMS/obj/Debug/netcoreapp2.0/mvcJJMS.dll
+/Users/miguel/Documents/Dev/JJMS/mvcJJMS/obj/Debug/netcoreapp2.0/mvcJJMS.pdb
+/Users/miguel/Documents/Dev/JJMS/mvcJJMS/bin/Debug/netcoreapp2.0/mvcJJMS.dll.config
+/Users/miguel/Documents/Dev/JJMS/mvcJJMS/bin/Debug/netcoreapp2.0/mvcJJMS.deps.json
+/Users/miguel/Documents/Dev/JJMS/mvcJJMS/bin/Debug/netcoreapp2.0/mvcJJMS.runtimeconfig.json
+/Users/miguel/Documents/Dev/JJMS/mvcJJMS/bin/Debug/netcoreapp2.0/mvcJJMS.runtimeconfig.dev.json
+/Users/miguel/Documents/Dev/JJMS/mvcJJMS/bin/Debug/netcoreapp2.0/mvcJJMS.dll
+/Users/miguel/Documents/Dev/JJMS/mvcJJMS/bin/Debug/netcoreapp2.0/mvcJJMS.pdb

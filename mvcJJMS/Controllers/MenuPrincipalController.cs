@@ -9,7 +9,7 @@ namespace mvcJJMS.Controllers{
             ViewBag.ListElem1="Login";
             ViewBag.ListElem2="Registar"; 
             ViewBag.To="MenuPrincipal";
-            SysFacade.iniciar("Avenida da Liberdade nº36, Braga"); 
+            SysFacadeController.iniciar("Avenida da Liberdade nº36, Braga"); 
             return View(); 
         }
 
@@ -21,7 +21,7 @@ namespace mvcJJMS.Controllers{
         [HttpPost]
         public ActionResult RealizarLogin(string email, string password){
             string action="Login";
-            int login = SysFacade.Login(email,password); 
+            int login = SysFacadeController.Login(email,password); 
             
             if(login==0){
                 action="Sucesso";
@@ -53,7 +53,7 @@ namespace mvcJJMS.Controllers{
 
         public ViewResult Registar(){
             ViewBag.Title = "Registar"; 
-            return View(); 
+            return View();
         }
 
         public ViewResult Registar_Cancelar(){
@@ -87,34 +87,5 @@ namespace mvcJJMS.Controllers{
             ViewBag.Msg = "O telefone inserido não é válido"; 
             return View(); 
         }
-
-        public ActionResult RealizarRegisto(string user,string password, string email, string morada, string telefone){
-            string action="Registar";
-            int result=SysFacade.Registar(user,password,email,morada,telefone);
-
-            switch(result){
-                case 1:             //username repetido
-
-                    break;
-                case 2:             //email repetido
-
-                    break;
-                case 3:             //email inválido
-
-                    break;
-                case 4:             //telefone inválido
-
-                    break;
-                case 5:             //password insegura
-
-                    break;
-                case 0:             //sucesso
-                    action="sucesso";
-                    break;   
-            }
-
-            return RedirectToAction(action);
-        }
-
     }
 }

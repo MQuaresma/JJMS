@@ -5,7 +5,7 @@
     </head>
     <body>
         <h1>@ViewBag.Title</h1>
-            @using (Html.BeginForm("RealizarRegisto", "MenuPrincipal", FormMethod.Post))
+            @using (Html.BeginForm("RealizarRegisto", "SysFacade", FormMethod.Post))
             {
                 @Html.ValidationSummary(true)
                 <fieldset>
