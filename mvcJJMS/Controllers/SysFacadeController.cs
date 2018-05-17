@@ -146,17 +146,36 @@ namespace mvcJJMS.Controllers{
 			throw new System.Exception("Not implemented");
 		}
 
+		static public bool TelefoneValido( string telefone) {
+			return true;
+		}
+
+		static public bool PasswordSegura( string password) {
+			return false;
+		}
+
         public ActionResult RealizarRegisto(string user,string password, string email, string morada, string telefone){
-            Utilizador nUser=_context.newUtilizador(user, password, email);
-            _context.Utilizadores.Add(nUser);
-            _context.SaveChanges();
-			return RedirectToAction("Index", "MenuPrincipal");
+			int registar = Registar(password,email,telefone);
+			switch (registar){
+				case 1:
+					Utilizador nUser=_context.newUtilizador(user, password, email);
+            		_context.Utilizadores.Add(nUser);
+            		_context.SaveChanges();
+					return RedirectToAction("Registar_Sucesso", "MenuPrincipal");
+				case 2:
+					return RedirectToAction("Registar_EmailEmUso", "MenuPrincipal");
+				case 3:
+					return RedirectToAction("Registar_TelefoneInvalido", "MenuPrincipal");
+				default:
+					return RedirectToAction("Registar_PasswordInsegura", "MenuPrincipal");
+			}
         }
 		
-		static public int Registar( string nome,  string password,  string email,  string morada,  string telefone) {
-			
-			
-			return 1;
+		static public int Registar( string password, string email, string telefone) {
+			if (EmailAssociado(email) == true) return 2;
+			else if (TelefoneValido(telefone) == false) return 3;
+			else if (PasswordSegura(password) == false) return 4;
+			else return 1;
 		}
 		
 		static public string GetLocalizacaoEncomenda( int idEncomenda) {
