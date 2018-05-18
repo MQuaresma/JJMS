@@ -30,5 +30,16 @@ namespace mvcJJMS.Data{
             nUtilizador.Email=email;
             return nUtilizador;
         }
+
+        public Cliente newCliente(string nome, string passwordH, string email, string morada, string telefone){
+            Cliente nCliente = new Cliente();
+            nCliente.Nome=nome;
+            nCliente.Password=passwordH;
+            nCliente.Email=email;
+            nCliente.morada = morada;
+            nCliente.telefone = telefone;
+            nCliente.bloqueado = false;
+            return nCliente;
+        }
     }
 }

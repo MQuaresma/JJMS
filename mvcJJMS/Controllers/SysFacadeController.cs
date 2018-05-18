@@ -173,8 +173,10 @@ namespace mvcJJMS.Controllers{
 			int registar = Registar(password,email,telefone);
 			switch (registar){
 				case 1:
-					Utilizador nUser=_context.newUtilizador(user, password, email);
-            		_context.Utilizadores.Add(nUser);
+					Cliente nCliente = _context.newCliente(user,password,email,morada,telefone);
+					_context.Clientes.Add(nCliente);
+					//Utilizador nUser=_context.newUtilizador(user, password, email);
+            		//_context.Utilizadores.Add(nUser);
             		_context.SaveChanges();
 					return RedirectToAction("Registar_Sucesso", "MenuPrincipal");
 				case 2:
