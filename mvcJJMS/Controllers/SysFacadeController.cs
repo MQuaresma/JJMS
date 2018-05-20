@@ -108,7 +108,7 @@ namespace mvcJJMS.Controllers{
 			if (u != default(Utilizador)){
 				byte[] passwordH = hashFunction(password);
 				if (passwordH.SequenceEqual(hashFunction(u.Password)))
-					ret=RedirectToAction("Sucesso", "MenuPrincipal");
+					ret=RedirectToAction("MenuCliente", "MenuPrincipal");
 				else ret=RedirectToAction("PasswordInvalida","MenuPrincipal");
 			}else ret=RedirectToAction("EmailInexistente", "MenuPrincipal");
 
