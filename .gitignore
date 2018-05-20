@@ -12,5 +12,5 @@
 
 ## Project Related
 **/appsettings.json
-**/obj/**
-**/bin/**
+mvcJJMS/obj/**
+mvcJJMS/bin/**

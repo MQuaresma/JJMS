@@ -23,12 +23,23 @@ namespace mvcJJMS.Data{
             return nFornecedor;
         }
 
-        public Utilizador newUtilizador(string nome, string passwordH, string email){
+        public Utilizador newUtilizador(string nome, byte[] passwordH, string email){
             Utilizador nUtilizador=new Utilizador();
             nUtilizador.Nome=nome;
             nUtilizador.Password=passwordH;
             nUtilizador.Email=email;
             return nUtilizador;
+        }
+
+        public Cliente newCliente(string nome, byte[] passwordH, string email, string morada, string telefone){
+            Cliente nCliente = new Cliente();
+            nCliente.Nome=nome;
+            nCliente.Password=passwordH;
+            nCliente.Email=email;
+            nCliente.morada = morada;
+            nCliente.telefone = telefone;
+            nCliente.bloqueado = false;
+            return nCliente;
         }
     }
 }

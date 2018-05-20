@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System;
 using mvcJJMS.Data;
 using mvcJJMS.Models;
 using FILE = System.String;
@@ -106,8 +107,8 @@ namespace mvcJJMS.Controllers{
 
 			if (u != default(Utilizador)){
 				byte[] passwordH = hashFunction(password);
-				if (passwordH.SequenceEqual(hashFunction(u.Password)))
-					ret=RedirectToAction("Sucesso", "MenuPrincipal");
+				if (passwordH.SequenceEqual(u.Password))
+					ret=RedirectToAction("MenuCliente", "MenuPrincipal");
 				else ret=RedirectToAction("PasswordInvalida","MenuPrincipal");
 			}else ret=RedirectToAction("EmailInexistente", "MenuPrincipal");
 
@@ -146,17 +147,52 @@ namespace mvcJJMS.Controllers{
 			throw new System.Exception("Not implemented");
 		}
 
+		static public bool TelefoneValido( string telefone) {
+			if (telefone.Length != 9) return false;
+			foreach (char c in telefone){
+        		if (!Char.IsDigit(c)) return false;
+			}
+    		return true;
+		}
+
+		static public bool PasswordSegura( string password) {
+			if (password.Length < 8) return false;
+			int numeros = 0;
+			int letras = 0;
+			int simbolos = 0;
+			foreach (char c in password){
+				if (Char.IsDigit(c)) numeros++;
+				else if (Char.IsLetter(c)) letras++;
+				else simbolos++;
+			}
+			if (numeros == 0 || letras == 0 || simbolos == 0) return false;
+			return true;
+		}
+
         public ActionResult RealizarRegisto(string user,string password, string email, string morada, string telefone){
-            Utilizador nUser=_context.newUtilizador(user, password, email);
-            _context.Utilizadores.Add(nUser);
-            _context.SaveChanges();
-			return RedirectToAction("Index", "MenuPrincipal");
+			int registar = Registar(password,email,telefone);
+			switch (registar){
+				case 1:
+					Cliente nCliente = _context.newCliente(user,hashFunction(password),email,morada,telefone);
+					_context.Clientes.Add(nCliente);
+					//Utilizador nUser=_context.newUtilizador(user, password, email);
+            		//_context.Utilizadores.Add(nUser);
+            		_context.SaveChanges();
+					return RedirectToAction("Registar_Sucesso", "MenuPrincipal");
+				case 2:
+					return RedirectToAction("Registar_EmailEmUso", "MenuPrincipal");
+				case 3:
+					return RedirectToAction("Registar_TelefoneInvalido", "MenuPrincipal");
+				default:
+					return RedirectToAction("Registar_PasswordInsegura", "MenuPrincipal");
+			}
         }
 		
-		static public int Registar( string nome,  string password,  string email,  string morada,  string telefone) {
-			
-			
-			return 1;
+		static public int Registar( string password, string email, string telefone) {
+			if (EmailAssociado(email) == true) return 2;
+			else if (TelefoneValido(telefone) == false) return 3;
+			else if (PasswordSegura(password) == false) return 4;
+			else return 1;
 		}
 		
 		static public string GetLocalizacaoEncomenda( int idEncomenda) {
