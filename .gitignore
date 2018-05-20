@@ -5,6 +5,7 @@
 ## Others
 **/*.swp
 *.out
+**/*.bak
 
 ## VSCode
 .vscode/**
