@@ -107,7 +107,7 @@ namespace mvcJJMS.Controllers{
 
 			if (u != default(Utilizador)){
 				byte[] passwordH = hashFunction(password);
-				if (passwordH.SequenceEqual(hashFunction(u.Password)))
+				if (passwordH.SequenceEqual(u.Password))
 					ret=RedirectToAction("MenuCliente", "MenuPrincipal");
 				else ret=RedirectToAction("PasswordInvalida","MenuPrincipal");
 			}else ret=RedirectToAction("EmailInexistente", "MenuPrincipal");
@@ -173,7 +173,7 @@ namespace mvcJJMS.Controllers{
 			int registar = Registar(password,email,telefone);
 			switch (registar){
 				case 1:
-					Cliente nCliente = _context.newCliente(user,password,email,morada,telefone);
+					Cliente nCliente = _context.newCliente(user,hashFunction(password),email,morada,telefone);
 					_context.Clientes.Add(nCliente);
 					//Utilizador nUser=_context.newUtilizador(user, password, email);
             		//_context.Utilizadores.Add(nUser);
