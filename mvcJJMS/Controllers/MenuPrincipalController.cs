@@ -72,5 +72,37 @@ namespace mvcJJMS.Controllers{
             ViewBag.Msg = "O telefone inserido não é válido"; 
             return View(); 
         }
+        public ViewResult MenuCliente(){
+            ViewBag.Title="Menu Cliente";
+            ViewBag.ListElem1="Requisitar Encomenda";
+            ViewBag.ListElem2="Consultar Histórico";
+            ViewBag.ListElem3="Tracking da Encomenda";
+            ViewBag.ListElem4="Avaliar Serviço";
+            ViewBag.ListElem5="Alterar Dados";
+            ViewBag.ListElem6="Logout";
+            ViewBag.To="MenuPrincipal";
+            return View(); 
+        }
+        public ViewResult Requisitar_Encomenda(){
+            ViewBag.Title="Requisitar Encomenda";
+            return View(); 
+        }
+        public ViewResult Consultar_Historico(){
+            ViewBag.Title="Consultar Histórico";
+            return View(); 
+        }
+        public ViewResult Tracking_da_Encomenda(){
+            ViewBag.Title="Tracking da Encomenda";
+            return View(); 
+        }
+        public ViewResult Avaliar_Servico(){
+            ViewBag.Title="Avaliar Serviço";
+            return View(); 
+        }
+        public ViewResult Alterar_Dados(){
+            ViewBag.Title="Alterar Dados";
+            return View(); 
+        }
+        
     }
 }
