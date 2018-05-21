@@ -1,9 +1,16 @@
 using mvcJJMS.Models;
 using System;
 using System.Linq;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace mvcJJMS.Data{
     public static class DbInitializer{
+
+        static private byte[] hashFunction(string input){
+			var sha384 = new SHA384CryptoServiceProvider();
+			return sha384.ComputeHash(Encoding.UTF8.GetBytes(input));
+		}
         public static void Initialize(JJMSContext context){
             context.Database.EnsureCreated();
 
@@ -13,23 +20,25 @@ namespace mvcJJMS.Data{
             }
             
             //TODO: seed database
-            
-            var utilizadores = new Utilizador[]{
-                new Utilizador(),
-                new Utilizador(),
+            var fornecedores = new Fornecedor[]{
+                context.newFornecedor("EmpresaTOP","Rua das Quintas"),
+                context.newFornecedor("SuperHiper","Rua da Rotunda"),
             };
-
-            foreach (Utilizador s in utilizadores) context.Utilizadores.Add(s);
-
+            foreach(Fornecedor f in fornecedores) context.Fornecedores.Add(f);
             context.SaveChanges();
 
-            
-            var fornecedores = new Fornecedor[]{
-                context.newFornecedor("nome","morada")
+            var funcionarios = new Funcionario[]{
+                context.newFuncionario("António", hashFunction("func1"), "antonio@hotmail.com", 0),
+                context.newFuncionario("Romeu", hashFunction("func2"), "romeu@hotmail.com", 1),
             };
+            foreach(Funcionario f in funcionarios) context.Funcionarios.Add(f);
+            context.SaveChanges();
 
-            foreach(Fornecedor f in fornecedores) context.Fornecedores.Add(f);
-            
+            var clientes = new Cliente[]{
+                context.newCliente("Alfredo",hashFunction("cli1"),"alfredo@hotmail.com","Rua de Cima","987654321"),
+                context.newCliente("Martim",hashFunction("cli2"),"martim@hotmail.com","Rua de Baixo","987654322"),
+            };
+            foreach(Cliente c in clientes) context.Clientes.Add(c);
             context.SaveChanges();
         }
     }

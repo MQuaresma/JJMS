@@ -41,5 +41,15 @@ namespace mvcJJMS.Data{
             nCliente.bloqueado = false;
             return nCliente;
         }
+
+        public Funcionario newFuncionario(string nome, byte[] passwordH, string email, int zonaTrabalho){
+            Funcionario nFuncionario = new Funcionario();
+            nFuncionario.Nome=nome;
+            nFuncionario.Password=passwordH;
+            nFuncionario.Email=email;
+            nFuncionario.zonaTrabalho = zonaTrabalho;
+            nFuncionario.nroEnc = 0;
+            return nFuncionario;
+        }
     }
 }

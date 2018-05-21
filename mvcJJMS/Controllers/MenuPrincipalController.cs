@@ -116,6 +116,8 @@ namespace mvcJJMS.Controllers{
             ViewBag.ListElem1View = "ConsultarRota";
             ViewBag.ListElem2 = "Atualizar Estado";
             ViewBag.ListElem2View = "AtualizarEstado";
+            ViewBag.ListElem3 = "Logout";
+            ViewBag.ListElem3View = "Index";
             ViewBag.To="MenuPrincipal";
             return View(); 
         }

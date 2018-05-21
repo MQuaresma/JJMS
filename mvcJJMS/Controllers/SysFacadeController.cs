@@ -116,7 +116,8 @@ namespace mvcJJMS.Controllers{
 					ret=RedirectToAction("PasswordInvalida","MenuPrincipal");
 					String p = uts[i].Password.ToString();
 					if (pass.Equals(p)){
-						ret=RedirectToAction("MenuCliente", "MenuPrincipal");
+						if (uts[i] is Cliente) ret=RedirectToAction("MenuCliente", "MenuPrincipal");
+						else ret = RedirectToAction("MenuFuncionario", "MenuPrincipal");
 					}
 				}
 			}
