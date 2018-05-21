@@ -26,5 +26,9 @@ namespace mvcJJMS.Models{
 		public void GerarFatura(Cliente cliente) {
 			throw new System.Exception("Not implemented");
 		}
+
+		public int GetIdFornecedor(){
+			return this.FornecedorID;
+		}
 	}
 }

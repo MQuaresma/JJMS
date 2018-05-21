@@ -14,6 +14,7 @@ using System.Net.Mail;
 namespace mvcJJMS.Controllers{
 	public class SysFacadeController : Controller {
 		static private string moradaCD;
+		private int utilizadorID;
 		static private JJMSContext _context;
 
 		public SysFacadeController(JJMSContext context){
@@ -118,6 +119,7 @@ namespace mvcJJMS.Controllers{
 					if (pass.Equals(p)){
 						if (uts[i] is Cliente) ret=RedirectToAction("MenuCliente", "MenuPrincipal");
 						else ret = RedirectToAction("MenuFuncionario", "MenuPrincipal");
+						this.utilizadorID = uts[i].UtilizadorID;
 					}
 				}
 			}
@@ -148,8 +150,9 @@ namespace mvcJJMS.Controllers{
 			throw new System.Exception("Not implemented");
 		}
 
-		static public string GetMoradaForn( int idEncomenda) {
-			throw new System.Exception("Not implemented");
+		static public string GetMoradaForn(int idForn) {
+			Fornecedor forn = SysFacadeController._context.Fornecedores.Find(idForn);
+			return forn.morada;
 		}
 
 		static public int GetEstadoEnc( int idEncomenda) {
@@ -217,11 +220,34 @@ namespace mvcJJMS.Controllers{
 		}
 		
 		static public string GetLocalizacaoEncomenda( int idEncomenda) {
-			throw new System.Exception("Not implemented");
+			Encomenda encomenda = SysFacadeController._context.Encomendas.Find(idEncomenda);
+			int estado = encomenda.estado;
+			switch (estado){
+				case 1:
+					int forn = encomenda.GetIdFornecedor();
+					return GetMoradaForn(forn);
+				case 2:
+					return GetMoradaCD();
+				case 3:
+					return "Não especificado";
+				default:
+					return encomenda.destino;
+			}
 		}
 
 		static public string GetEstadoEncomenda( int idEncomenda) {
-			throw new System.Exception("Not implemented");
+			Encomenda enc = SysFacadeController._context.Encomendas.Find(idEncomenda);
+			int estado = enc.estado;
+			switch (estado){
+				case 1:
+					return "com o fornecedor";
+				case 2:
+					return "no centro de distribuição";
+				case 3:
+					return "em trânsito";
+				default:
+					return "entregue";
+			}
 		}
 
 		static public FILE GetFatura( int idCliente,  int idEncomenda) {
@@ -267,6 +293,13 @@ namespace mvcJJMS.Controllers{
 		static private byte[] hashFunction(string input){
 			var sha384 = new SHA384CryptoServiceProvider();
 			return sha384.ComputeHash(Encoding.UTF8.GetBytes(input));
+		}
+		public ActionResult TrackingEncomenda(int idEncomenda) {
+			if (ExisteEncomenda(idEncomenda) == false) 
+				return RedirectToAction("TrackingEncomenda_CodigoInexistente", "MenuPrincipal");
+			string localizacao = GetLocalizacaoEncomenda(idEncomenda);
+			string estado = GetEstadoEncomenda(idEncomenda);
+			return RedirectToAction("TrackingEncomenda_InformacaoEncomenda", "MenuPrincipal", new {encomenda = idEncomenda, localizacao = localizacao, estado = estado});
 		}
 	}
 }

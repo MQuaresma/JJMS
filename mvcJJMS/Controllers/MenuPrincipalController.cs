@@ -97,10 +97,6 @@ namespace mvcJJMS.Controllers{
             ViewBag.Title="Consultar Histórico";
             return View(); 
         }
-        public ViewResult Tracking_da_Encomenda(){
-            ViewBag.Title="Tracking da Encomenda";
-            return View(); 
-        }
         public ViewResult Avaliar_Servico(){
             ViewBag.Title="Avaliar Serviço";
             return View(); 
@@ -128,6 +124,31 @@ namespace mvcJJMS.Controllers{
         }
         public ViewResult AtualizarEstado(){
             ViewBag.Title="Atualizar Estado";
+            return View(); 
+        }
+
+        public ViewResult TrackingEncomenda(){
+            ViewBag.Title="Tracking Encomenda";
+            ViewBag.Msg="Insira o código da sua encomenda:";
+            return View(); 
+        }
+        public ViewResult TrackingEncomenda_Cancelar(){
+            ViewBag.Title = "Cancelar";
+            ViewBag.Msg = "Operação cancelada"; 
+            return View(); 
+        }
+
+        public ViewResult TrackingEncomenda_CodigoInexistente(){
+            ViewBag.Title = "Código Inexistente";
+            ViewBag.Msg = "Não existe a encomenda com o código inserido"; 
+            return View(); 
+        }
+
+        public ViewResult TrackingEncomenda_InformacaoEncomenda(int encomenda, string localizacao, string estado){
+            ViewBag.Title = "Email em uso";
+            ViewBag.Msg = "Encomenda " + encomenda;
+            ViewBag.Item1 = "Localização : " + localizacao;
+            ViewBag.Item2 = "Estado : " + estado;
             return View(); 
         }
         

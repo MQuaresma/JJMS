@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>@ViewBag.Title</title>
+    </head>
+    <body>
+        <h1>@ViewBag.Title</h1>
+            @using (Html.BeginForm("TrackingEncomenda", "SysFacade", FormMethod.Post))
+            {
+                @Html.ValidationSummary(true)
+                <fieldset>
+                    @ViewBag.Msg<br>
+                    <input type="number" name="idEncomenda" id="idEncomenda" required />
+                    <br>
+                </fieldset>
+                <button type="button" onclick="location.href='@Url.Action("TrackingEncomenda_Cancelar","MenuPrincipal")'">Cancelar</button>
+                <input type="submit" value="Continuar" />
+            } 
+    </body>
+</html>
