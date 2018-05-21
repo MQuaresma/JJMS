@@ -103,16 +103,23 @@ namespace mvcJJMS.Controllers{
 		}
 
 		public ActionResult Login(string email, string password) {
-			Utilizador u = SysFacadeController._context.Utilizadores.Where(ut => ut.Email.Equals(email)).FirstOrDefault();
-			ActionResult ret;
+			List<Utilizador> uts = SysFacadeController._context.Utilizadores.ToList();
+			Boolean found = false;
+			ActionResult ret=RedirectToAction("EmailInexistente", "MenuPrincipal");
 
-			if (u != default(Utilizador)){
-				byte[] passwordH = hashFunction(password);
-				if (passwordH.SequenceEqual(u.Password))
-					ret=RedirectToAction("MenuCliente", "MenuPrincipal");
-				else ret=RedirectToAction("PasswordInvalida","MenuPrincipal");
-			}else ret=RedirectToAction("EmailInexistente", "MenuPrincipal");
+			String pass = hashFunction(password).ToString();
 
+			for(int i=0; i< uts.Count && !found; i++){
+				String e = uts[i].Email;
+				if (email.Equals(e)){
+					found = true;
+					ret=RedirectToAction("PasswordInvalida","MenuPrincipal");
+					String p = uts[i].Password.ToString();
+					if (pass.Equals(p)){
+						ret=RedirectToAction("MenuCliente", "MenuPrincipal");
+					}
+				}
+			}
 			return ret;
 		}
 
