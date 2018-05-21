@@ -109,6 +109,25 @@ namespace mvcJJMS.Controllers{
             ViewBag.Title="Alterar Dados";
             return View(); 
         }
+
+        public ViewResult MenuFuncionario(){
+            ViewBag.Title = "Menu Funcionário";
+            ViewBag.ListElem1 = "Consultar Rota";
+            ViewBag.ListElem1View = "ConsultarRota";
+            ViewBag.ListElem2 = "Atualizar Estado";
+            ViewBag.ListElem2View = "AtualizarEstado";
+            ViewBag.To="MenuPrincipal";
+            return View(); 
+        }
+
+        public ViewResult ConsultarRota(){
+            ViewBag.Title="Consultar Rota";
+            return View(); 
+        }
+        public ViewResult AtualizarEstado(){
+            ViewBag.Title="Atualizar Estado";
+            return View(); 
+        }
         
     }
 }
