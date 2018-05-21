@@ -15,13 +15,13 @@ namespace mvcJJMS.Controllers
             
             switch(login){
                 case 0:
-                    ret=RedirectToAction("MenuCliente", "Login");
+                    ret = RedirectToAction("MenuCliente", "Login");
                     break;
                 case 1:
                     ret = RedirectToAction("MenuFuncionario", "Login");
                     break;
                 case 2:
-                    ret=RedirectToAction("EmailInexistente", "Login");
+                    ret = RedirectToAction("EmailInexistente", "Login");
                     break;
                 case 3:
                     ret = ret=RedirectToAction("PasswordInvalida","Login");
@@ -31,12 +31,6 @@ namespace mvcJJMS.Controllers
                     break;
             }
             return ret;
-        }
-
-        public ViewResult Sucesso(){
-            ViewBag.Title = "Sucesso";
-            ViewBag.Msg = "Login bem sucedido!";
-            return View();
         }
 
         public ViewResult EmailInexistente(){
