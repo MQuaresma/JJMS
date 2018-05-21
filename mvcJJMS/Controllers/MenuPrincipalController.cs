@@ -61,6 +61,12 @@ namespace mvcJJMS.Controllers{
             return View(); 
         }
 
+        public ViewResult Registar_EmailInvalido(){
+            ViewBag.Title = "Email inválido";
+            ViewBag.Msg = "O email inserido não é válido"; 
+            return View(); 
+        }
+
         public ViewResult Registar_Sucesso(){
             ViewBag.Title = "Sucesso";
             ViewBag.Msg = "Registo efetuado com sucesso"; 

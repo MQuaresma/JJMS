@@ -9,6 +9,7 @@ using mvcJJMS.Models;
 using FILE = System.String;
 using Date = System.String;
 using Time = System.String;
+using System.Net.Mail; 
 
 namespace mvcJJMS.Controllers{
 	public class SysFacadeController : Controller {
@@ -169,29 +170,41 @@ namespace mvcJJMS.Controllers{
 			return true;
 		}
 
+		static public bool EmailValido( string email){
+			MailAddress address;
+			try{
+				address = new MailAddress(email);
+			}
+			catch (FormatException){
+				return false;
+			}
+			return true;
+		}
+
         public ActionResult RealizarRegisto(string user,string password, string email, string morada, string telefone){
 			int registar = Registar(password,email,telefone);
 			switch (registar){
 				case 1:
 					Cliente nCliente = _context.newCliente(user,hashFunction(password),email,morada,telefone);
 					_context.Clientes.Add(nCliente);
-					//Utilizador nUser=_context.newUtilizador(user, password, email);
-            		//_context.Utilizadores.Add(nUser);
             		_context.SaveChanges();
 					return RedirectToAction("Registar_Sucesso", "MenuPrincipal");
 				case 2:
-					return RedirectToAction("Registar_EmailEmUso", "MenuPrincipal");
-				case 3:
 					return RedirectToAction("Registar_TelefoneInvalido", "MenuPrincipal");
-				default:
+				case 3:
 					return RedirectToAction("Registar_PasswordInsegura", "MenuPrincipal");
+				case 4:
+					return RedirectToAction("Registar_EmailInvalido", "MenuPrincipal");
+				default:
+					return RedirectToAction("Registar_EmailEmUso", "MenuPrincipal");
 			}
         }
 		
 		static public int Registar( string password, string email, string telefone) {
-			if (EmailAssociado(email) == true) return 2;
-			else if (TelefoneValido(telefone) == false) return 3;
-			else if (PasswordSegura(password) == false) return 4;
+			if (TelefoneValido(telefone) == false) return 2;
+			else if (PasswordSegura(password) == false) return 3;
+			else if (EmailValido(email) == false) return 4;
+			else if (EmailAssociado(email) == true) return 5;
 			else return 1;
 		}
 		
