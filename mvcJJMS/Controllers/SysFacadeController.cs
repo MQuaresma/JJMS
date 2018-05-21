@@ -9,12 +9,11 @@ using mvcJJMS.Models;
 using FILE = System.String;
 using Date = System.String;
 using Time = System.String;
-using System.Net.Mail; 
 
 namespace mvcJJMS.Controllers{
 	public class SysFacadeController : Controller {
 		static private string moradaCD;
-		private int utilizadorID;
+		static private int utilizadorID;
 		static private JJMSContext _context;
 
 		public SysFacadeController(JJMSContext context){
@@ -102,23 +101,22 @@ namespace mvcJJMS.Controllers{
 			throw new System.Exception("Not implemented");
 		}
 
-		public ActionResult Login(string email, string password) {
+		static public int Login(string email, string password) {
 			List<Utilizador> uts = SysFacadeController._context.Utilizadores.ToList();
-			Boolean found = false;
-			ActionResult ret=RedirectToAction("EmailInexistente", "MenuPrincipal");
-
-			String pass = hashFunction(password).ToString();
+			bool found = false;
+			int ret=2;
+			string pass = hashFunction(password).ToString();
 
 			for(int i=0; i< uts.Count && !found; i++){
-				String e = uts[i].Email;
+				string e = uts[i].Email;
 				if (email.Equals(e)){
 					found = true;
-					ret=RedirectToAction("PasswordInvalida","MenuPrincipal");
-					String p = uts[i].Password.ToString();
+					ret=3;
+					string p = uts[i].Password.ToString();
 					if (pass.Equals(p)){
-						if (uts[i] is Cliente) ret=RedirectToAction("MenuCliente", "MenuPrincipal");
-						else ret = RedirectToAction("MenuFuncionario", "MenuPrincipal");
-						this.utilizadorID = uts[i].UtilizadorID;
+						if (uts[i] is Cliente) ret=0;
+						else ret = 1;
+						SysFacadeController.utilizadorID = uts[i].UtilizadorID;
 					}
 				}
 			}
@@ -158,47 +156,10 @@ namespace mvcJJMS.Controllers{
 			throw new System.Exception("Not implemented");
 		}
 
-		static public bool TelefoneValido( string telefone) {
-			if (telefone.Length != 9) return false;
-			foreach (char c in telefone){
-        		if (!Char.IsDigit(c)) return false;
-			}
-    		return true;
-		}
-
-		static public bool PasswordSegura( string password) {
-			if (password.Length < 8) return false;
-			int numeros = 0;
-			int letras = 0;
-			int simbolos = 0;
-			foreach (char c in password){
-				if (Char.IsDigit(c)) numeros++;
-				else if (Char.IsLetter(c)) letras++;
-				else simbolos++;
-			}
-			if (numeros == 0 || letras == 0 || simbolos == 0) return false;
-			return true;
-		}
-
-		static public bool EmailValido( string email){
-			MailAddress address;
-			try{
-				address = new MailAddress(email);
-			}
-			catch (FormatException){
-				return false;
-			}
-			return true;
-		}
-
-        
-		
-		static public int Registar( string password, string email, string telefone) {
-			if (TelefoneValido(telefone) == false) return 2;
-			else if (PasswordSegura(password) == false) return 3;
-			else if (EmailValido(email) == false) return 4;
-			else if (EmailAssociado(email) == true) return 5;
-			else return 1;
+		static public void Registar(string nome, string password, string email,string morada, string telefone) {
+			Cliente nCliente = _context.newCliente(nome,SysFacadeController.hashFunction(password),email,morada,telefone);
+			_context.Clientes.Add(nCliente);
+            _context.SaveChanges();
 		}
 		
 		static public string GetLocalizacaoEncomenda( int idEncomenda) {

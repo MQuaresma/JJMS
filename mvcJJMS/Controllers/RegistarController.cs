@@ -1,35 +1,62 @@
 using Microsoft.AspNetCore.Mvc;
-using mvcJJMS.Data;
-using mvcJJMS.Models;
+using System;
+using System.Net.Mail;
 
 namespace mvcJJMS.Controllers
 {
     public class RegistarController : Controller
     {
-        static private JJMSContext _context;
+        public ActionResult Registar(string user,string password, string email, string morada, string telefone){
+			
+            if(SysFacadeController.EmailAssociado(email)){
+                return RedirectToAction("EmailEmUso", "Registar");
+            }
+            if(TelefoneValido(telefone)==false){
+                return RedirectToAction("TelefoneInvalido", "Registar");
+            }
+            if(PasswordSegura(password)==false){
+                return RedirectToAction("PasswordInsegura", "Registar");
+            }
+            if(EmailValido(email)==false){
+                return RedirectToAction("EmailInvalido", "Registar");
+            }
 
-		public RegistarController(JJMSContext context){
-			RegistarController._context=context;
+            SysFacadeController.Registar(user,password,email,morada,telefone);
+            return RedirectToAction("Sucesso", "Registar");
+        }  
+
+        static public bool TelefoneValido( string telefone) {
+			if (telefone.Length != 9) return false;
+			foreach (char c in telefone){
+        		if (!Char.IsDigit(c)) return false;
+			}
+    		return true;
 		}
 
-        public ActionResult RealizarRegisto(string user,string password, string email, string morada, string telefone){
-			int registar = SysFacadeController.Registar(password,email,telefone);
-			switch (registar){
-				case 1:
-					Cliente nCliente = _context.newCliente(user,SysFacadeController.hashFunction(password),email,morada,telefone);
-					_context.Clientes.Add(nCliente);
-            		_context.SaveChanges();
-					return RedirectToAction("Sucesso", "Registar");
-				case 2:
-					return RedirectToAction("TelefoneInvalido", "Registar");
-				case 3:
-					return RedirectToAction("PasswordInsegura", "Registar");
-				case 4:
-					return RedirectToAction("EmailInvalido", "Registar");
-				default:
-					return RedirectToAction("EmailEmUso", "Registar");
+		static public bool PasswordSegura( string password) {
+			if (password.Length < 8) return false;
+			int numeros = 0;
+			int letras = 0;
+			int simbolos = 0;
+			foreach (char c in password){
+				if (Char.IsDigit(c)) numeros++;
+				else if (Char.IsLetter(c)) letras++;
+				else simbolos++;
 			}
-        }  
+			if (numeros == 0 || letras == 0 || simbolos == 0) return false;
+			return true;
+		}   
+
+        static public bool EmailValido( string email){
+			MailAddress address;
+			try{
+				address = new MailAddress(email);
+			}
+			catch (FormatException){
+				return false;
+			}
+			return true;
+		}
 
         public ViewResult Index(){
             ViewBag.Title = "Registar"; 
