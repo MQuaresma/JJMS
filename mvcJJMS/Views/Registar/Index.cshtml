@@ -5,7 +5,7 @@
     </head>
     <body>
         <h1>@ViewBag.Title</h1>
-            @using (Html.BeginForm("RealizarRegisto", "SysFacade", FormMethod.Post))
+            @using (Html.BeginForm("RealizarRegisto", "Registar", FormMethod.Post))
             {
                 @Html.ValidationSummary(true)
                 <fieldset>
@@ -20,7 +20,7 @@
                     Telefone: <input type="text" name="telefone" id="telefone" required />
                 </fieldset>
                 <input type="submit" value="Registar" />
-                <button type="button" onclick="location.href='@Url.Action("Registar_Cancelar","MenuPrincipal")'">Cancelar</button>
+                <button type="button" onclick="location.href='@Url.Action("Cancelar","Registar")'">Cancelar</button>
             }
         </div> 
     </body>

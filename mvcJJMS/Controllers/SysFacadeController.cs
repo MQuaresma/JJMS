@@ -23,7 +23,6 @@ namespace mvcJJMS.Controllers{
 
         static public void iniciar(string mCD){
 			SysFacadeController.moradaCD=mCD;
-			//TODO: buscar os restos dos valores à BD
 		}
 
 		static public bool ExisteEncomenda(int idEncomenda) {
@@ -192,24 +191,7 @@ namespace mvcJJMS.Controllers{
 			return true;
 		}
 
-        public ActionResult RealizarRegisto(string user,string password, string email, string morada, string telefone){
-			int registar = Registar(password,email,telefone);
-			switch (registar){
-				case 1:
-					Cliente nCliente = _context.newCliente(user,hashFunction(password),email,morada,telefone);
-					_context.Clientes.Add(nCliente);
-            		_context.SaveChanges();
-					return RedirectToAction("Registar_Sucesso", "MenuPrincipal");
-				case 2:
-					return RedirectToAction("Registar_TelefoneInvalido", "MenuPrincipal");
-				case 3:
-					return RedirectToAction("Registar_PasswordInsegura", "MenuPrincipal");
-				case 4:
-					return RedirectToAction("Registar_EmailInvalido", "MenuPrincipal");
-				default:
-					return RedirectToAction("Registar_EmailEmUso", "MenuPrincipal");
-			}
-        }
+        
 		
 		static public int Registar( string password, string email, string telefone) {
 			if (TelefoneValido(telefone) == false) return 2;
@@ -290,16 +272,9 @@ namespace mvcJJMS.Controllers{
 			throw new System.Exception("Not implemented");
 		}
 
-		static private byte[] hashFunction(string input){
+		static public byte[] hashFunction(string input){
 			var sha384 = new SHA384CryptoServiceProvider();
 			return sha384.ComputeHash(Encoding.UTF8.GetBytes(input));
-		}
-		public ActionResult TrackingEncomenda(int idEncomenda) {
-			if (ExisteEncomenda(idEncomenda) == false) 
-				return RedirectToAction("TrackingEncomenda_CodigoInexistente", "MenuPrincipal");
-			string localizacao = GetLocalizacaoEncomenda(idEncomenda);
-			string estado = GetEstadoEncomenda(idEncomenda);
-			return RedirectToAction("TrackingEncomenda_InformacaoEncomenda", "MenuPrincipal", new {encomenda = idEncomenda, localizacao = localizacao, estado = estado});
 		}
 	}
 }

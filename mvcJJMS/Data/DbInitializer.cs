@@ -1,4 +1,5 @@
 using mvcJJMS.Models;
+using mvcJJMS.Controllers;
 using System;
 using System.Linq;
 using System.Security.Cryptography;
@@ -7,10 +8,6 @@ using System.Text;
 namespace mvcJJMS.Data{
     public static class DbInitializer{
 
-        static private byte[] hashFunction(string input){
-			var sha384 = new SHA384CryptoServiceProvider();
-			return sha384.ComputeHash(Encoding.UTF8.GetBytes(input));
-		}
         public static void Initialize(JJMSContext context){
             context.Database.EnsureCreated();
 
@@ -31,21 +28,21 @@ namespace mvcJJMS.Data{
             context.SaveChanges();
 
             var funcionarios = new Funcionario[]{
-                context.newFuncionario("António", hashFunction("func1"), "antonio@hotmail.com", 0),
-                context.newFuncionario("Romeu", hashFunction("func2"), "romeu@hotmail.com", 1),
-                context.newFuncionario("Tomé", hashFunction("func3"), "tome@hotmail.com", 2),
-                context.newFuncionario("Olga", hashFunction("func4"), "olga@hotmail.com", 3),
-                context.newFuncionario("Patrícia", hashFunction("func5"), "patricia@hotmail.com", 4),
+                context.newFuncionario("António", SysFacadeController.hashFunction("func1"), "antonio@hotmail.com", 0),
+                context.newFuncionario("Romeu", SysFacadeController.hashFunction("func2"), "romeu@hotmail.com", 1),
+                context.newFuncionario("Tomé", SysFacadeController.hashFunction("func3"), "tome@hotmail.com", 2),
+                context.newFuncionario("Olga", SysFacadeController.hashFunction("func4"), "olga@hotmail.com", 3),
+                context.newFuncionario("Patrícia", SysFacadeController.hashFunction("func5"), "patricia@hotmail.com", 4),
             };
             foreach(Funcionario f in funcionarios) context.Funcionarios.Add(f);
             context.SaveChanges();
 
             var clientes = new Cliente[]{
-                context.newCliente("Alfredo",hashFunction("cli1"),"alfredo@hotmail.com","Rua de Cima","987654321"),
-                context.newCliente("Martim",hashFunction("cli2"),"martim@hotmail.com","Rua de Baixo","987654322"),
-                context.newCliente("Carla",hashFunction("cli2"),"carla@hotmail.com","Rua do Lado","987654323"),
-                context.newCliente("Matilde",hashFunction("cli2"),"matilde@hotmail.com","Rua de Trás","987654324"),
-                context.newCliente("Diogo",hashFunction("cli2"),"diogo@hotmail.com","Rua da Esquina","987654325"),
+                context.newCliente("Alfredo",SysFacadeController.hashFunction("cli1"),"alfredo@hotmail.com","Rua de Cima","987654321"),
+                context.newCliente("Martim",SysFacadeController.hashFunction("cli2"),"martim@hotmail.com","Rua de Baixo","987654322"),
+                context.newCliente("Carla",SysFacadeController.hashFunction("cli2"),"carla@hotmail.com","Rua do Lado","987654323"),
+                context.newCliente("Matilde",SysFacadeController.hashFunction("cli2"),"matilde@hotmail.com","Rua de Trás","987654324"),
+                context.newCliente("Diogo",SysFacadeController.hashFunction("cli2"),"diogo@hotmail.com","Rua da Esquina","987654325"),
             };
             foreach(Cliente c in clientes) context.Clientes.Add(c);
             context.SaveChanges();

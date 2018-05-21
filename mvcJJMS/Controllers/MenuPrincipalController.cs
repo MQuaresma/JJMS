@@ -1,6 +1,4 @@
 using Microsoft.AspNetCore.Mvc;
-using mvcJJMS.Models;
-using System.Text.Encodings.Web;
 
 namespace mvcJJMS.Controllers{
     public class MenuPrincipalController : Controller{
@@ -35,49 +33,7 @@ namespace mvcJJMS.Controllers{
             ViewBag.Msg = "A password inserida é inválida.";
             return View();
         }
-
-        public ViewResult Registar(){
-            ViewBag.Title = "Registar"; 
-            return View();
-        }
-
-        public ViewResult Registar_Cancelar(){
-            ViewBag.Title = "Cancelar";
-            ViewBag.Msg = "Operação cancelada"; 
-            return View(); 
-        }
-
-        public ViewResult Registar_EmailEmUso(){
-            ViewBag.Title = "Email em uso";
-            ViewBag.Msg = "O email inserido já se encontra associado a outro cliente"; 
-            return View(); 
-        }
-
-        public ViewResult Registar_PasswordInsegura(){
-            ViewBag.Title = "Password Insegura";
-            ViewBag.Msg = "A password não cumpre requisitos mínimos de segurança"; 
-            ViewBag.Item1 = "* 8 ou mais carateres";
-            ViewBag.Item2 = "* possuir números, letras e símbolos";
-            return View(); 
-        }
-
-        public ViewResult Registar_EmailInvalido(){
-            ViewBag.Title = "Email inválido";
-            ViewBag.Msg = "O email inserido não é válido"; 
-            return View(); 
-        }
-
-        public ViewResult Registar_Sucesso(){
-            ViewBag.Title = "Sucesso";
-            ViewBag.Msg = "Registo efetuado com sucesso"; 
-            return View(); 
-        }
-
-        public ViewResult Registar_TelefoneInvalido(){
-            ViewBag.Title = "Telefone inválido";
-            ViewBag.Msg = "O telefone inserido não é válido"; 
-            return View(); 
-        }
+        
         public ViewResult MenuCliente(){
             ViewBag.Title="Menu Cliente";
             ViewBag.ListElem1="Requisitar Encomenda";
@@ -126,31 +82,5 @@ namespace mvcJJMS.Controllers{
             ViewBag.Title="Atualizar Estado";
             return View(); 
         }
-
-        public ViewResult TrackingEncomenda(){
-            ViewBag.Title="Tracking Encomenda";
-            ViewBag.Msg="Insira o código da sua encomenda:";
-            return View(); 
-        }
-        public ViewResult TrackingEncomenda_Cancelar(){
-            ViewBag.Title = "Cancelar";
-            ViewBag.Msg = "Operação cancelada"; 
-            return View(); 
-        }
-
-        public ViewResult TrackingEncomenda_CodigoInexistente(){
-            ViewBag.Title = "Código Inexistente";
-            ViewBag.Msg = "Não existe a encomenda com o código inserido"; 
-            return View(); 
-        }
-
-        public ViewResult TrackingEncomenda_InformacaoEncomenda(int encomenda, string localizacao, string estado){
-            ViewBag.Title = "Email em uso";
-            ViewBag.Msg = "Encomenda " + encomenda;
-            ViewBag.Item1 = "Localização : " + localizacao;
-            ViewBag.Item2 = "Estado : " + estado;
-            return View(); 
-        }
-        
     }
 }
