@@ -51,5 +51,14 @@ namespace mvcJJMS.Data{
             nFuncionario.nroEnc = 0;
             return nFuncionario;
         }
+
+        public CartaoCredito newCartaoCredito(int mes, int ano, int cvv, int pais){
+            CartaoCredito nCartaoCredito = new CartaoCredito();
+            nCartaoCredito.mes = mes;
+            nCartaoCredito.ano = ano;
+            nCartaoCredito.cvv = cvv;
+            nCartaoCredito.pais = pais;
+            return nCartaoCredito;
+        }
     }
 }
