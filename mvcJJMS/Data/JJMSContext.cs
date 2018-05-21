@@ -52,7 +52,7 @@ namespace mvcJJMS.Data{
             return nFuncionario;
         }
 
-        public CartaoCredito newCartaoCredito(int mes, int ano, int cvv, int pais){
+        public CartaoCredito newCartaoCredito(int mes, int ano, int cvv, string pais){
             CartaoCredito nCartaoCredito = new CartaoCredito();
             nCartaoCredito.mes = mes;
             nCartaoCredito.ano = ano;
