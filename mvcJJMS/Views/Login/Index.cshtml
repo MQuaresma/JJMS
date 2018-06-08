@@ -6,7 +6,7 @@
     <body>
         <div>
             <h1>@ViewBag.Title</h1>
-            @using (Html.BeginForm("Autenticar", "Login", FormMethod.Post))
+            @using (Html.BeginForm("Login", "Utilizador", FormMethod.Post))
     {
         @Html.ValidationSummary(true)
         <fieldset>

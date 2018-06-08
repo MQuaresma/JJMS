@@ -5,23 +5,22 @@
     </head>
     <body>
         <h1>@ViewBag.Title</h1>
-            @using (Html.BeginForm("RealizarRegisto", "Registar", FormMethod.Post))
-            {
-                @Html.ValidationSummary(true)
-                <fieldset>
-                    User: <input type="text" name="user" id="user" required />
-                    <br>
-                    Password: <input type="password" name="password" id="password" required />
-                    <br>
-                    Email: <input type="text" name="email" id="email" required />
-                    <br>
-                    Morada: <input type="text" name="morada" id="morada" required />
-                    <br>
-                    Telefone: <input type="text" name="telefone" id="telefone" required />
-                </fieldset>
-                <input type="submit" value="Registar" />
-                <button type="button" onclick="location.href='@Url.Action("Cancelar","Registar")'">Cancelar</button>
-            }
-        </div> 
+        @using (Html.BeginForm("Registar", "Cliente", FormMethod.Post))
+        {
+            @Html.ValidationSummary(true)
+            <fieldset>
+                User: <input type="text" name="user" id="user" required />
+                <br>
+                Password: <input type="password" name="password" id="password" required />
+                <br>
+                Email: <input type="text" name="email" id="email" required />
+                <br>
+                Morada: <input type="text" name="morada" id="morada" required />
+                <br>
+                Telefone: <input type="text" name="telefone" id="telefone" required />
+            </fieldset>
+            <input type="submit" value="Registar" />
+            <button type="button" onclick="location.href='@Url.Action("Cancelar","Registar")'">Cancelar</button>
+        }
     </body>
 </html>

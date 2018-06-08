@@ -30,5 +30,9 @@ namespace mvcJJMS.Models{
 		public int GetIdFornecedor(){
 			return this.FornecedorID;
 		}
+
+		public int getClienteID(){
+			return this.ClienteID;
+		}
 	}
 }

@@ -6,8 +6,8 @@
     <body>
         <h1>@ViewBag.Title</h1>
         <ol>
-            <li><button type="button" onclick="location.href='@Url.Action("Index",(string)@ViewBag.ListElem1)'">@ViewBag.ListElem1</button></li>
-            <li><button type="button" onclick="location.href='@Url.Action("Index",(string)@ViewBag.ListElem2)'">@ViewBag.ListElem2</button></li>
+            <li><button type="button" onclick="location.href='@Url.Action((string)@ViewBag.ListElem1,"MenuPrincipal")'">@ViewBag.ListElem1</button></li>
+            <li><button type="button" onclick="location.href='@Url.Action((string)@ViewBag.ListElem2,"MenuPrincipal")'">@ViewBag.ListElem2</button></li>
         </ol> 
     </body>
 </html>

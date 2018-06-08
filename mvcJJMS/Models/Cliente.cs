@@ -7,7 +7,7 @@ namespace mvcJJMS.Models{
 		public string telefone{get;set;}
 		public bool bloqueado{get;set;}
 
-		private ICollection<Encomenda> encomendas{get;set;}
+		public ICollection<Encomenda> Encomendas{get;set;}
 
 		public bool TemEncomenda(int idEncomenda) {
 			throw new System.Exception("Not implemented");

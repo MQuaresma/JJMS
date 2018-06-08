@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using mvcJJMS.Data;
+using mvcJJMS.Controllers;
 using Microsoft.EntityFrameworkCore;
 
 namespace mvcJJMS{
@@ -22,8 +23,7 @@ namespace mvcJJMS{
             //Register JJMSContext as a service
             services.AddDbContext<JJMSContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
-            services.AddMvc();
+            services.AddMvc().AddControllersAsServices();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

@@ -6,28 +6,16 @@ namespace mvcJJMS.Controllers{
             ViewBag.Title="Menu Principal";
             ViewBag.ListElem1="Login";
             ViewBag.ListElem2="Registar"; 
-            SysFacadeController.iniciar("Avenida da Liberdade nº36, Braga"); 
             return View(); 
         }
 
-        public ViewResult MenuCliente(){
-            ViewBag.Title="Menu Cliente";
-            ViewBag.ListElem1="Requisitar Encomenda";
-            ViewBag.ListElem2="Consultar Histórico";
-            ViewBag.ListElem3="Tracking da Encomenda";
-            ViewBag.ListElem4="Avaliar Serviço";
-            ViewBag.ListElem5="Alterar Dados";
-            ViewBag.ListElem6="Logout";
-            ViewBag.To="MenuPrincipal";
-            return View(); 
-        }
         public ViewResult Requisitar_Encomenda(){
             ViewBag.Title="Requisitar Encomenda";
             return View(); 
         }
         public ViewResult Consultar_Historico(){
             ViewBag.Title="Consultar Histórico";
-            return View(); 
+            return View();
         }
         public ViewResult Avaliar_Servico(){
             ViewBag.Title="Avaliar Serviço";
@@ -38,18 +26,6 @@ namespace mvcJJMS.Controllers{
             return View(); 
         }
 
-        public ViewResult MenuFuncionario(){
-            ViewBag.Title = "Menu Funcionário";
-            ViewBag.ListElem1 = "Consultar Rota";
-            ViewBag.ListElem1View = "ConsultarRota";
-            ViewBag.ListElem2 = "Atualizar Estado";
-            ViewBag.ListElem2View = "AtualizarEstado";
-            ViewBag.ListElem3 = "Logout";
-            ViewBag.ListElem3View = "Index";
-            ViewBag.To="MenuPrincipal";
-            return View(); 
-        }
-
         public ViewResult ConsultarRota(){
             ViewBag.Title="Consultar Rota";
             return View(); 
@@ -57,6 +33,16 @@ namespace mvcJJMS.Controllers{
         public ViewResult AtualizarEstado(){
             ViewBag.Title="Atualizar Estado";
             return View(); 
+        }
+
+        public ViewResult Login(){
+            ViewBag.Title="Login";
+            return View("~/Views/Login/Index.cshtml");
+        }
+
+        public ViewResult Registar(){
+            ViewBag.Title="Registar Utilizador";
+            return View("~/Views/Registar/Index.cshtml");
         }
     }
 }

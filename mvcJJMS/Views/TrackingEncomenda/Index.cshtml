@@ -5,7 +5,7 @@
     </head>
     <body>
         <h1>@ViewBag.Title</h1>
-            @using (Html.BeginForm("TrackingEncomenda", "SysFacade", FormMethod.Post))
+            @using (Html.BeginForm("TrackingEncomenda", "Encomenda", FormMethod.Post))
             {
                 @Html.ValidationSummary(true)
                 <fieldset>
@@ -13,7 +13,7 @@
                     <input type="number" name="idEncomenda" id="idEncomenda" required />
                     <br>
                 </fieldset>
-                <button type="button" onclick="location.href='@Url.Action("Cancelar","TrackingEncomenda")'">Cancelar</button>
+                <button type="button" onclick="location.href='@Url.Action("Cancelar","MenuCliente")'">Cancelar</button>
                 <input type="submit" value="Continuar" />
             } 
     </body>

@@ -1,12 +1,71 @@
+@model IEnumerable<mvcJJMS.Models.Encomenda>
 <html>
     <head>
         <meta name="viewport" content="width=device-width" />
         <title>@ViewBag.Title</title>
+        <html>
     </head>
     <body>
         <h1>@ViewBag.Title</h1>
-        <ol>
-
-        </ol> 
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EncomendaID)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.estado)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.destino)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.fatura)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.avaliação)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.custo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.dia)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.hora)
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model) {
+                    <tr>
+                        <th>
+                            @Html.DisplayFor(modelItem => item.EncomendaID)
+                        </th>
+                        <th>
+                            @Html.DisplayFor(modelItem => item.estado)
+                        </th>
+                        <th>
+                            @Html.DisplayFor(modelItem => item.destino)
+                        </th>
+                        <th>
+                            @Html.DisplayFor(modelItem => item.fatura)
+                        </th>
+                        <th>
+                            @Html.DisplayFor(modelItem => item.avaliação)
+                        </th>
+                        <th>
+                            @Html.DisplayFor(modelItem => item.custo)
+                        </th>
+                        <th>
+                            @Html.DisplayFor(modelItem => item.dia)
+                        </th>
+                        <th>
+                            @Html.DisplayFor(modelItem => item.hora)
+                        </th> 
+                    </tr>
+                }
+            </tbody>
+        </table>
     </body>
 </html>
