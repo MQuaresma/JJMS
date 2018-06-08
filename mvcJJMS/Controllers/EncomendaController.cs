@@ -11,9 +11,11 @@ namespace mvcJJMS.Controllers{
     public class EncomendaController : Controller{
         private readonly JJMSContext _context;
         private readonly String moradaCD="Avenida da Liberdade nº36, Braga";
+		private readonly FornecedorController _fController;
 
-		public EncomendaController(JJMSContext context){
+		public EncomendaController(JJMSContext context, FornecedorController fController){
 			_context=context;
+			_fController=fController;
 		}
 
         public ActionResult TrackingEncomenda(int idEncomenda) {
@@ -33,8 +35,8 @@ namespace mvcJJMS.Controllers{
 			int estado = encomenda.estado;
 			switch (estado){
 				case 1:
-					int forn = 1;//encomenda.GetIdFornecedor();
-					return "";//FornecedorController.GetMoradaForn(forn);
+					int forn = encomenda.GetIdFornecedor();
+					return _fController.GetMoradaForn(forn);
 				case 2:
 					return this.moradaCD;
 				case 3:
@@ -45,21 +47,6 @@ namespace mvcJJMS.Controllers{
 		}
 		
 		public string getEstadoEncomenda( int idEncomenda) {
-			Encomenda enc = _context.Encomendas.Find(idEncomenda);
-			int estado = enc.estado;
-			switch (estado){
-				case 1:
-					return "com o fornecedor";
-				case 2:
-					return "no centro de distribuição";
-				case 3:
-					return "em trânsito";
-				default:
-					return "entregue";
-			}
-		}
-
-		public string GetEstadoEncomenda( int idEncomenda) {
 			Encomenda enc = _context.Encomendas.Find(idEncomenda);
 			int estado = enc.estado;
 			switch (estado){
