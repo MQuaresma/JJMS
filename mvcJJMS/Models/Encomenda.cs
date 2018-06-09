@@ -39,7 +39,7 @@ namespace mvcJJMS.Models{
 			this.FornecedorID = fornecedor;
 		}
 
-		public int GetIdFornecedor(){
+		public int getFornecedorID(){
 			return this.FornecedorID;
 		}
 
