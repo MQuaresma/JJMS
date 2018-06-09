@@ -13,10 +13,10 @@ namespace mvcJJMS.Models{
 		public Date dia{get;set;}
 		public Time hora{get;set;}
 		
-		private int FornecedorID{get;set;}
-		private int ClienteID{get;set;}
-		private int FuncionarioID{get;set;}
-		private int CartaoCreditoID{get;set;}
+		private int FornecedorID;
+		private int ClienteID;
+		private int FuncionarioID;
+		private int CartaoCreditoID;
 
 		private Cliente Cliente{get;set;}
 		private Funcionario Funcionario{get;set;}
@@ -27,7 +27,19 @@ namespace mvcJJMS.Models{
 			throw new System.Exception("Not implemented");
 		}
 
-		public int getIdFornecedor(){
+		public void setClienteID(int cliente){
+			this.ClienteID = cliente;
+		}
+
+		public void setFuncionarioID(int funcionario){
+			this.FuncionarioID = funcionario;
+		}
+
+		public void setFornecedorID(int fornecedor){
+			this.FornecedorID = fornecedor;
+		}
+
+		public int getFornecedorID(){
 			return this.FornecedorID;
 		}
 
@@ -39,6 +51,11 @@ namespace mvcJJMS.Models{
 			return this.CartaoCreditoID;
 		}
 
+		public void setPrivate(int fornecedor, int cliente, int funcionario){
+			this.FornecedorID = fornecedor;
+            this.ClienteID = cliente;
+            this.FuncionarioID = funcionario;
+		}
 		public int getFuncionarioID(){
 			return this.FuncionarioID;
 		}

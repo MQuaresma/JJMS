@@ -1,5 +1,8 @@
 using mvcJJMS.Models;
 using Microsoft.EntityFrameworkCore;
+using FILE = System.String;
+using Date = System.String;
+using Time = System.String;
 
 namespace mvcJJMS.Data{
     public class JJMSContext : DbContext{
@@ -59,6 +62,21 @@ namespace mvcJJMS.Data{
             nCartaoCredito.cvv = cvv;
             nCartaoCredito.pais = pais;
             return nCartaoCredito;
+        }
+
+        public Encomenda newEncomenda(int estado, string destino, Date dia, Time hora, int fornecedor, int cliente, int funcionario){
+            Encomenda nEncomenda = new Encomenda();
+            nEncomenda.estado = estado;
+            nEncomenda.destino = destino;
+            nEncomenda.fatura = null;
+            nEncomenda.avaliação = 0;
+            nEncomenda.custo = 0;
+            nEncomenda.dia = dia;
+            nEncomenda.hora = hora;
+            nEncomenda.setFornecedorID(fornecedor);
+            nEncomenda.setClienteID(cliente);
+            nEncomenda.setFuncionarioID(funcionario);
+            return nEncomenda;
         }
     }
 }

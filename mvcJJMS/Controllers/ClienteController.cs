@@ -9,6 +9,8 @@ using mvcJJMS.Data;
 using mvcJJMS.Models;
 
 using FILE=System.String;
+using Date = System.String;
+using Time = System.String;
 
 namespace mvcJJMS.Controllers{
     public class ClienteController : Controller{
@@ -181,6 +183,10 @@ namespace mvcJJMS.Controllers{
 			ViewBag.Title = "Cancelar";
 			ViewBag.Msg = "Operação Cancelada";
 			return View("~/Views/Registar/Cancelar.cshtml");
+		}
+
+		public ActionResult RequisitarEncomenda(string fornecedor,string morada, Date dia, Time hora){
+			throw new System.Exception("Not implemented");
 		}
     }
 }
