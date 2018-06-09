@@ -66,7 +66,8 @@ namespace mvcJJMS.Controllers{
         }
 
         public ActionResult AlterarDadosAlterar(string user,string password, string email, string morada, string telefone){
-            return null;
+            bool emailAssoc = false;
+            return null;           
         }
 
         public ViewResult AlteradoComSucesso(){
@@ -89,8 +90,8 @@ namespace mvcJJMS.Controllers{
 
         public ViewResult PasswordInsegura(){
             ViewBag.Title = "Password Insegura";
-            ViewBag.Msg = "Dados alterados com sucesso.";
-            return View("~/Views/AlterarDados/AlteradoComSucesso.cshtml");
+            ViewBag.Msg = "Password não cumpre requisitos mínimos de segurança:<br>-8 ou mais caracteres<br>-possuir números, letras e símbolos";
+            return View("~/Views/AlterarDados/PasswordInsegura.cshtml");
         }
 
         public ViewResult CancelarAvaliar(){
