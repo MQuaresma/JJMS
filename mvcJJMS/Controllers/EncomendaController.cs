@@ -22,7 +22,7 @@ namespace mvcJJMS.Controllers{
             if (existeEncomenda(idEncomenda) == false) 
                 return CodigoInexistente();
             string localizacao = getLocalizacaoEncomenda(idEncomenda);
-            string estado = getEstadoEncomenda(idEncomenda);
+            string estado = getEstadoEncomendaS(idEncomenda);
             return InformacaoEncomenda(idEncomenda, localizacao, estado);
         }
 
@@ -46,7 +46,15 @@ namespace mvcJJMS.Controllers{
 			}
 		}
 		
-		public string getEstadoEncomenda( int idEncomenda) {
+		public int getEstaoEncomendaI( int idEncomenda) {
+			Encomenda enc = _context.Encomendas.Find(idEncomenda);
+			return  enc.estado;
+		}
+
+		/// <summary>
+		/// Return the current status of the order in a String format
+		/// </summary>
+		public string getEstadoEncomendaS( int idEncomenda) {
 			Encomenda enc = _context.Encomendas.Find(idEncomenda);
 			int estado = enc.estado;
 			switch (estado){
