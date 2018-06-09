@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>@ViewBag.Title</title>
+    </head>
+    <body>
+        <h1>@ViewBag.Title</h1>
+        @using (Html.BeginForm("VerificaDadosCartao", "Cartao", FormMethod.Post))
+        {
+            @Html.ValidationSummary(true)
+            <fieldset>
+                Nr Cartão Crédito: <input type="number" name="ncc" id="ncc" required />
+                <br>
+                Mês: <input type="number" name="mes" id="mes" required />
+                <br>
+                Ano: <input type="number" name="ano" id="ano" required />
+                <br>
+                CVV: <input type="number" name="cvv" id="cvv" required />
+                <br>
+                País: <input type="text" name="pais" id="pais" required />
+            </fieldset>
+            <input type="submit" value="OK" />
+        }
+    </body>
+</html>

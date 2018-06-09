@@ -12,10 +12,19 @@ namespace mvcJJMS.Controllers{
         private readonly JJMSContext _context;
         private readonly String moradaCD="Avenida da Liberdade nº36, Braga";
 		private readonly FornecedorController _fController;
+		private readonly UtilizadorController _uController;
+		private readonly CartaoController _caController;
 
-		public EncomendaController(JJMSContext context, FornecedorController fController){
+		private int encIdForn;
+		private string encMorada;
+		private Date encDia;
+		private Time encHora;
+
+		public EncomendaController(JJMSContext context, FornecedorController fController, UtilizadorController uController, CartaoController caController){
 			_context=context;
 			_fController=fController;
+			_uController=uController;
+			_caController=caController;
 		}
 
         public ActionResult TrackingEncomenda(int idEncomenda) {
@@ -80,8 +89,28 @@ namespace mvcJJMS.Controllers{
         public int GetFuncionarioResp( int idEncomenda) {
 			throw new System.Exception("Not implemented");
 		}
-        public void SetEncomenda(int idCliente,string nomeForn,string morada,Date dia,Time hora,int numCartCredito,int mes,int ano,int cvv,string pais) {
-			throw new System.Exception("Not implemented");
+        public void SetEncomenda(int numCartCredito,int mes,int ano,int cvv,string pais) {
+			Encomenda nEncomenda = new Encomenda();
+            nEncomenda.estado = 1;
+            nEncomenda.destino = encMorada;
+            nEncomenda.fatura = null;
+            nEncomenda.avaliação = 0;
+            nEncomenda.custo = 0;
+            nEncomenda.dia = encDia;
+            nEncomenda.hora = encHora;
+            nEncomenda.setFornecedorID(encIdForn);
+            nEncomenda.setClienteID(_uController.getUtilizadorID());
+            nEncomenda.setFuncionarioID(1); // TODO DELEGAR FUNCIONÁRIO
+
+			CartaoCredito nCartaoCredito = new CartaoCredito();
+			nCartaoCredito.CartaoCreditoID = numCartCredito;
+            nCartaoCredito.mes = mes;
+            nCartaoCredito.ano = ano;
+            nCartaoCredito.cvv = cvv;
+            nCartaoCredito.pais = pais;
+
+			nEncomenda.setCartaoCredito(nCartaoCredito);
+			_context.Encomendas.Add(nEncomenda);
 		}
 
         public string GetDestinoEnc( int idEncomenda) {
@@ -112,6 +141,28 @@ namespace mvcJJMS.Controllers{
 			ViewBag.Item1 = "Localização : " + localizacao;
 			ViewBag.Item2 = "Estado : " + estado;
 			return View("~/Views/TrackingEncomenda/InformacaoEncomenda.cshtml"); 
+		}
+
+		public ActionResult RequisitarEncomenda(string fornecedor,string morada, Date dia, Time hora){
+			int idForn = _fController.IdForn(fornecedor);
+			if (idForn == -1) return FornecedorInvalido();
+			encIdForn = idForn;
+			encMorada = morada;
+			encDia = dia;
+			encHora = hora;
+			return _caController.DadosPagamento();
+		}
+
+		public ViewResult FornecedorInvalido(){
+			ViewBag.Title = "Fornecedor Inválido";
+			ViewBag.Msg = "O fornecedor inserido não está associado à JJMS."; 
+			return View("~/Views/RequisitarEncomenda/FornecedorInvalido.cshtml"); 
+		}
+
+		public ViewResult Sucesso(){
+			ViewBag.Title = "Sucesso";
+			ViewBag.Msg = "A encomenda foi requisitada com sucesso!"; 
+			return View("~/Views/RequisitarEncomenda/Sucesso.cshtml"); 
 		}
     }
 }

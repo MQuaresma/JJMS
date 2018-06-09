@@ -51,6 +51,10 @@ namespace mvcJJMS.Models{
 			return this.CartaoCreditoID;
 		}
 
+		public void setCartaoCredito(CartaoCredito cc){
+			this.CartaoCredito = cc;
+		}
+
 		public void setPrivate(int fornecedor, int cliente, int funcionario){
 			this.FornecedorID = fornecedor;
             this.ClienteID = cliente;

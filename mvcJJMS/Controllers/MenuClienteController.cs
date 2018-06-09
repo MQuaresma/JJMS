@@ -190,8 +190,19 @@ namespace mvcJJMS.Controllers{
         }
 
         public ViewResult RequisitarEncomenda(){
-            ViewBag.Title="Requisitar Encomenda";
-            return View("~/Views/RequisitarEncomenda/Index.cshtml"); 
+            int idU = _uController.getUtilizadorID();
+            bool bloq = _cController.EstaBloqueado(idU);
+            if (bloq) return ClienteBloqueado();
+            else{
+                ViewBag.Title="Requisitar Encomenda";
+                return View("~/Views/RequisitarEncomenda/Index.cshtml"); 
+            }
+        }
+
+        public ViewResult ClienteBloqueado(){
+            ViewBag.Title="Cliente Bloqueado";
+            ViewBag.Msg = "Está bloqueado por falta de pagamento de uma encomenda anteriormente realizada";
+            return View("~/Views/RequisitarEncomenda/ClienteBloqueado.cshtml"); 
         }
     }
 }

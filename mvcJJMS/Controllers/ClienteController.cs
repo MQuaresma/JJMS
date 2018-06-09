@@ -184,9 +184,5 @@ namespace mvcJJMS.Controllers{
 			ViewBag.Msg = "Operação Cancelada";
 			return View("~/Views/Registar/Cancelar.cshtml");
 		}
-
-		public ActionResult RequisitarEncomenda(string fornecedor,string morada, Date dia, Time hora){
-			throw new System.Exception("Not implemented");
-		}
     }
 }
