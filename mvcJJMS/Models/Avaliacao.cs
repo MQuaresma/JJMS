@@ -4,7 +4,7 @@ namespace mvcJJMS.Models{
 		private int numAvaliações{get;set;}
 
 		public void AdicionaAvaliacao(int classificacao) {
-			throw new System.Exception("Not implemented");
+			this.avaliação=((this.avaliação*this.numAvaliações++)+classificacao)/this.numAvaliações;
 		}
 	}
 }

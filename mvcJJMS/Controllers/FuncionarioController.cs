@@ -12,6 +12,10 @@ namespace mvcJJMS.Controllers{
 			_context=context;
 		}
         
+		public Funcionario getFuncionario(int idFuncionario){
+			return _context.Funcionarios.Find(idFuncionario);
+		}
+
         public int DelegarFuncionario( int idEncomenda,  string destino) {
 			throw new System.Exception("Not implemented");
 		}

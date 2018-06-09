@@ -9,14 +9,16 @@ namespace mvcJJMS.Controllers{
         private readonly EncomendaController _eController;
         private readonly UtilizadorController _uController;
         private readonly ClienteController _cController;
+        private readonly FuncionarioController _fController;
         private int clienteId;
 
-        public MenuClienteController(JJMSContext context, EncomendaController eController, UtilizadorController uController, ClienteController cController){
+        public MenuClienteController(JJMSContext context, EncomendaController eController, UtilizadorController uController, ClienteController cController, FuncionarioController fController){
 			_context=context;
             _eController=eController;
             _uController=uController;
             _cController=cController;
-            this.clienteId = -1;
+            _fController=fController;
+            this.clienteId=-1;
 		}
 
         public ViewResult Index(int idU){
@@ -137,8 +139,12 @@ namespace mvcJJMS.Controllers{
             return (classServicoEntrega >= 0 && classServicoEntrega <= 10 && classEstadoEncomenda >= 0 && classEstadoEncomenda <= 5);
         }
 
-        public void avalia( int idEncomendaS,  int classServicoEntrega,  int classEstadoEncomenda) {
-            //TODO: implement code to save new rating
+        public void avalia( int idEncomenda,  int classServicoEntrega,  int classEstadoEncomenda) {
+            Encomenda enc=_eController.getEncomenda(idEncomenda);
+            int idFun=enc.getFuncionarioID();
+            Funcionario funcionario= _fController.getFuncionario(idFun);
+            enc.setAvaliacao(classEstadoEncomenda);
+            funcionario.AtualizaAvaliacao(classServicoEntrega);
 		}
 
         public ViewResult ClassificaoesInvalidas(){

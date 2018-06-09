@@ -10,7 +10,7 @@ namespace mvcJJMS.Models{
 		private ICollection<Encomenda> encomendas{get;set;}
 
 		public void AtualizaAvaliacao(int classFuncionario) {
-			throw new System.Exception("Not implemented");
+			this.avaliacao.AdicionaAvaliacao(classFuncionario);
 		}
 	}
 }
