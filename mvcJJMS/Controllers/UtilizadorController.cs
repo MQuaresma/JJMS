@@ -9,8 +9,8 @@ using System;
 
 namespace mvcJJMS.Controllers{
     public class UtilizadorController : Controller{
-
         private readonly JJMSContext _context;
+		private static int utilizadorID=-1;
 
 		public UtilizadorController(JJMSContext context){
 			_context=context;
@@ -20,7 +20,6 @@ namespace mvcJJMS.Controllers{
 			List<Utilizador> uts = _context.Utilizadores.ToList();
 			bool found = false;
 			int ret=2;
-			int id=-1;
 			byte[] pass = hashFunction(password);
 
 			for(int i=0; i< uts.Count && !found; i++){
@@ -31,15 +30,15 @@ namespace mvcJJMS.Controllers{
 					if (pass.SequenceEqual(uts[i].Password)){
 						if (uts[i] is Cliente) ret=0;
 						else ret = 1;
-						id = uts[i].UtilizadorID;
+						utilizadorID = uts[i].UtilizadorID;
 					}
 				}
 			}
 			switch(ret){
 				case 0:
-                    return RedirectToAction("Index", "MenuCliente", new{idU=id});
+                    return RedirectToAction("Index", "MenuCliente");
                 case 1:
-                    return RedirectToAction("Index", "MenuFuncionario", new{idU=id});
+                    return RedirectToAction("Index", "MenuFuncionario");
                 case 2:
                     return this.EmailInexistente();
                 case 3:
@@ -47,6 +46,10 @@ namespace mvcJJMS.Controllers{
 				default:
 					return RedirectToAction("Index","MenuPrincipal");
 			}
+		}
+
+		public int getUtilizadorID(){
+			return utilizadorID;
 		}
 
 		public bool emailAssociado( string email) {
