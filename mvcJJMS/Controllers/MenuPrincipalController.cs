@@ -11,7 +11,7 @@ namespace mvcJJMS.Controllers{
 
         public ViewResult Requisitar_Encomenda(){
             ViewBag.Title="Requisitar Encomenda";
-            return View(); 
+            return View("~/Views/RequisitarEncomenda/Index.cshtml"); 
         }
         public ViewResult Consultar_Historico(){
             ViewBag.Title="Consultar Histórico";

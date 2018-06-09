@@ -41,6 +41,16 @@ namespace mvcJJMS.Data{
             };
             foreach(Cliente c in clientes) context.Clientes.Add(c);
             context.SaveChanges();
+
+            Encomenda encomenda = context.newEncomenda(1,"Quinta da Rua","2018-05-28","05:45",1,1,1);
+            Encomenda encomenda2 = context.newEncomenda(2,"Quinta da Conde","2018-05-30","02:00",2,2,2);
+            Encomenda encomenda3 = context.newEncomenda(3,"Rua do Canto","2018-06-07","15:30",3,3,3);
+            Encomenda encomenda4 = context.newEncomenda(4,"Rua do Cais","2018-06-02","16:10",4,4,4);
+            context.Encomendas.Add(encomenda);
+            context.Encomendas.Add(encomenda2);
+            context.Encomendas.Add(encomenda3);
+            context.Encomendas.Add(encomenda4);
+            context.SaveChanges();
         }
     }
 }

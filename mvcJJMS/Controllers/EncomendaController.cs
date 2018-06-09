@@ -103,7 +103,7 @@ namespace mvcJJMS.Controllers{
 		}
 
 		public ViewResult InformacaoEncomenda(int encomenda, string localizacao, string estado){
-			ViewBag.Title = "Email em uso";
+			ViewBag.Title = "Informação da Encomenda";
 			ViewBag.Msg = "Encomenda " + encomenda;
 			ViewBag.Item1 = "Localização : " + localizacao;
 			ViewBag.Item2 = "Estado : " + estado;

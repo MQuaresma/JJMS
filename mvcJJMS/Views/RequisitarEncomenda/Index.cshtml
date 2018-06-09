@@ -5,8 +5,19 @@
     </head>
     <body>
         <h1>@ViewBag.Title</h1>
-        <ol>
-
-        </ol> 
+        @using (Html.BeginForm("RequisitarEncomenda", "Cliente", FormMethod.Post))
+        {
+            @Html.ValidationSummary(true)
+            <fieldset>
+                Fornecedor: <input type="text" name="fornecedor" id="fornecedor" required />
+                <br>
+                Morada da Entrega: <input type="text" name="morada" id="morada" required />
+                <br>
+                Dia: <input type="text" name="dia" id="dia" required />
+                <br>
+                Hora: <input type="text" name="hora" id="hora" required />
+            </fieldset>
+            <input type="submit" value="OK" />
+        }
     </body>
 </html>
