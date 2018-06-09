@@ -101,7 +101,7 @@ namespace mvcJJMS.Controllers{
 
 		public void Bloquear( int idCliente) {
 			Cliente cliente = _context.Clientes.Find(idCliente);
-			cliente.bloqueado = true;
+			cliente.Bloqueia();
 			_context.SaveChanges();
 		}
 
