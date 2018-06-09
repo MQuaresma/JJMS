@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using mvcJJMS.Data;
 using mvcJJMS.Models;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace mvcJJMS.Controllers{
     public class MenuClienteController : Controller{
@@ -54,18 +55,44 @@ namespace mvcJJMS.Controllers{
 
         public ViewResult AlterarDados(){
             ViewBag.Title = "Alterar Dados";
-            int uId=_uController.getUtilizadorID();
-            ViewBag.nome = this._uController.GetUserNome(uId);
-            ViewBag.password = this._uController.GetUserPassword(uId);
-            ViewBag.email = this._uController.GetUserEmail(uId);
-            ViewBag.morada = this._cController.GetClienteMorada(uId);
-            ViewBag.telefone = this._cController.GetClienteTelefone(uId);
+            int idCliente=_uController.getUtilizadorID();
+            ViewBag.nome = this._uController.GetUserNome(idCliente);
+            ViewBag.password = this._uController.GetUserPassword(idCliente);
+            ViewBag.email = this._uController.GetUserEmail(idCliente);
+            int idCliente2 = _context.Clientes.Where(e=>e.getUtilizadorID()==idCliente).FirstOrDefault().ClienteID;
+            ViewBag.morada = this._cController.GetClienteMorada(idCliente2);
+            ViewBag.telefone = this._cController.GetClienteTelefone(idCliente2);
             return View("~/Views/AlterarDados/Index.cshtml");
         }
 
-        public ActionResult AlterarDadosAlterar(string user,string password, string email, string morada, string telefone){
+        public ActionResult AlterarDadosAlterar(string nomeInput, string passwordInput, string emailInput, string moradaInput, string telefoneInput){
+            int idCliente=_uController.getUtilizadorID();
+            string nome = this._uController.GetUserNome(idCliente);
+            string password = this._uController.GetUserPassword(idCliente);
+            string email = this._uController.GetUserEmail(idCliente);
+            int idCliente2 = _context.Clientes.Where(e=>e.getUtilizadorID()==idCliente).FirstOrDefault().ClienteID;
+            string morada = this._cController.GetClienteMorada(idCliente2);
+            string telefone = this._cController.GetClienteTelefone(idCliente2);
+            
             bool emailAssoc = false;
-            return null;           
+            if(!emailInput.Equals(email)) emailAssoc = this._uController.emailAssociado(emailInput);
+            if(emailAssoc) return EmailJaAssociado();
+
+            bool telVal = true;
+            if(!telefoneInput.Equals(telefone)) telVal = this._cController.telefoneValido(telefoneInput);
+            if(!telVal) return TelefoneInvalido();
+
+            bool passVal = true;
+            if(!passwordInput.Equals(password)) passVal = this._cController.passwordSegura(passwordInput);
+            if(!passVal) return PasswordInsegura();
+
+            if(!nomeInput.Equals(nome)) this._uController.UpdateNome(idCliente,nomeInput); 
+            if(!passwordInput.Equals(password)) this._uController.UpdatePassword(idCliente,passwordInput);
+            if(!emailInput.Equals(email)) this._uController.UpdateEmail(idCliente,emailInput);
+            if(!moradaInput.Equals(morada)) this._cController.UpdateMorada(idCliente2,moradaInput);
+            if(!telefoneInput.Equals(telefone)) this._cController.UpdateTelefone(idCliente2,telefoneInput);
+
+            return AlteradoComSucesso();           
         }
 
         public ViewResult AlteradoComSucesso(){
@@ -88,7 +115,6 @@ namespace mvcJJMS.Controllers{
 
         public ViewResult PasswordInsegura(){
             ViewBag.Title = "Password Insegura";
-            ViewBag.Msg = "Password não cumpre requisitos mínimos de segurança:<br>-8 ou mais caracteres<br>-possuir números, letras e símbolos";
             return View("~/Views/AlterarDados/PasswordInsegura.cshtml");
         }
 

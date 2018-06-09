@@ -61,9 +61,9 @@ namespace mvcJJMS.Controllers{
 			return cliente.Nome;
 		}
 
-        public byte[] GetUserPassword( int idCliente) {
+        public string GetUserPassword( int idCliente) {
 			Utilizador cliente =_context.Utilizadores.Find(idCliente);
-			return cliente.Password;
+			return System.Text.Encoding.UTF8.GetString(cliente.Password);
 		}
 
 		public string GetUserEmail( int idCliente) {
@@ -77,9 +77,9 @@ namespace mvcJJMS.Controllers{
 			_context.SaveChanges();
 		}
 
-		public void UpdatePassword( int idCliente,  byte[] passwordInput) {
+		public void UpdatePassword( int idCliente, string passwordInput) {
 			Utilizador cliente = _context.Utilizadores.Find(idCliente);
-			cliente.Password = passwordInput;
+			cliente.Password = hashFunction(passwordInput);
 			_context.SaveChanges();
 		}
 

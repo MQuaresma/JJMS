@@ -15,5 +15,9 @@ namespace mvcJJMS.Models{
 		public void Bloqueia() {
 			throw new System.Exception("Not implemented");
 		}
+
+		public int getUtilizadorID(){
+			return this.UtilizadorID;
+		}
 	}
 }
