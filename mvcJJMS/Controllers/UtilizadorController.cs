@@ -21,15 +21,14 @@ namespace mvcJJMS.Controllers{
 			List<Utilizador> uts = _context.Utilizadores.ToList();
 			bool found = false;
 			int ret=2;
-			string pass = hashFunction(password).ToString();
+			byte[] pass = hashFunction(password);
 
 			for(int i=0; i< uts.Count && !found; i++){
 				string e = uts[i].Email;
 				if (email.Equals(e)){
 					found = true;
 					ret=3;
-					string p = uts[i].Password.ToString();
-					if (pass.Equals(p)){
+					if (pass.SequenceEqual(uts[i].Password)){
 						if (uts[i] is Cliente) ret=0;
 						else ret = 1;
 						this.utilizadorID = uts[i].UtilizadorID;
