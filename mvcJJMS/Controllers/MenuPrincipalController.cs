@@ -21,10 +21,6 @@ namespace mvcJJMS.Controllers{
             ViewBag.Title="Avaliar Serviço";
             return View(); 
         }
-        public ViewResult Alterar_Dados(){
-            ViewBag.Title="Alterar Dados";
-            return View(); 
-        }
 
         public ViewResult ConsultarRota(){
             ViewBag.Title="Consultar Rota";

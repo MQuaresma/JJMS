@@ -46,7 +46,7 @@ namespace mvcJJMS.Controllers{
 			}
 		}
 		
-		public int getEstaoEncomendaI( int idEncomenda) {
+		public int getEstadoEncomendaI( int idEncomenda) {
 			Encomenda enc = _context.Encomendas.Find(idEncomenda);
 			return  enc.estado;
 		}

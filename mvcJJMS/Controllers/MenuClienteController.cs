@@ -7,13 +7,20 @@ namespace mvcJJMS.Controllers{
     public class MenuClienteController : Controller{
         private readonly JJMSContext _context;
         private readonly EncomendaController _eController;
+        private readonly UtilizadorController _uController;
+        private readonly ClienteController _cController;
+        private int clienteId;
 
-        public MenuClienteController(JJMSContext context, EncomendaController eController){
+        public MenuClienteController(JJMSContext context, EncomendaController eController, UtilizadorController uController, ClienteController cController){
 			_context=context;
             _eController=eController;
+            _uController=uController;
+            _cController=cController;
+            this.clienteId = -1;
 		}
 
-        public ViewResult Index(){
+        public ViewResult Index(int idU){
+            this.clienteId = idU;
             ViewBag.Title="Menu Cliente";
             ViewBag.ListElem1="Requisitar Encomenda";
             ViewBag.ListElem2="Consultar Histórico";
@@ -46,6 +53,44 @@ namespace mvcJJMS.Controllers{
             return View("~/Views/Avaliar_Servico/Index.cshtml");
         }
 
+        public ViewResult AlterarDados(){
+            ViewBag.Title = "Alterar Dados";
+            ViewBag.nome = this._uController.GetUserNome(this.clienteId);
+            ViewBag.password = this._uController.GetUserPassword(this.clienteId);
+            ViewBag.email = this._uController.GetUserEmail(this.clienteId);
+            ViewBag.morada = this._cController.GetClienteMorada(this.clienteId);
+            ViewBag.telefone = this._cController.GetClienteTelefone(this.clienteId);
+            return View("~/Views/AlterarDados/Index.cshtml");
+        }
+
+        public ActionResult AlterarDadosAlterar(string user,string password, string email, string morada, string telefone){
+            return null;
+        }
+
+        public ViewResult AlteradoComSucesso(){
+            ViewBag.Title = "Alterado com Sucesso";
+            ViewBag.Msg = "Dados alterados com sucesso.";
+            return View("~/Views/AlterarDados/AlteradoComSucesso.cshtml");
+        }
+
+        public ViewResult EmailJaAssociado(){
+            ViewBag.Title = "Email já associado";
+            ViewBag.Msg = "Email já associado a outro cliente.";
+            return View("~/Views/AlterarDados/EmailJaAssociado.cshtml");
+        }
+
+        public ViewResult TelefoneInvalido(){
+            ViewBag.Title = "Telefone Inválido";
+            ViewBag.Msg = "Telefone inserido não é válido.";
+            return View("~/Views/AlterarDados/TelefoneInvalido.cshtml");
+        }
+
+        public ViewResult PasswordInsegura(){
+            ViewBag.Title = "Password Insegura";
+            ViewBag.Msg = "Dados alterados com sucesso.";
+            return View("~/Views/AlterarDados/AlteradoComSucesso.cshtml");
+        }
+
         public ViewResult CancelarAvaliar(){
             ViewBag.Title = "Cancelar";
             ViewBag.Msg = "Operação cancelada"; 
@@ -54,9 +99,8 @@ namespace mvcJJMS.Controllers{
 
         public ActionResult checkEncomenda(int idEncomenda){
             if(!this._eController.existeEncomenda(idEncomenda)) return CodigoInexistente();
-            else if(this._eController.getEstaoEncomendaI(idEncomenda)!=4) return EncomendaPorEntregar();
+            else if(this._eController.getEstadoEncomendaI(idEncomenda)!=4) return EncomendaPorEntregar();
             return InserirClassificacoes(idEncomenda);
-
         }
 
         public ViewResult CodigoInexistente(){
@@ -78,7 +122,7 @@ namespace mvcJJMS.Controllers{
         }
 
         public ActionResult AvaliaS(string idEncomendaS, int classServicoEntrega,  int classEstadoEncomenda){
-            if(!classificacoesValias(classServicoEntrega, classEstadoEncomenda))
+            if(!classificacoesValidas(classServicoEntrega, classEstadoEncomenda))
                 return ClassificaoesInvalidas();
             
             // Remove trailling forward slash
@@ -89,7 +133,7 @@ namespace mvcJJMS.Controllers{
             return Sucesso();
         }
 
-        public bool classificacoesValias(int classServicoEntrega,  int classEstadoEncomenda){
+        public bool classificacoesValidas(int classServicoEntrega,  int classEstadoEncomenda){
             return (classServicoEntrega >= 0 && classServicoEntrega <= 10 && classEstadoEncomenda >= 0 && classEstadoEncomenda <= 5);
         }
 

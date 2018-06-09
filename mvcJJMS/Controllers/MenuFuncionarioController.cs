@@ -6,11 +6,14 @@ using System.Collections.Generic;
 namespace mvcJJMS.Controllers{
     public class MenuFuncionarioController : Controller{
         private readonly JJMSContext _context;
+        private int FuncionarioId;
         public MenuFuncionarioController(JJMSContext context){
 			_context=context;
+            this.FuncionarioId=-1;
 		}
 
-        public ViewResult Index(){
+        public ViewResult Index(int idU){
+            this.FuncionarioId=idU;
             ViewBag.Title = "Menu Funcionário";
             ViewBag.ListElem1 = "Consultar Rota";
             ViewBag.ListElem1View = "ConsultarRota";
