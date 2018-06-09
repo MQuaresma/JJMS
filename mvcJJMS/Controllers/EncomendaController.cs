@@ -70,11 +70,15 @@ namespace mvcJJMS.Controllers{
 		}
 
         public void UpdateCustoEnc( int idEncomenda,  float custoInput) {
-			throw new System.Exception("Not implemented");
+			Encomenda enc = _context.Encomendas.Find(idEncomenda);
+			enc.custo += custoInput;
+			_context.SaveChanges();
 		}
 
 		public void UpdateEstadoEnc( int idEncomenda) {
-			throw new System.Exception("Not implemented");
+			Encomenda enc = _context.Encomendas.Find(idEncomenda);
+			if(enc.estado>0 && enc.estado<4) enc.estado++;
+			_context.SaveChanges();
 		}
 
         public int GetFuncionarioResp( int idEncomenda) {

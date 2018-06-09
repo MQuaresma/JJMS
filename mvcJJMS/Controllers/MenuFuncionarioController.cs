@@ -73,7 +73,14 @@ namespace mvcJJMS.Controllers{
         }
 
         bool custoValido(string custo){
-            throw new System.Exception("Not implemented");
+            int i = 0;
+            bool ret;
+
+            while(i<custo.Length && (Char.IsDigit(custo[i]) || custo[i]=='.')) i++;
+
+            if(i==custo.Length) ret = true;
+            else ret = false;
+            return ret;
         }
 
         public ViewResult AtualizadoComSucesso(){
