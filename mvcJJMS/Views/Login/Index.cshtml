@@ -7,15 +7,15 @@
         <div>
             <h1>@ViewBag.Title</h1>
             @using (Html.BeginForm("Login", "Utilizador", FormMethod.Post))
-    {
-        @Html.ValidationSummary(true)
-        <fieldset>
-            Email: <input type="text" name="email" id="email" required />
-            <br>
-            Password: <input type="password" name="password" id="password" required />
-        </fieldset>
-        <input type="submit" value="Ok" />
-}
+            {
+                @Html.ValidationSummary(true)
+                <fieldset>
+                    Email: <input type="text" name="email" id="email" required />
+                    <br>
+                    Password: <input type="password" name="password" id="password" required />
+                </fieldset>
+                <input type="submit" value="Ok" />
+            }
         </div> 
     </body>
 </html>

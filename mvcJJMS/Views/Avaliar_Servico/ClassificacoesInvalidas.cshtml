@@ -4,9 +4,8 @@
         <title>@ViewBag.Title</title>
     </head>
     <body>
-        <h1>@ViewBag.Title</h1>
-        <ol>
-
+        @ViewBag.Msg<br><br>
+        <button type="button" onclick="location.href='@Url.Action("Index", "MenuCliente")'">OK</button>
         </ol> 
     </body>
 </html>

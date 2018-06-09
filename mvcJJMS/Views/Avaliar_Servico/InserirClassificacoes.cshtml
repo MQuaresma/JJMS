@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>@ViewBag.Title</title>
+    </head>
+    <body>
+        <p1>Avalie tendo em conta os seguintes critérios:</p1>
+        <div>
+            @using (Html.BeginForm("AvaliaS","MenuCliente", FormMethod.Post))
+            {
+                @Html.ValidationSummary(true)
+                <fieldset>
+                    <input type="hidden" name="idEncomendaS" id="idEncomendaS" value=@ViewBag.idEncomenda/>
+                    Serviço prestado pelo funcionário na entrega [0-10]<br>
+                    <input type="number" name="classServicoEntrega" id="classServicoEntrega" required />
+                    <br>Estado da encomenda [0-5]<br>
+                    <input type="number" name="classEstadoEncomenda" id="classEstadoEncomenda" required />
+                </fieldset>
+                <button type="button" onclick="location.href='@Url.Action("CancelarAvaliar","MenuCliente")'">Cancelar</button>
+                <input type="submit" value="Avaliar"/>
+            }
+        </div>
+    </body>
+</html>

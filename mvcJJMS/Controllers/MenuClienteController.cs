@@ -55,7 +55,8 @@ namespace mvcJJMS.Controllers{
         public ActionResult checkEncomenda(int idEncomenda){
             if(!this._eController.existeEncomenda(idEncomenda)) return CodigoInexistente();
             else if(this._eController.getEstaoEncomendaI(idEncomenda)!=4) return EncomendaPorEntregar();
-            else return View("~/Views/Avaliar_Servico/Avaliar.cshtml");
+            return InserirClassificacoes(idEncomenda);
+
         }
 
         public ViewResult CodigoInexistente(){
@@ -70,8 +71,43 @@ namespace mvcJJMS.Controllers{
             return View("~/Views/Avaliar_Servico/EncomendaPorEntregar.cshtml");
         }
 
-        public void Avalia( int idEncomenda,  int classServicoEntrega,  int classEstadoEncomenda) {
-        
+        public ViewResult InserirClassificacoes(int idEncomenda){
+            ViewBag.Title="Inserir Classificações";
+            ViewBag.idEncomenda=idEncomenda.ToString();
+            return View("~/Views/Avaliar_Servico/InserirClassificacoes.cshtml");
+        }
+
+        public ActionResult AvaliaS(string idEncomendaS, int classServicoEntrega,  int classEstadoEncomenda){
+            if(!classificacoesValias(classServicoEntrega, classEstadoEncomenda))
+                return ClassificaoesInvalidas();
+            
+            // Remove trailling forward slash
+            idEncomendaS=idEncomendaS.Remove(idEncomendaS.Length-1);
+            int idEncomenda=int.Parse(idEncomendaS);
+            avalia(idEncomenda,classServicoEntrega,classEstadoEncomenda);
+            
+            return Sucesso();
+        }
+
+        public bool classificacoesValias(int classServicoEntrega,  int classEstadoEncomenda){
+            return (classServicoEntrega >= 0 && classServicoEntrega <= 10 && classEstadoEncomenda >= 0 && classEstadoEncomenda <= 5);
+        }
+
+        public void avalia( int idEncomendaS,  int classServicoEntrega,  int classEstadoEncomenda) {
+            //TODO: implement code to save new rating
 		}
+
+        public ViewResult ClassificaoesInvalidas(){
+            ViewBag.Title = "Classificações Inválidas";
+            ViewBag.Msg = "Foram inseridos valores incorretos, não respeitando a gama de valores estabelecida."; 
+            return View("~/Views/Avaliar_Servico/ClassificacoesInvalidas.cshtml");
+        }
+
+        public ViewResult Sucesso(){
+            ViewBag.Title = "Sucesso";
+            ViewBag.Msg = "Avaliação efetuda com sucesso"; 
+            return View("~/Views/Avaliar_Servico/Sucesso.cshtml");
+        }
+
     }
 }
