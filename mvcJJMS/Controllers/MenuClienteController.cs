@@ -10,7 +10,6 @@ namespace mvcJJMS.Controllers{
         private readonly UtilizadorController _uController;
         private readonly ClienteController _cController;
         private readonly FuncionarioController _fController;
-        private int clienteId;
 
         public MenuClienteController(JJMSContext context, EncomendaController eController, UtilizadorController uController, ClienteController cController, FuncionarioController fController){
 			_context=context;
@@ -18,11 +17,9 @@ namespace mvcJJMS.Controllers{
             _uController=uController;
             _cController=cController;
             _fController=fController;
-            this.clienteId=-1;
 		}
 
-        public ViewResult Index(int idU){
-            this.clienteId = idU;
+        public ViewResult Index(){
             ViewBag.Title="Menu Cliente";
             ViewBag.ListElem1="Requisitar Encomenda";
             ViewBag.ListElem2="Consultar Histórico";
@@ -57,11 +54,12 @@ namespace mvcJJMS.Controllers{
 
         public ViewResult AlterarDados(){
             ViewBag.Title = "Alterar Dados";
-            ViewBag.nome = this._uController.GetUserNome(this.clienteId);
-            ViewBag.password = this._uController.GetUserPassword(this.clienteId);
-            ViewBag.email = this._uController.GetUserEmail(this.clienteId);
-            ViewBag.morada = this._cController.GetClienteMorada(this.clienteId);
-            ViewBag.telefone = this._cController.GetClienteTelefone(this.clienteId);
+            int uId=_uController.getUtilizadorID();
+            ViewBag.nome = this._uController.GetUserNome(uId);
+            ViewBag.password = this._uController.GetUserPassword(uId);
+            ViewBag.email = this._uController.GetUserEmail(uId);
+            ViewBag.morada = this._cController.GetClienteMorada(uId);
+            ViewBag.telefone = this._cController.GetClienteTelefone(uId);
             return View("~/Views/AlterarDados/Index.cshtml");
         }
 
