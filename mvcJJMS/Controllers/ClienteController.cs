@@ -188,5 +188,11 @@ namespace mvcJJMS.Controllers{
 		public ActionResult RequisitarEncomenda(string fornecedor,string morada, Date dia, Time hora){
 			throw new System.Exception("Not implemented");
 		}
+
+		public void PagarServiço(int idCliente, int idEncomenda){
+			bool sucesso = TransfereMontante(idCliente,idEncomenda);
+			if(!sucesso) Bloquear(idCliente);
+			else GerarFatura(idCliente,idEncomenda);
+		} 
     }
 }
