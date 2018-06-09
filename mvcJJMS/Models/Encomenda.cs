@@ -56,5 +56,12 @@ namespace mvcJJMS.Models{
             this.ClienteID = cliente;
             this.FuncionarioID = funcionario;
 		}
+		public int getFuncionarioID(){
+			return this.FuncionarioID;
+		}
+
+		public void setAvaliacao(int classEstadoEncomenda){
+			this.avaliação=classEstadoEncomenda;
+		}
 	}
 }

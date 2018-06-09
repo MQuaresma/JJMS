@@ -5,16 +5,15 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
+using System;
 
 namespace mvcJJMS.Controllers{
     public class UtilizadorController : Controller{
-
         private readonly JJMSContext _context;
-		int utilizadorID;
+		private static int utilizadorID=-1;
 
 		public UtilizadorController(JJMSContext context){
 			_context=context;
-			this.utilizadorID=-1;
 		}
 
         public ActionResult Login(string email, string password) {
@@ -31,7 +30,7 @@ namespace mvcJJMS.Controllers{
 					if (pass.SequenceEqual(uts[i].Password)){
 						if (uts[i] is Cliente) ret=0;
 						else ret = 1;
-						this.utilizadorID = uts[i].UtilizadorID;
+						utilizadorID = uts[i].UtilizadorID;
 					}
 				}
 			}
@@ -49,34 +48,45 @@ namespace mvcJJMS.Controllers{
 			}
 		}
 
+		public int getUtilizadorID(){
+			return utilizadorID;
+		}
+
 		public bool emailAssociado( string email) {
 			return (_context.Utilizadores.Where(ut => ut.Email.Equals(email)).FirstOrDefault() != default(Utilizador));
 		}
 
         public string GetUserNome( int idCliente) {
-			Cliente cli=_context.Clientes.Find(idCliente);
-			if(cli!=null) return cli.Nome;
-			else return null;
+			Utilizador cliente=_context.Utilizadores.Find(idCliente);
+			return cliente.Nome;
 		}
 
-        public string GetUserPassword( int idCliente) {
-			throw new System.Exception("Not implemented");
+        public byte[] GetUserPassword( int idCliente) {
+			Utilizador cliente =_context.Utilizadores.Find(idCliente);
+			return cliente.Password;
 		}
 
 		public string GetUserEmail( int idCliente) {
-			throw new System.Exception("Not implemented");
+			Utilizador cliente =_context.Utilizadores.Find(idCliente);
+			return cliente.Email;
 		}
 
 		public void UpdateNome( int idCliente,  string nomeInput) {
-			throw new System.Exception("Not implemented");
+			Utilizador cliente = _context.Utilizadores.Find(idCliente);
+			cliente.Nome = nomeInput;
+			_context.SaveChanges();
 		}
 
-		public void UpdatePassword( int idCliente,  string passwordInput) {
-			throw new System.Exception("Not implemented");
+		public void UpdatePassword( int idCliente,  byte[] passwordInput) {
+			Utilizador cliente = _context.Utilizadores.Find(idCliente);
+			cliente.Password = passwordInput;
+			_context.SaveChanges();
 		}
 
 		public void UpdateEmail( int idCliente,  string emailInput) {
-			throw new System.Exception("Not implemented");
+			Utilizador cliente = _context.Utilizadores.Find(idCliente);
+			cliente.Email = emailInput;
+			_context.SaveChanges();
 		}
 
 		static public byte[] hashFunction(string input){

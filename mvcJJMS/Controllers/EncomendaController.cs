@@ -35,7 +35,7 @@ namespace mvcJJMS.Controllers{
 			int estado = encomenda.estado;
 			switch (estado){
 				case 1:
-					int forn = encomenda.GetIdFornecedor();
+					int forn = encomenda.getIdFornecedor();
 					return _fController.GetMoradaForn(forn);
 				case 2:
 					return this.moradaCD;
@@ -46,7 +46,7 @@ namespace mvcJJMS.Controllers{
 			}
 		}
 		
-		public int getEstaoEncomendaI( int idEncomenda) {
+		public int getEstadoEncomendaI( int idEncomenda) {
 			Encomenda enc = _context.Encomendas.Find(idEncomenda);
 			return  enc.estado;
 		}
@@ -94,6 +94,10 @@ namespace mvcJJMS.Controllers{
 
         public bool EncomendaEntregue( int idEncomenda) {
 			throw new System.Exception("Not implemented");
+		}
+
+		public Encomenda getEncomenda(int idEncomenda){
+			return _context.Encomendas.Find(idEncomenda);
 		}
 
 		public ViewResult CodigoInexistente(){
