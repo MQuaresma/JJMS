@@ -103,8 +103,8 @@ namespace mvcJJMS.Controllers{
             nEncomenda.dia = encDia;
             nEncomenda.hora = encHora;
             nEncomenda.setFornecedorID(encIdForn);
-            nEncomenda.setClienteID(_uController.getUtilizadorID());
-            nEncomenda.setFuncionarioID(1); // TODO DELEGAR FUNCIONÁRIO
+            nEncomenda.setClienteID(1);
+            nEncomenda.setFuncionarioID(1);
 
 			CartaoCredito nCartaoCredito = new CartaoCredito();
 			nCartaoCredito.CartaoCreditoID = numCartCredito;
@@ -154,8 +154,27 @@ namespace mvcJJMS.Controllers{
 			encMorada = morada;
 			encDia = dia;
 			encHora = hora;
-			return _caController.DadosPagamento();
+			return InserirDadosPagamento();
 		}
+
+		public ViewResult InserirDadosPagamento(){
+			ViewBag.Title = "Dados de Pagamento";
+			return View("~/Views/RequisitarEncomenda/InserirDadosPagamento.cshtml"); 
+		}
+
+		public ViewResult ProcDadosPagamento(int ncc,int mes,int ano,int cvv,string pais){
+			bool cartao = _caController.CartaoValido(ncc,mes,ano,cvv,pais);
+			if (cartao == false) return DadosPagamentoInvalidos();
+			this.SetEncomenda(ncc,mes,ano,cvv,pais);
+			return Sucesso();
+		}
+
+		public ViewResult DadosPagamentoInvalidos(){
+			ViewBag.Title = "Dados de Pagamento Inválidos";
+			ViewBag.Msg = "Os dados de pagamento inseridos são inválidos";
+			return View("~/Views/RequisitarEncomenda/DadosPagamentoInvalidos.cshtml"); 
+		}
+
 
 		public ViewResult FornecedorInvalido(){
 			ViewBag.Title = "Fornecedor Inválido";

@@ -14,8 +14,8 @@ namespace mvcJJMS.Controllers{
 
         public MenuClienteController(JJMSContext context, EncomendaController eController, UtilizadorController uController, ClienteController cController, FuncionarioController fController){
 			_context=context;
-            _eController=eController;
             _uController=uController;
+            _eController=eController;
             _cController=cController;
             _fController=fController;
 		}
@@ -59,20 +59,18 @@ namespace mvcJJMS.Controllers{
             ViewBag.nome = this._uController.GetUserNome(idCliente);
             ViewBag.password = this._uController.GetUserPassword(idCliente);
             ViewBag.email = this._uController.GetUserEmail(idCliente);
-            int idCliente2 = _context.Clientes.Where(e=>e.getUtilizadorID()==idCliente).FirstOrDefault().ClienteID;
-            ViewBag.morada = this._cController.GetClienteMorada(idCliente2);
-            ViewBag.telefone = this._cController.GetClienteTelefone(idCliente2);
+            ViewBag.morada = this._cController.GetClienteMorada(idCliente);
+            ViewBag.telefone = this._cController.GetClienteTelefone(idCliente);
             return View("~/Views/AlterarDados/Index.cshtml");
         }
 
         public ActionResult AlterarDadosAlterar(string nomeInput, string passwordInput, string emailInput, string moradaInput, string telefoneInput){
             int idCliente=_uController.getUtilizadorID();
             string nome = this._uController.GetUserNome(idCliente);
-            string password = this._uController.GetUserPassword(idCliente);
+            byte[] password = this._uController.GetUserPassword(idCliente);
             string email = this._uController.GetUserEmail(idCliente);
-            int idCliente2 = _context.Clientes.Where(e=>e.getUtilizadorID()==idCliente).FirstOrDefault().ClienteID;
-            string morada = this._cController.GetClienteMorada(idCliente2);
-            string telefone = this._cController.GetClienteTelefone(idCliente2);
+            string morada = this._cController.GetClienteMorada(idCliente);
+            string telefone = this._cController.GetClienteTelefone(idCliente);
             
             bool emailAssoc = false;
             if(!emailInput.Equals(email)) emailAssoc = this._uController.emailAssociado(emailInput);
@@ -89,8 +87,8 @@ namespace mvcJJMS.Controllers{
             if(!nomeInput.Equals(nome)) this._uController.UpdateNome(idCliente,nomeInput); 
             if(!passwordInput.Equals(password)) this._uController.UpdatePassword(idCliente,passwordInput);
             if(!emailInput.Equals(email)) this._uController.UpdateEmail(idCliente,emailInput);
-            if(!moradaInput.Equals(morada)) this._cController.UpdateMorada(idCliente2,moradaInput);
-            if(!telefoneInput.Equals(telefone)) this._cController.UpdateTelefone(idCliente2,telefoneInput);
+            if(!moradaInput.Equals(morada)) this._cController.UpdateMorada(idCliente,moradaInput);
+            if(!telefoneInput.Equals(telefone)) this._cController.UpdateTelefone(idCliente,telefoneInput);
 
             return AlteradoComSucesso();           
         }

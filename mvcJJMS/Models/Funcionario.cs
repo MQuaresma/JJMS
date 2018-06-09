@@ -2,7 +2,6 @@ using System.Collections.Generic;
 
 namespace mvcJJMS.Models{
 	public class Funcionario : Utilizador  {
-		public int FuncionarioID{get;set;}
 		public int zonaTrabalho{get;set;}
 		public int nroEnc{get;set;}
 

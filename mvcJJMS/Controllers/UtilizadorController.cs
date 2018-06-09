@@ -61,9 +61,9 @@ namespace mvcJJMS.Controllers{
 			return cliente.Nome;
 		}
 
-        public string GetUserPassword( int idCliente) {
+        public byte[] GetUserPassword( int idCliente) {
 			Utilizador cliente =_context.Utilizadores.Find(idCliente);
-			return System.Text.Encoding.UTF8.GetString(cliente.Password);
+			return cliente.Password;
 		}
 
 		public string GetUserEmail( int idCliente) {

@@ -10,15 +10,15 @@
             {
                 @Html.ValidationSummary(true)
                 <fieldset>
-                    Nome: <input type="text" name="nomeInput" id="nomeInput" value=@ViewBag.nome required />
+                    Nome: <input type="text" name="user" id="user" value=@ViewBag.nome required />
                     <br>
-                    Password: <input type="password" name="passwordInput" id="passwordInput" value=@ViewBag.password required />
+                    Password: <input type="password" name="password" id="password" value=@ViewBag.password required />
                     <br>
-                    Email: <input type="text" name="emailInput" id="emailInput" value=@ViewBag.email required />
+                    Email: <input type="text" name="email" id="email" value=@ViewBag.email required />
                     <br>
-                    Morada: <input type="text" name="moradaInput" id="moradaInput" value=@ViewBag.morada required />
+                    Morada: <input type="text" name="morada" id="morada" value=@ViewBag.morada required />
                     <br>
-                    Telefone: <input type="text" name="telefoneInput" id="telefoneInput" value=@ViewBag.telefone required />
+                    Telefone: <input type="text" name="telefone" id="telefone" value=@ViewBag.telefone required />
                 </fieldset>
                 <input type="submit" value="Alterar" />
                 <button type="button" onclick="location.href='@Url.Action("Cancelar","Cliente")'">Cancelar</button>

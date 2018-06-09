@@ -1,5 +1,5 @@
-using mvcJJMS.Models;
 using Microsoft.EntityFrameworkCore;
+using mvcJJMS.Models;
 using FILE = System.String;
 using Date = System.String;
 using Time = System.String;
@@ -12,26 +12,18 @@ namespace mvcJJMS.Data{
         }
         
         //Each DbSet corresponds to a table in the database
-        public DbSet<Utilizador> Utilizadores { get; set; }
         public DbSet<Cliente> Clientes { get; set; }
 		public DbSet<Funcionario> Funcionarios { get; set; }
 		public DbSet<Fornecedor> Fornecedores { get; set; }
         public DbSet<Encomenda> Encomendas { get; set; }
         public DbSet<CartaoCredito> Cartoes { get; set; }
-    
+        public DbSet<Utilizador> Utilizadores { get; set; }
+        
         public Fornecedor newFornecedor(string nome, string morada){
             Fornecedor nFornecedor=new Fornecedor();
             nFornecedor.setNome(nome);
             nFornecedor.setMorada(morada);
             return nFornecedor;
-        }
-
-        public Utilizador newUtilizador(string nome, byte[] passwordH, string email){
-            Utilizador nUtilizador=new Utilizador();
-            nUtilizador.Nome=nome;
-            nUtilizador.Password=passwordH;
-            nUtilizador.Email=email;
-            return nUtilizador;
         }
 
         public Cliente newCliente(string nome, byte[] passwordH, string email, string morada, string telefone){

@@ -8,11 +8,9 @@ namespace mvcJJMS.Controllers{
 
     public class CartaoController : Controller{
  		private readonly JJMSContext _context;
-		private readonly EncomendaController _eController;
 
-		public CartaoController(JJMSContext context, EncomendaController eController){
+		public CartaoController(JJMSContext context){
 			_context=context;
-			_eController = eController;
 		}
 
         public bool Luhn_check( int numCartCredito) {
@@ -51,24 +49,6 @@ namespace mvcJJMS.Controllers{
 			if(ano<anoatual) return false;
 			if(ano==anoatual && mes<mesatual) return false;
 			return true;
-		}
-
-		public ViewResult DadosPagamento(){
-			ViewBag.Title = "Dados de Pagamento";
-			return View("~/Views/RequisitarEncomenda/DadosPagamento.cshtml"); 
-		}
-
-		public ActionResult VerificaDadosCartao(int ncc,int mes,int ano,int cvv,string pais){
-			bool cartao = CartaoValido(ncc,mes,ano,cvv,pais);
-			if (cartao == false) return DadosPagamentoInvalidos();
-			_eController.SetEncomenda(ncc,mes,ano,cvv,pais);
-			return _eController.Sucesso();
-		}
-
-		public ViewResult DadosPagamentoInvalidos(){
-			ViewBag.Title = "Dados de Pagamento Inválidos";
-			ViewBag.Msg = "Os dados de pagamento inseridos são inválidos";
-			return View("~/Views/RequisitarEncomenda/DadosPagamentoInvalidos.cshtml"); 
 		}
     }
 }
