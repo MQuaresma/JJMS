@@ -27,7 +27,7 @@ namespace mvcJJMS.Models{
 			throw new System.Exception("Not implemented");
 		}
 
-		public int GetIdFornecedor(){
+		public int getIdFornecedor(){
 			return this.FornecedorID;
 		}
 
@@ -37,6 +37,14 @@ namespace mvcJJMS.Models{
 
 		public int getCartaoCreditoID(){
 			return this.CartaoCreditoID;
+		}
+
+		public int getFuncionarioID(){
+			return this.FuncionarioID;
+		}
+
+		public void setAvaliacao(int classEstadoEncomenda){
+			this.avaliação=classEstadoEncomenda;
 		}
 	}
 }

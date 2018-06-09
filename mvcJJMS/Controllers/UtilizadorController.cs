@@ -10,7 +10,7 @@ namespace mvcJJMS.Controllers{
     public class UtilizadorController : Controller{
 
         private readonly JJMSContext _context;
-		int utilizadorID;
+		private int utilizadorID;
 
 		public UtilizadorController(JJMSContext context){
 			_context=context;
@@ -57,6 +57,10 @@ namespace mvcJJMS.Controllers{
 			Cliente cli=_context.Clientes.Find(idCliente);
 			if(cli!=null) return cli.Nome;
 			else return null;
+		}
+
+		public int getUtilizadorId(){
+			return this.utilizadorID;
 		}
 
         public string GetUserPassword( int idCliente) {

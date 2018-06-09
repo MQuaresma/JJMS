@@ -7,10 +7,14 @@ namespace mvcJJMS.Controllers{
     public class MenuClienteController : Controller{
         private readonly JJMSContext _context;
         private readonly EncomendaController _eController;
+        private readonly FuncionarioController _fController;
+        private readonly UtilizadorController _uController;
 
-        public MenuClienteController(JJMSContext context, EncomendaController eController){
+        public MenuClienteController(JJMSContext context, EncomendaController eController,FuncionarioController fController,UtilizadorController uController){
 			_context=context;
             _eController=eController;
+            _fController=fController;
+            _uController=uController;
 		}
 
         public ViewResult Index(){
@@ -54,9 +58,8 @@ namespace mvcJJMS.Controllers{
 
         public ActionResult checkEncomenda(int idEncomenda){
             if(!this._eController.existeEncomenda(idEncomenda)) return CodigoInexistente();
-            else if(this._eController.getEstaoEncomendaI(idEncomenda)!=4) return EncomendaPorEntregar();
+            else if(this._eController.getEstadoEncomendaI(idEncomenda)!=4) return EncomendaPorEntregar();
             return InserirClassificacoes(idEncomenda);
-
         }
 
         public ViewResult CodigoInexistente(){
@@ -93,8 +96,12 @@ namespace mvcJJMS.Controllers{
             return (classServicoEntrega >= 0 && classServicoEntrega <= 10 && classEstadoEncomenda >= 0 && classEstadoEncomenda <= 5);
         }
 
-        public void avalia( int idEncomendaS,  int classServicoEntrega,  int classEstadoEncomenda) {
-            //TODO: implement code to save new rating
+        public void avalia( int idEncomenda,  int classServicoEntrega,  int classEstadoEncomenda) {
+            Encomenda enc=_eController.getEncomenda(idEncomenda);
+            int idFun=enc.getFuncionarioID();
+            Funcionario funcionario= _fController.getFuncionario(idFun);
+            enc.setAvaliacao(classEstadoEncomenda);
+            funcionario.AtualizaAvaliacao(classServicoEntrega);
 		}
 
         public ViewResult ClassificaoesInvalidas(){
