@@ -34,5 +34,9 @@ namespace mvcJJMS.Models{
 		public int getClienteID(){
 			return this.ClienteID;
 		}
+
+		public int getCartaoCreditoID(){
+			return this.CartaoCreditoID;
+		}
 	}
 }

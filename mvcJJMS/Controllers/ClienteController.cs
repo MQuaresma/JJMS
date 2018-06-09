@@ -75,35 +75,60 @@ namespace mvcJJMS.Controllers{
 		} 
 
         public string GetClienteMorada( int idCliente) {
-			throw new System.Exception("Not implemented");
+			Cliente cliente = _context.Clientes.Find(idCliente);
+			return cliente.morada;
 		}
 
         public string GetClienteTelefone( int idCliente) {
-			throw new System.Exception("Not implemented");
+			Cliente cliente = _context.Clientes.Find(idCliente);
+			return cliente.telefone;
 		}
 
-        public void UpdateMorada( int idCliente,  string moradaInput) {
-			throw new System.Exception("Not implemented");
+        public void UpdateMorada( int idCliente, string moradaInput) {
+			Cliente cliente = _context.Clientes.Find(idCliente);
+			cliente.morada = moradaInput;
+			_context.SaveChanges();
+
 		}
 
 		public void UpdateTelefone( int idCliente,  string telefoneInput) {
-			throw new System.Exception("Not implemented");
+			Cliente cliente = _context.Clientes.Find(idCliente);
+			cliente.telefone = telefoneInput;
+			_context.SaveChanges();
 		}
 
 		public void Bloquear( int idCliente) {
-			throw new System.Exception("Not implemented");
+			Cliente cliente = _context.Clientes.Find(idCliente);
+			cliente.bloqueado = true;
+			_context.SaveChanges();
 		}
 
-		public void TransfereMontante( int idCliente,  int idEncomenda) {
-			throw new System.Exception("Not implemented");
+		public bool TransfereMontante( int idCliente,  int idEncomenda) {
+			bool existe = ExisteEncomendaCliente(idCliente,idEncomenda);
+			bool suc = false;
+
+			if(existe){
+				Encomenda enc = _context.Encomendas.Find(idEncomenda);
+				CartaoCredito cc = _context.Cartoes.Find(enc.getCartaoCreditoID());
+				suc = cc.Pagamento();
+			}
+			return suc;
 		}
 
 		public void GerarFatura( int idCliente,  int idEncomenda) {
-			throw new System.Exception("Not implemented");
+			Cliente cliente = _context.Clientes.Find(idCliente);
+			Encomenda enc = _context.Encomendas.Find(idEncomenda);
+			enc.GerarFatura(cliente);
 		}
 
         public FILE GetFatura( int idCliente,  int idEncomenda) {
-			throw new System.Exception("Not implemented");
+			bool existe = ExisteEncomendaCliente(idCliente,idEncomenda);
+			
+			if(existe==true){
+				Encomenda enc = _context.Encomendas.Find(idEncomenda);
+				FILE file = enc.fatura;
+				return file;
+			}else return null;
 		}
 
         public async Task<List<Encomenda>> GetHistoricoEnc( int idCliente) {
@@ -111,11 +136,13 @@ namespace mvcJJMS.Controllers{
 		}
 
         public bool ExisteEncomendaCliente( int idCliente,  int idEncomenda) {
-			throw new System.Exception("Not implemented");
+			Cliente cliente = _context.Clientes.Find(idCliente);
+			return cliente.TemEncomenda(idEncomenda);
 		}
 
         public bool EstaBloqueado( int idCliente) {
-			throw new System.Exception("Not implemented");
+			Cliente cliente = _context.Clientes.Find(idCliente);
+			return cliente.bloqueado;
 		}
 
 		public ViewResult EmailEmUso(){
@@ -148,6 +175,12 @@ namespace mvcJJMS.Controllers{
 			ViewBag.Title = "Telefone inválido";
 			ViewBag.Msg = "O telefone inserido não é válido"; 
 			return View("~/Views/Registar/TelefoneInvalido.cshtml"); 
+		}
+
+		public ViewResult Cancelar(){
+			ViewBag.Title = "Cancelar";
+			ViewBag.Msg = "Operação Cancelada";
+			return View("~/Views/Registar/Cancelar.cshtml");
 		}
     }
 }
