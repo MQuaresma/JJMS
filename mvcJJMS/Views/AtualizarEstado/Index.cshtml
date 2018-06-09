@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <title>@ViewBag.Title</title>
+    </head>
+    <body>
+        <h1>@ViewBag.Title</h1>
+        <div>
+            @using (Html.BeginForm("AtualizarEstadoCusto", "MenuFuncionario", FormMethod.Post))
+            {
+                @Html.ValidationSummary(true)
+                <fieldset>
+                    <input type="text" name="idEncomenda" id="idEncomenda" required />
+                </fieldset>
+                <input type="submit" value="Seguinte" />
+            }
+        </div>
+    </body>
+</html>

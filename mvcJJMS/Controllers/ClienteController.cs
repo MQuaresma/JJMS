@@ -184,5 +184,11 @@ namespace mvcJJMS.Controllers{
 			ViewBag.Msg = "Operação Cancelada";
 			return View("~/Views/Registar/Cancelar.cshtml");
 		}
+
+		public void PagarServiço(int idCliente, int idEncomenda){
+			bool sucesso = TransfereMontante(idCliente,idEncomenda);
+			if(!sucesso) Bloquear(idCliente);
+			else GerarFatura(idCliente,idEncomenda);
+		} 
     }
 }
