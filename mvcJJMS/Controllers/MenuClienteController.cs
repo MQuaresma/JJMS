@@ -50,7 +50,7 @@ namespace mvcJJMS.Controllers{
 		/// </summary>
         public ViewResult AvaliarServico(){
             ViewBag.Title="Avaliar Serviço";
-            return View("~/Views/Avaliar_Servico/Index.cshtml");
+            return View("~/Views/AvaliarServico/Index.cshtml");
         }
 
         public ViewResult AlterarDados(){
@@ -121,7 +121,7 @@ namespace mvcJJMS.Controllers{
         public ViewResult CancelarAvaliar(){
             ViewBag.Title = "Cancelar";
             ViewBag.Msg = "Operação cancelada"; 
-            return View("~/Views/Avaliar_Servico/Cancelar.cshtml"); 
+            return View("~/Views/AvaliarServico/Cancelar.cshtml"); 
         }
 
         public ActionResult checkEncomenda(int idEncomenda){
@@ -133,19 +133,19 @@ namespace mvcJJMS.Controllers{
         public ViewResult CodigoInexistente(){
             ViewBag.Title = "Codigo Inexistente";
             ViewBag.Msg = "Não existe encomenda com o código inserido."; 
-            return View("~/Views/Avaliar_Servico/CodigoInexistente.cshtml"); 
+            return View("~/Views/AvaliarServico/CodigoInexistente.cshtml"); 
         }
 
         public ViewResult EncomendaPorEntregar(){
             ViewBag.Title = "Encomenda por entregar";
             ViewBag.Msg = "A encomenda ainda não foi entregue, sendo não pode ser avaliada."; 
-            return View("~/Views/Avaliar_Servico/EncomendaPorEntregar.cshtml");
+            return View("~/Views/AvaliarServico/EncomendaPorEntregar.cshtml");
         }
 
         public ViewResult InserirClassificacoes(int idEncomenda){
             ViewBag.Title="Inserir Classificações";
             ViewBag.idEncomenda=idEncomenda.ToString();
-            return View("~/Views/Avaliar_Servico/InserirClassificacoes.cshtml");
+            return View("~/Views/AvaliarServico/InserirClassificacoes.cshtml");
         }
 
         public ActionResult AvaliaS(string idEncomendaS, int classServicoEntrega,  int classEstadoEncomenda){
@@ -175,14 +175,23 @@ namespace mvcJJMS.Controllers{
         public ViewResult ClassificaoesInvalidas(){
             ViewBag.Title = "Classificações Inválidas";
             ViewBag.Msg = "Foram inseridos valores incorretos, não respeitando a gama de valores estabelecida."; 
-            return View("~/Views/Avaliar_Servico/ClassificacoesInvalidas.cshtml");
+            return View("~/Views/AvaliarServico/ClassificacoesInvalidas.cshtml");
         }
 
         public ViewResult Sucesso(){
             ViewBag.Title = "Sucesso";
             ViewBag.Msg = "Avaliação efetuda com sucesso"; 
-            return View("~/Views/Avaliar_Servico/Sucesso.cshtml");
+            return View("~/Views/AvaliarServico/Sucesso.cshtml");
         }
 
+        public ViewResult ConsultarHistorico(){
+            ViewBag.Title="Consultar Histórico";
+            return View();
+        }
+
+        public ViewResult RequisitarEncomenda(){
+            ViewBag.Title="Requisitar Encomenda";
+            return View("~/Views/RequisitarEncomenda/Index.cshtml"); 
+        }
     }
 }

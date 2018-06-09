@@ -25,5 +25,14 @@ namespace mvcJJMS.Controllers{
         public int CalcularRota( string origem,  string destino) {
 			throw new System.Exception("Not implemented");
 		}
+
+        public ViewResult ConsultarRota(){
+            ViewBag.Title="Consultar Rota";
+            return View(); 
+        }
+        public ViewResult AtualizarEstado(){
+            ViewBag.Title="Atualizar Estado";
+            return View(); 
+        }
     }
 }

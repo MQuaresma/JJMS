@@ -9,28 +9,6 @@ namespace mvcJJMS.Controllers{
             return View(); 
         }
 
-        public ViewResult Requisitar_Encomenda(){
-            ViewBag.Title="Requisitar Encomenda";
-            return View("~/Views/RequisitarEncomenda/Index.cshtml"); 
-        }
-        public ViewResult Consultar_Historico(){
-            ViewBag.Title="Consultar Histórico";
-            return View();
-        }
-        public ViewResult Avaliar_Servico(){
-            ViewBag.Title="Avaliar Serviço";
-            return View(); 
-        }
-
-        public ViewResult ConsultarRota(){
-            ViewBag.Title="Consultar Rota";
-            return View(); 
-        }
-        public ViewResult AtualizarEstado(){
-            ViewBag.Title="Atualizar Estado";
-            return View(); 
-        }
-
         public ViewResult Login(){
             ViewBag.Title="Login";
             return View("~/Views/Login/Index.cshtml");
