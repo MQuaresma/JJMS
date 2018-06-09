@@ -86,19 +86,28 @@ namespace mvcJJMS.Controllers{
         public ViewResult AtualizadoComSucesso(){
             ViewBag.Title="Atualizado com sucesso";
             ViewBag.Msg = "Estado atualizao com sucesso.";
-            return View("~/Views/AtualizarEstado/AtualizadoComSucesso.cshtml");
+            ViewBag.Func = "Index";
+            ViewBag.File = "MenuFuncionario";
+            ViewBag.ButtonName = "OK";
+            return View("~/Views/Shared/SimpleMsg.cshtml");
         }
 
         public ViewResult CustoInvalido(){
             ViewBag.Title="Custo Inválido";
             ViewBag.Msg = "Custo inserido inválido, valor negativo ou possui letras ou símbolos.";
-            return View("~/Views/AtualizarEstado/CustoInvalido.cshtml");
+            ViewBag.Func = "Index";
+            ViewBag.File = "MenuFuncionario";
+            ViewBag.ButtonName = "OK";
+            return View("~/Views/Shared/SimpleMsg.cshtml");
         }
 
         public ViewResult NaoExisteEncomenda(){
             ViewBag.Title="Não existe encomenda";
             ViewBag.msg = "Não existe encomenda com o código fornecido ou já foi entregue.";
-            return View("~/Views/AtualizarEstado/NãoExisteEncomenda.cshtml");
+            ViewBag.Func = "Index";
+            ViewBag.File = "MenuFuncionario";
+            ViewBag.ButtonName = "OK";
+            return View("~/Views/Shared/SimpleMsg.cshtml");
         }
     }
 }

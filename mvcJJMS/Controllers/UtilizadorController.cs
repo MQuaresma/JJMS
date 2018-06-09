@@ -97,13 +97,19 @@ namespace mvcJJMS.Controllers{
 		public ViewResult EmailInexistente(){
 			ViewBag.Title = "Email Inexistente";
 			ViewBag.Msg = "O email inserido não existe.";
-			return View("~/Views/Login/EmailInexistente.cshtml");
+			ViewBag.Func = "Index";
+            ViewBag.File = "MenuPrincipal";
+            ViewBag.ButtonName = "Voltar";
+            return View("~/Views/Shared/SimpleMsg.cshtml");
 		}
 
 		public ViewResult PasswordInvalida(){
     		ViewBag.Title = "Password Inválida";
     		ViewBag.Msg = "A password inserida é inválida.";	
-    		return View("~/Views/Login/PasswordInvalida.cshtml");
+			ViewBag.Func = "Index";
+            ViewBag.File = "MenuPrincipal";
+            ViewBag.ButtonName = "Voltar";
+            return View("~/Views/Shared/SimpleMsg.cshtml");
 		}
     }
 }

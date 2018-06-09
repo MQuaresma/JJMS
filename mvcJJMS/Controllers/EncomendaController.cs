@@ -172,20 +172,29 @@ namespace mvcJJMS.Controllers{
 		public ViewResult DadosPagamentoInvalidos(){
 			ViewBag.Title = "Dados de Pagamento Inválidos";
 			ViewBag.Msg = "Os dados de pagamento inseridos são inválidos";
-			return View("~/Views/RequisitarEncomenda/DadosPagamentoInvalidos.cshtml"); 
+			ViewBag.Func = "Index";
+            ViewBag.File = "MenuCliente";
+            ViewBag.ButtonName = "Cancelar";
+            return View("~/Views/Shared/SimpleMsg.cshtml");
 		}
 
 
 		public ViewResult FornecedorInvalido(){
 			ViewBag.Title = "Fornecedor Inválido";
 			ViewBag.Msg = "O fornecedor inserido não está associado à JJMS."; 
-			return View("~/Views/RequisitarEncomenda/FornecedorInvalido.cshtml"); 
+			ViewBag.Func = "Index";
+            ViewBag.File = "MenuCliente";
+            ViewBag.ButtonName = "Cancelar";
+            return View("~/Views/Shared/SimpleMsg.cshtml");
 		}
 
 		public ViewResult Sucesso(){
 			ViewBag.Title = "Sucesso";
 			ViewBag.Msg = "A encomenda foi requisitada com sucesso!"; 
-			return View("~/Views/RequisitarEncomenda/Sucesso.cshtml"); 
+			ViewBag.Func = "Index";
+            ViewBag.File = "MenuCliente";
+            ViewBag.ButtonName = "Ok";
+            return View("~/Views/Shared/SimpleMsg.cshtml");
 		}
     }
 }

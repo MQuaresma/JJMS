@@ -150,39 +150,57 @@ namespace mvcJJMS.Controllers{
 		public ViewResult EmailEmUso(){
 			ViewBag.Title = "Email em uso";
 			ViewBag.Msg = "O email inserido já se encontra associado a outro cliente"; 
-			return View("~/Views/Registar/EmailEmUso.cshtml"); 
+			ViewBag.Func = "Index";
+            ViewBag.File = "MenuPrincipal";
+            ViewBag.ButtonName = "Ok";
+            return View("~/Views/Shared/SimpleMsg.cshtml");
 		}
 
 		public ViewResult PasswordInsegura(){
 			ViewBag.Title = "Password Insegura";
-			ViewBag.Msg = "A password não cumpre requisitos mínimos de segurança"; 
+			ViewBag.Msg = "A password não cumpre requisitos mínimos de segurança:"; 
 			ViewBag.Item1 = "* 8 ou mais carateres";
 			ViewBag.Item2 = "* possuir números, letras e símbolos";
-			return View("~/Views/Registar/PasswordInsegura.cshtml"); 
+			ViewBag.Func = "Index";
+            ViewBag.File = "MenuPrincipal";
+            ViewBag.ButtonName = "Ok";
+			return View("~/Views/Shared/PasswordInsegura.cshtml"); 
 		}
 
 		public ViewResult EmailInvalido(){
 			ViewBag.Title = "Email inválido";
 			ViewBag.Msg = "O email inserido não é válido"; 
-			return View("~/Views/Registar/EmailInvalido.cshtml"); 
+			ViewBag.Func = "Index";
+            ViewBag.File = "MenuPrincipal";
+            ViewBag.ButtonName = "Ok";
+            return View("~/Views/Shared/SimpleMsg.cshtml");
 		}
 
 		public ViewResult Sucesso(){
 			ViewBag.Title = "Sucesso";
 			ViewBag.Msg = "Registo efetuado com sucesso"; 
-			return View("~/Views/Registar/Sucesso.cshtml"); 
+			ViewBag.Func = "Index";
+            ViewBag.File = "MenuPrincipal";
+            ViewBag.ButtonName = "Ok";
+            return View("~/Views/Shared/SimpleMsg.cshtml");
 		}
 
 		public ViewResult TelefoneInvalido(){
 			ViewBag.Title = "Telefone inválido";
 			ViewBag.Msg = "O telefone inserido não é válido"; 
-			return View("~/Views/Registar/TelefoneInvalido.cshtml"); 
+			ViewBag.Func = "Index";
+            ViewBag.File = "MenuPrincipal";
+            ViewBag.ButtonName = "Ok";
+            return View("~/Views/Shared/SimpleMsg.cshtml");
 		}
 
 		public ViewResult Cancelar(){
 			ViewBag.Title = "Cancelar";
 			ViewBag.Msg = "Operação Cancelada";
-			return View("~/Views/Registar/Cancelar.cshtml");
+			ViewBag.Func = "Index";
+            ViewBag.File = "MenuPrincipal";
+            ViewBag.ButtonName = "Ok";
+            return View("~/Views/Shared/SimpleMsg.cshtml");
 		}
 
 		public void PagarServiço(int idCliente, int idEncomenda){

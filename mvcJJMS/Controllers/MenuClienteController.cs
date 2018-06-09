@@ -42,7 +42,10 @@ namespace mvcJJMS.Controllers{
         public ViewResult CancelarTracking(){
             ViewBag.Title = "Cancelar";
             ViewBag.Msg = "Operação cancelada"; 
-            return View("~/Views/TrackingEncomenda/Cancelar.cshtml"); 
+            ViewBag.Func = "Index";
+            ViewBag.File = "MenuCliente";
+            ViewBag.ButtonName = "OK";
+            return View("~/Views/Shared/SimpleMsg.cshtml");
         }
 
         /// <summary>
@@ -97,30 +100,48 @@ namespace mvcJJMS.Controllers{
         public ViewResult AlteradoComSucesso(){
             ViewBag.Title = "Alterado com Sucesso";
             ViewBag.Msg = "Dados alterados com sucesso.";
-            return View("~/Views/AlterarDados/AlteradoComSucesso.cshtml");
+            ViewBag.Func = "Index";
+            ViewBag.File = "MenuCliente";
+            ViewBag.ButtonName = "OK";
+            return View("~/Views/Shared/SimpleMsg.cshtml");
         }
 
         public ViewResult EmailJaAssociado(){
             ViewBag.Title = "Email já associado";
             ViewBag.Msg = "Email já associado a outro cliente.";
-            return View("~/Views/AlterarDados/EmailJaAssociado.cshtml");
+            ViewBag.Func = "Index";
+            ViewBag.File = "MenuCliente";
+            ViewBag.ButtonName = "OK";
+            return View("~/Views/Shared/SimpleMsg.cshtml");
         }
 
         public ViewResult TelefoneInvalido(){
             ViewBag.Title = "Telefone Inválido";
             ViewBag.Msg = "Telefone inserido não é válido.";
-            return View("~/Views/AlterarDados/TelefoneInvalido.cshtml");
+            ViewBag.Func = "Index";
+            ViewBag.File = "MenuCliente";
+            ViewBag.ButtonName = "OK";
+            return View("~/Views/Shared/SimpleMsg.cshtml");
         }
 
         public ViewResult PasswordInsegura(){
             ViewBag.Title = "Password Insegura";
-            return View("~/Views/AlterarDados/PasswordInsegura.cshtml");
+            ViewBag.Msg = "A password não cumpre requisitos mínimos de segurança:"; 
+			ViewBag.Item1 = "* 8 ou mais carateres";
+			ViewBag.Item2 = "* possuir números, letras e símbolos";
+			ViewBag.Func = "Index";
+            ViewBag.File = "MenuCliente";
+            ViewBag.ButtonName = "Ok";
+            return View("~/Views/Shared/PasswordInsegura.cshtml");
         }
 
         public ViewResult CancelarAvaliar(){
             ViewBag.Title = "Cancelar";
             ViewBag.Msg = "Operação cancelada"; 
-            return View("~/Views/AvaliarServico/Cancelar.cshtml"); 
+            ViewBag.Func = "Index";
+            ViewBag.File = "MenuCliente";
+            ViewBag.ButtonName = "OK";
+            return View("~/Views/Shared/SimpleMsg.cshtml");
         }
 
         public ActionResult checkEncomenda(int idEncomenda){
@@ -132,13 +153,19 @@ namespace mvcJJMS.Controllers{
         public ViewResult CodigoInexistente(){
             ViewBag.Title = "Codigo Inexistente";
             ViewBag.Msg = "Não existe encomenda com o código inserido."; 
-            return View("~/Views/AvaliarServico/CodigoInexistente.cshtml"); 
+            ViewBag.Func = "Index";
+            ViewBag.File = "MenuCliente";
+            ViewBag.ButtonName = "Ok";
+            return View("~/Views/Shared/SimpleMsg.cshtml");
         }
 
         public ViewResult EncomendaPorEntregar(){
             ViewBag.Title = "Encomenda por entregar";
-            ViewBag.Msg = "A encomenda ainda não foi entregue, sendo não pode ser avaliada."; 
-            return View("~/Views/AvaliarServico/EncomendaPorEntregar.cshtml");
+            ViewBag.Msg = "A encomenda ainda não foi entregue, sendo assim, ainda não pode ser avaliada."; 
+            ViewBag.Func = "Index";
+            ViewBag.File = "MenuCliente";
+            ViewBag.ButtonName = "OK";
+            return View("~/Views/Shared/SimpleMsg.cshtml");
         }
 
         public ViewResult InserirClassificacoes(int idEncomenda){
@@ -174,13 +201,19 @@ namespace mvcJJMS.Controllers{
         public ViewResult ClassificaoesInvalidas(){
             ViewBag.Title = "Classificações Inválidas";
             ViewBag.Msg = "Foram inseridos valores incorretos, não respeitando a gama de valores estabelecida."; 
-            return View("~/Views/AvaliarServico/ClassificacoesInvalidas.cshtml");
+            ViewBag.Func = "Index";
+            ViewBag.File = "MenuCliente";
+            ViewBag.ButtonName = "OK";
+            return View("~/Views/Shared/SimpleMsg.cshtml");
         }
 
         public ViewResult Sucesso(){
             ViewBag.Title = "Sucesso";
             ViewBag.Msg = "Avaliação efetuda com sucesso"; 
-            return View("~/Views/AvaliarServico/Sucesso.cshtml");
+            ViewBag.Func = "Index";
+            ViewBag.File = "MenuCliente";
+            ViewBag.ButtonName = "OK";
+            return View("~/Views/Shared/SimpleMsg.cshtml");
         }
 
         public ViewResult ConsultarHistorico(){
@@ -201,7 +234,10 @@ namespace mvcJJMS.Controllers{
         public ViewResult ClienteBloqueado(){
             ViewBag.Title="Cliente Bloqueado";
             ViewBag.Msg = "Está bloqueado por falta de pagamento de uma encomenda anteriormente realizada";
-            return View("~/Views/RequisitarEncomenda/ClienteBloqueado.cshtml"); 
+            ViewBag.Func = "Index";
+            ViewBag.File = "MenuCliente";
+            ViewBag.ButtonName = "OK";
+            return View("~/Views/Shared/SimpleMsg.cshtml");
         }
     }
 }
