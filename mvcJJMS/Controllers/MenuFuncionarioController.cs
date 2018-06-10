@@ -11,11 +11,13 @@ namespace mvcJJMS.Controllers{
         private readonly EncomendaController _eController;
         private readonly FuncionarioController _fController;
         private readonly ClienteController _cController;
-        public MenuFuncionarioController(JJMSContext context, EncomendaController eController, FuncionarioController fController, ClienteController cController){
+        private readonly FornecedorController _fornController;
+        public MenuFuncionarioController(JJMSContext context, EncomendaController eController, FuncionarioController fController, ClienteController cController, FornecedorController fornController){
 			this._context=context;
             this._eController=eController;
             this._fController=fController;
             this._cController=cController;
+            this._fornController=fornController;
 		}
 
         public ViewResult Index(){
@@ -66,7 +68,7 @@ namespace mvcJJMS.Controllers{
             this._eController.UpdateEstadoEnc(idEnc);
             int estado = this._eController.getEstadoEncomendaI(idEnc);
             
-            if(estado==2) this._fController.DelegarFuncionario(idEnc,this._eController.GetDestinoEnc(idEnc)); 
+            if(estado==2) DelegarFuncionario(idEnc); 
             else if(estado==4) this._cController.PagarServiço(_context.Encomendas.Find(idEnc).getClienteID(),idEnc);
 
             return AtualizadoComSucesso();
@@ -108,6 +110,18 @@ namespace mvcJJMS.Controllers{
             ViewBag.File = "MenuFuncionario";
             ViewBag.ButtonName = "OK";
             return View("~/Views/Shared/SimpleMsg.cshtml");
+        }
+
+        public void DelegarFuncionario(int idEncomenda){
+            int estado = this._eController.getEstadoEncomendaI(idEncomenda);
+            int idForn = this._eController.getIdForn(idEncomenda);
+            string destino = null;
+
+            if(estado==1) destino = this._fornController.GetMoradaForn(idForn);
+            else if(estado==2) destino = this._eController.GetDestinoEnc(idEncomenda);
+
+            int idFunc = this._fController.DelegarFuncionario(idEncomenda,destino);
+            this._fController.EnviarEmail(idFunc,idEncomenda);
         }
     }
 }

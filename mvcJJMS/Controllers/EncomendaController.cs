@@ -132,6 +132,11 @@ namespace mvcJJMS.Controllers{
 			return _context.Encomendas.Find(idEncomenda);
 		}
 
+		public int getIdForn(int idEncomenda){
+			Encomenda enc = _context.Encomendas.Find(idEncomenda);
+			return enc.getFornecedorID();
+		}
+
 		public ViewResult CodigoInexistente(){
 			ViewBag.Title = "Código Inexistente";
 			ViewBag.Msg = "Não existe a encomenda com o código inserido"; 

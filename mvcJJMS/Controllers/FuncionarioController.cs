@@ -53,7 +53,7 @@ namespace mvcJJMS.Controllers{
 			string emailFunc = this._uController.GetUserEmail(idFunc);
 			string st = this._eController.getEstadoEncomendaS(idEncomenda);
 			string origem = this._eController.getLocalizacaoEncomenda(idEncomenda);
-			int idForn = _context.Encomendas.Find(idEncomenda).GetIdFornecedor(); 
+			int idForn = this._eController.getIdForn(idEncomenda); 
 			string destino = null;
 
 			if(st.Equals("com o fornecedor")) destino=this._fController.GetMoradaForn(idForn);

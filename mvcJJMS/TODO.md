@@ -13,6 +13,6 @@
 - [ ] Model: Encomenda: GerarFatura
 
 ## Documentation
-- [ ] Change getEstadoEncomenda/getEstadoEnc to getEstadoEncomendaS and getEstadoEncomendaI on the diagrams
+- [x] Change getEstadoEncomenda/getEstadoEnc to getEstadoEncomendaS and getEstadoEncomendaI on the diagrams
 - [ ] Rearrange report so that interface mockups and state machines for the same use case are grouped together
 - [ ] Update logic database model to fit Table-Per-Hierarchy structure of EF
