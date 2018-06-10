@@ -89,7 +89,7 @@ namespace mvcJJMS.Controllers{
 			Encomenda enc = _context.Encomendas.Find(idEncomenda);
 			return enc.getFuncionarioID();
 		}
-        public void SetEncomenda(int idCliente,string fornecedor,string morada,Date dia,Time hora,int numCartCredito,int mes,int ano,int cvv,string pais) {
+        public void SetEncomenda(int idCliente,string fornecedor,string morada,Date dia,Time hora,long numCartCredito,int mes,int ano,int cvv,string pais) {
 			Encomenda nEncomenda = new Encomenda();
             nEncomenda.estado = 1;
             nEncomenda.destino = morada;
@@ -140,7 +140,10 @@ namespace mvcJJMS.Controllers{
 		public ViewResult CodigoInexistente(){
 			ViewBag.Title = "Código Inexistente";
 			ViewBag.Msg = "Não existe a encomenda com o código inserido"; 
-			return View("~/Views/TrackingEncomenda/CodigoInexistente.cshtml"); 
+			ViewBag.Func="Index";
+			ViewBag.File="MenuCliente";
+			ViewBag.ButtonName="OK";
+			return View("~/Views/Shared/SimpleMsg.cshtml"); 
 		}
 
 		public ViewResult InformacaoEncomenda(int encomenda, string localizacao, string estado){
@@ -166,7 +169,8 @@ namespace mvcJJMS.Controllers{
 			return View("~/Views/RequisitarEncomenda/InserirDadosPagamento.cshtml"); 
 		}
 
-		public ViewResult ProcDadosPagamento(string fornecedor,string morada,Date dia,Time hora,int ncc,int mes,int ano,int cvv,string pais){
+		public ViewResult ProcDadosPagamento(string fornecedor,string morada,Date dia,Time hora,string nccS,int mes,int ano,int cvv,string pais){
+			Int64 ncc=Int64.Parse(nccS);
 			bool cartao = _caController.CartaoValido(ncc,mes,ano,cvv,pais);
 			if (cartao == false) return DadosPagamentoInvalidos();
 			this.SetEncomenda(_uController.getUtilizadorID(),fornecedor,morada,dia,hora,ncc,mes,ano,cvv,pais);

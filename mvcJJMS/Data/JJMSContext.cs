@@ -31,8 +31,7 @@ namespace mvcJJMS.Data{
             modelBuilder.Entity<Encomenda>()
                         .HasOne(m=>m.Funcionario)
                         .WithMany(m=>m.Encomendas)
-                        .OnDelete(DeleteBehavior.Restrict)
-                        .IsRequired();
+                        .OnDelete(DeleteBehavior.Restrict);
 
              modelBuilder.Entity<Encomenda>()
                         .HasOne(m=>m.Fornecedor)
