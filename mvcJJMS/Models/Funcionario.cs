@@ -9,6 +9,10 @@ namespace mvcJJMS.Models{
 
 		public ICollection<Encomenda> Encomendas { get; set; }
 
+		/// <summary>
+		/// updates the evalution of the employee, calculating the new average
+		/// </summary>
+		/// <param name="classificacao"></param>
 		public void AtualizaAvaliacao(int classificacao) {
 			this.Avaliação=((this.Avaliação*this.NumAvaliações++)+classificacao)/this.NumAvaliações;
 		}
