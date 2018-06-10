@@ -3,11 +3,19 @@ using mvcJJMS.Controllers;
 using System.Linq;
 
 namespace mvcJJMS.Data{
+    
+    /// <summary>
+    /// Seeds the database if it is found to be empty
+    /// </summary>
     public static class DbInitializer{
+        /// <summary>
+        /// Seeds the database the given database
+        /// </summary>
+        /// <param name="context">Connection to the database</param>
         public static void Initialize(JJMSContext context){
             context.Database.EnsureCreated();
 
-            //Check if Db has been seeded
+            // Check if Db has been seeded
             if (context.Utilizadores.Any()){
                 return;
             }

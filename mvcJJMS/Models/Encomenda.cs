@@ -4,6 +4,9 @@ using Date = System.String;
 using Time = System.String;
 
 namespace mvcJJMS.Models{
+	/// <summary>
+	/// Represents a single order associated with a client and provider
+	/// </summary>
 	public class Encomenda {
 		public int EncomendaID{get;set;}
 		public int estado{get;set;}

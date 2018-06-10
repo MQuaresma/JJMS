@@ -1,6 +1,9 @@
 using System.Collections.Generic;
 
 namespace mvcJJMS.Models{
+	/// <summary>
+	/// Represents a user of type employee
+	/// </summary>
 	public class Funcionario : Utilizador  {
 		public int ZonaTrabalho{get;set;}
 		public int NroEnc{get;set;}
