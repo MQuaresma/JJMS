@@ -22,6 +22,10 @@ namespace mvcJJMS.Controllers{
             this._uController=uController;
 		}
 
+        /// <summary>
+        /// Show the menu of Funcionario(employee)
+        /// </summary>
+        /// <returns>MenuFuncionario</returns>
         public ViewResult Index(){
             ViewBag.Title = "Menu Funcionário";
             ViewBag.ListElem1 = "Consultar Rota";
@@ -35,10 +39,22 @@ namespace mvcJJMS.Controllers{
             return View(); 
         }
 
+        /// <summary>
+        /// Calculates the route between origem(source) adress and destino(destiny) adress
+        /// </summary>
+        /// <param name="origem"></param>
+        /// <param name="destino"></param>
+        /// <returns>return route</returns>
         public ViewResult CalcularRota( string origem,  string destino) {
 			throw new System.Exception("Not implemented");
 		}
 
+        /// <summary>
+        /// Obtain route for an Encomenda(order) where Funcionario(employee) is at origem adress
+        /// </summary>
+        /// <param name="idEncomenda"></param>
+        /// <param name="origem"></param>
+        /// <returns>return route</returns>
         public ViewResult CalcularRota(int idEncomenda, string origem){
             int stEnc = this._eController.getEstadoEncomendaI(idEncomenda);
             string dest=null;
@@ -57,6 +73,12 @@ namespace mvcJJMS.Controllers{
             return View("~/View/ConsultarRota/Index.cshtml"); 
         }
 
+        /// <summary>
+        /// Allow Funcionario(employee) to consult a route for an Encomenda(order) with idEncS, verify if Encomenda(order) is a valid one and if is returns the route
+        /// </summary>
+        /// <param name="idEncS"></param>
+        /// <param name="origem"></param>
+        /// <returns>return route</returns>
         public ActionResult ConsultarRotaRes(string idEncS, string origem){
             int idEnc = Convert.ToInt32(idEncS);
             bool existeEnc = this._eController.existeEncomenda(idEnc);
@@ -93,6 +115,11 @@ namespace mvcJJMS.Controllers{
             return View("~/Views/AtualizarEstado/Index.cshtml"); 
         }
 
+        /// <summary>
+        /// Checks if Encomenda(order) with idEncomenda is valid and return the correpondent view
+        /// </summary>
+        /// <param name="idEncomenda"></param>
+        /// <returns>return the correspondent view</returns>
         public ViewResult AtualizarEstadoCusto(string idEncomenda){
             ViewBag.Title="Custo Transporte";
             ViewBag.idEncomenda = idEncomenda;
@@ -104,6 +131,13 @@ namespace mvcJJMS.Controllers{
             return View("~/Views/AtualizarEstado/Custo.cshtml");
         }
 
+        /// <summary>
+        /// checks cost(custoInput) and updates state and total cost of order with id idEncomenda, 
+        /// and depending the state delegate a employee or activate the payment of the service
+        /// </summary>
+        /// <param name="idEncomenda"></param>
+        /// <param name="custoInput"></param>
+        /// <returns>return the correspondent action</returns>
         public ActionResult AtualizarEstadoRes(string idEncomenda, string custoInput){
             
             bool custoVal = custoValido(custoInput);
@@ -121,6 +155,11 @@ namespace mvcJJMS.Controllers{
             return AtualizadoComSucesso();
         }
 
+        /// <summary>
+        /// checks if inserted cost is valid, if is not negative and not have letters neither symbols 
+        /// </summary>
+        /// <param name="custo"></param>
+        /// <returns>true if valid, false if not</returns>
         bool custoValido(string custo){
             int i = 0;
             bool ret;
@@ -159,6 +198,10 @@ namespace mvcJJMS.Controllers{
             return View("~/Views/Shared/SimpleMsg.cshtml");
         }
 
+        /// <summary>
+        /// Delegates an Funcionario(employee) for the Encomenda(order) with id idEncomenda
+        /// </summary>
+        /// <param name="idEncomenda"></param>
         public void DelegarFuncionario(int idEncomenda){
             int estado = this._eController.getEstadoEncomendaI(idEncomenda);
             int idForn = this._eController.getIdForn(idEncomenda);

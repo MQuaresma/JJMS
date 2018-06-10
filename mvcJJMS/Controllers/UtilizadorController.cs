@@ -16,6 +16,12 @@ namespace mvcJJMS.Controllers{
 			_context=context;
 		}
 
+		/// <summary>
+		/// Logs a user into the system
+		/// </summary>
+		/// <param name="email">User email</param>
+		/// <param name="password">User password</param>
+		/// <returns>Redirects to a Menu or an Error view</returns>
         public ActionResult Login(string email, string password) {
 			List<Utilizador> uts = _context.Utilizadores.ToList();
 			bool found = false;
@@ -48,47 +54,92 @@ namespace mvcJJMS.Controllers{
 			}
 		}
 
+		/// <summary>
+		/// Returns the ID of the user currently logged in
+		/// </summary>
+		/// <returns>Unique identifier of the user</returns>
 		public int getUtilizadorID(){
 			return utilizadorID;
 		}
 
+		/// <summary>
+		/// Checks whether there's a registered user with the given email
+		/// </summary>
+		/// <param name="email">Email address to check for</param>
+		/// <returns>TRUE if there is a user registered with the email else FALSE</returns>
 		public bool emailAssociado( string email) {
 			return (_context.Utilizadores.Where(ut => ut.Email.Equals(email)).FirstOrDefault() != default(Utilizador));
 		}
 
-        public string GetUserNome( int idCliente) {
-			Utilizador cliente=_context.Utilizadores.Find(idCliente);
-			return cliente.Nome;
+		/// <summary>
+		/// Retrieves the username associated with the given user ID
+		/// </summary>
+		/// <param name="idUser">Unique identifier of the user</param>
+		/// <returns>Username associated with the identifier</returns>
+        public string GetUserNome( int idUser) {
+			Utilizador user=_context.Utilizadores.Find(idUser);
+			return user.Nome;
 		}
 
-        public byte[] GetUserPassword( int idCliente) {
-			Utilizador cliente =_context.Utilizadores.Find(idCliente);
-			return cliente.Password;
+		/// <summary>
+		///	Retrieves the password associated with the given user ID
+		/// </summary>
+		/// <param name="idUser">Unique identifier of the user</param>
+		/// <returns>Hashed byte array of user password</returns>
+        public byte[] GetUserPassword( int idUser) {
+			Utilizador user =_context.Utilizadores.Find(idUser);
+			return user.Password;
 		}
 
-		public string GetUserEmail( int idCliente) {
-			Utilizador cliente =_context.Utilizadores.Find(idCliente);
-			return cliente.Email;
+		/// <summary>
+		/// Retrieves the email associated with the given user ID
+		/// </summary>
+		/// <param name="idUser">Unique identifier of the user</param>
+		/// <returns>Email associated with the identifier</returns>
+		public string GetUserEmail( int idUser) {
+			Utilizador user =_context.Utilizadores.Find(idUser);
+			return user.Email;
 		}
 
-		public void UpdateNome( int idCliente,  string nomeInput) {
-			Utilizador cliente = _context.Utilizadores.Find(idCliente);
-			cliente.Nome = nomeInput;
+		/// <summary>
+		/// Updates the username associated with the given user ID
+		/// </summary>
+		/// <param name="idUser">Unique identifier of the user</param>
+		/// <param name="nomeInput">New username</param>
+		public void UpdateNome( int idUser,  string nomeInput) {
+			Utilizador user = _context.Utilizadores.Find(idUser);
+			user.Nome = nomeInput;
 			_context.SaveChanges();
 		}
 
-		public void UpdatePassword( int idCliente, string passwordInput) {
-			Utilizador cliente = _context.Utilizadores.Find(idCliente);
-			cliente.Password = hashFunction(passwordInput);
+		/// <summary>
+		/// Updates the password associated with the given user ID
+		/// </summary>
+		/// <param name="idUser">Unique identifier of the user</param>
+		/// <param name="passwordInput">New password</param>
+		public void UpdatePassword( int idUser, string passwordInput) {
+			Utilizador user = _context.Utilizadores.Find(idUser);
+			user.Password = hashFunction(passwordInput);
 			_context.SaveChanges();
 		}
 
-		public void UpdateEmail( int idCliente,  string emailInput) {
-			Utilizador cliente = _context.Utilizadores.Find(idCliente);
+		/// <summary>
+		/// Updates the email associated with the given user ID
+		/// </summary>
+		/// <param name="idUser">Unique identifier of the user</param>
+		/// <param name="emailInput">New email</param>
+		public void UpdateEmail( int idUser,  string emailInput) {
+			Utilizador cliente = _context.Utilizadores.Find(idUser);
 			cliente.Email = emailInput;
 			_context.SaveChanges();
 		}
 
+
+		/// <summary>
+		/// Performas a sha384 hash on the input string
+		/// </summary>
+		/// <param name="input">String to perform the hash on</param>
+		/// <returns>SHA384 hash output</returns>
 		static public byte[] hashFunction(string input){
 			var sha384 = new SHA384CryptoServiceProvider();
 			return sha384.ComputeHash(Encoding.UTF8.GetBytes(input));

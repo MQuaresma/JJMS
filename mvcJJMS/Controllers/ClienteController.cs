@@ -23,6 +23,15 @@ namespace mvcJJMS.Controllers{
 			_uController=uController;
 		}
 
+		/// <summary>
+		/// Checks input and if all is right, save the Cliente to the DataBase
+		/// </summary>
+		/// <param name="user"></param>
+		/// <param name="password"></param>
+		/// <param name="email"></param>
+		/// <param name="morada"></param>
+		/// <param name="telefone"></param>
+		/// <returns>returns the correspondent Action</returns>
 		public ActionResult Registar(string user,string password, string email, string morada, string telefone){
 			if(_uController.emailAssociado(email)){
 				return EmailEmUso();
