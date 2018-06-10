@@ -34,51 +34,84 @@ namespace mvcJJMS.Models{
 		public long CartaoCreditoID;		
 		public CartaoCredito CartaoCredito{get;set;}
 
-		
+		/// <summary>
+		/// Generates order details for certain client
+		/// </summary>
+		/// <param name="cliente">Unique identifier for a client</param>
 		public void gerarFatura(Cliente cliente) {
 			throw new System.Exception("Not implemented");
 		}
 
+		/// <summary>
+		/// Set employee associated with the order
+		/// </summary>
+		/// <param name="funcionario">Unique identifier for a employee</param>
 		public void setFuncionarioID(int funcionario){
 			this.FuncionarioID = funcionario;
 		}
 
+		/// <summary>
+		/// Retrieves employee associated with the order
+		/// </summary>
+		/// <returns>Employee unique identifier</returns>
 		public int getFuncionarioID(){
 			return this.FuncionarioID;
 		}
 
+		/// <summary>
+		/// Set provider associated with the order
+		/// </summary>
+		/// <param name="fornecedor">Unique identifier for a provider</param>
 		public void setFornecedorID(int fornecedor){
 			this.FornecedorID = fornecedor;
 		}
 
+		/// <summary>
+		/// Retrieves provider associated with the order
+		/// </summary>
+		/// <returns>Provider unique identifier</returns>
 		public int getFornecedorID(){
 			return this.FornecedorID;
 		}
 
+		/// <summary>
+		/// Set client associated with the order
+		/// </summary>
+		/// <param name="cliente">Unique identifier for a client</param>
 		public void setClienteID(int cliente){
 			this.ClienteID = cliente;
 		}
 
+		/// <summary>
+		/// Retrieves client associated with the order
+		/// </summary>
+		/// <returns>Client unique identifier</returns>
 		public int getClienteID(){
 			return this.ClienteID;
 		}
 
+		/// <summary>
+		/// Set credit card associated with the order
+		/// </summary>
+		/// <param name="cc">Credit Card to associate with the order</param>
 		public void setCartaoCredito(CartaoCredito cc){
 			this.CartaoCredito = cc;
 		}
 
+		/// <summary>
+		/// Retrieves credit card unique indentifier associated with the order
+		/// </summary>
+		/// <returns>Credit card unique identifier</returns>
 		public long getCartaoCreditoID(){
 			return this.CartaoCreditoID;
 		}
 
+		/// <summary>
+		/// Set evaluation of the order
+		/// </summary>
+		/// <param name="classEstadoEncomenda">Order status rating</param>
 		public void setAvaliacao(int classEstadoEncomenda){
 			this.avaliação=classEstadoEncomenda;
-		}
-
-		public void setPrivate(int fornecedor, int cliente, int funcionario){
-			this.FornecedorID = fornecedor;
-            this.ClienteID = cliente;
-            this.FuncionarioID = funcionario;
 		}
 	}
 }
