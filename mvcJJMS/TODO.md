@@ -25,11 +25,11 @@
 - [ ] Rearrange report so that interface mockups and state machines for the same use case are grouped together
 - [ ] Update logic database model to fit [Table-Per-Hierarchy](https://weblogs.asp.net/manavi/inheritance-mapping-strategies-with-entity-framework-code-first-ctp5-part-1-table-per-hierarchy-tph) structure of EF
 - [x] MenuPrincipalController
-- [ ] UtilizadorController
+- [x] UtilizadorController
 - [ ] MenuClienteController
 - [ ] ClienteController
 - [ ] MenuFuncionarioController
 - [ ] FuncionarioController
-- [ ] FornecedorController
+- [x] FornecedorController
 - [x] EncomendaController
-- [ ] CartaoController
+- [x] CartaoController
