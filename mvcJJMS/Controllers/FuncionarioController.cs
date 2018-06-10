@@ -3,6 +3,8 @@ using System;
 using System.Net.Mail;
 using mvcJJMS.Data;
 using mvcJJMS.Models;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace mvcJJMS.Controllers{
     public class FuncionarioController : Controller{
@@ -23,7 +25,28 @@ namespace mvcJJMS.Controllers{
 		}
 
         public int DelegarFuncionario( int idEncomenda,  string destino) {
-			throw new System.Exception("Not implemented");
+			int idResp = -1;
+			int nEncResp = 0;
+			int nRespT=Int32.MaxValue;
+			int dZona = GetZona(destino);
+			List<Utilizador> utilizadores = _context.Utilizadores.ToList();
+
+			foreach(Utilizador utilizador in utilizadores){
+				if(utilizador is Funcionario){
+					Funcionario func = (Funcionario)utilizador;
+					int fZona = func.zonaTrabalho;
+					nEncResp = func.nroEnc;
+
+					if(idResp==-1 || fZona==dZona && nRespT>nEncResp){
+						idResp = func.UtilizadorID;
+						nRespT = nEncResp;
+					}
+				}
+			}
+
+			Encomenda enc = _context.Encomendas.Find(idEncomenda);
+			enc.setFuncionarioID(idResp);
+			return idResp;
 		}
 
         public void EnviarEmail( int idFunc, int idEncomenda) {
