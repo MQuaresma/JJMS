@@ -4,7 +4,7 @@
 - [ ] Use common error views for different use cases
 - [ ] Check if all interfaces are mockup compliant
 - [ ] Delegate task to employee
-- [ ] FornecedorController: IdForn
+- [x] FornecedorController: IdForn
 - [ ] FuncionarioController: GetZona
 - [ ] MenuClienteController: ConsultarHistorico
 - [ ] MenuFuncionarioController: CalcularRota e ConsultarRota
