@@ -27,9 +27,9 @@
 - [x] MenuPrincipalController
 - [x] UtilizadorController
 - [ ] MenuClienteController
-- [ ] ClienteController
+- [x] ClienteController
 - [x] MenuFuncionarioController
-- [ ] FuncionarioController
+- [x] FuncionarioController
 - [x] FornecedorController
 - [x] EncomendaController
 - [x] CartaoController
