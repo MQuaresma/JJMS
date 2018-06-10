@@ -1,18 +1,18 @@
 using System.Collections.Generic;
+using System.Linq;
 
 namespace mvcJJMS.Models{
 	public class Cliente : Utilizador  {
-		public string morada{get;set;}	
-		public string telefone{get;set;}
-		public bool bloqueado{get;set;}
-
-		public ICollection<Encomenda> Encomendas{get;set;}
+		public string Morada{get;set;}	
+		public string Telefone{get;set;}
+		public bool Bloqueado{get;set;}
+		public ICollection<Encomenda> Encomendas { get; set; }
 
 		public bool TemEncomenda(int idEncomenda) {
-			throw new System.Exception("Not implemented");
+			return this.Encomendas.Where(e=>e.EncomendaID==idEncomenda).FirstOrDefault()!=default(Encomenda);
 		}
 		public void Bloqueia() {
-			this.bloqueado = true;
+			this.Bloqueado = true;
 		}
 
 		public int getUtilizadorID(){

@@ -6,7 +6,7 @@ namespace mvcJJMS.Models{
 		public string nome{get;set;}
 		public string morada{get;set;}
 
-		private ICollection<Encomenda> encomendas{get;set;}
+		public ICollection<Encomenda> Encomendas{get;set;}
 	
 		public void setNome(string nome){
 			this.nome=nome;

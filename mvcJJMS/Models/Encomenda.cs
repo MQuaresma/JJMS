@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations.Schema;
 using FILE = System.String;
 using Date = System.String;
 using Time = System.String;
@@ -13,62 +14,65 @@ namespace mvcJJMS.Models{
 		public Date dia{get;set;}
 		public Time hora{get;set;}
 		
-		private int FornecedorID;
-		private int ClienteID;
-		private int FuncionarioID;
-		private int CartaoCreditoID;
+		[ForeignKey("Fornecedor")]
+		public int FornecedorID;
+		public Fornecedor Fornecedor{get;set;}
 
-		private Cliente Cliente{get;set;}
-		private Funcionario Funcionario{get;set;}
-		private Fornecedor Fornecedor{get;set;}
-		private CartaoCredito CartaoCredito;
+		[ForeignKey("Cliente")]
+		public int ClienteID;
+		public Cliente Cliente{get;set;}
+		
+		[ForeignKey("Funcionario")]
+		public int FuncionarioID;
+		public Funcionario Funcionario{get;set;}
+		
+		public int CartaoCreditoID;		
+		public CartaoCredito CartaoCredito;
 
-		public void GerarFatura(Cliente cliente) {
+		public void gerarFatura(Cliente cliente) {
 			throw new System.Exception("Not implemented");
-		}
-
-		public void setClienteID(int cliente){
-			this.ClienteID = cliente;
 		}
 
 		public void setFuncionarioID(int funcionario){
 			this.FuncionarioID = funcionario;
 		}
 
+		public int getFuncionarioID(){
+			return this.FuncionarioID;
+		}
+
 		public void setFornecedorID(int fornecedor){
 			this.FornecedorID = fornecedor;
 		}
 
-		public int GetIdFornecedor(){
-			return this.FornecedorID;
-		} 
 		public int getFornecedorID(){
 			return this.FornecedorID;
+		}
+
+		public void setClienteID(int cliente){
+			this.ClienteID = cliente;
 		}
 
 		public int getClienteID(){
 			return this.ClienteID;
 		}
 
+		public void setCartaoCredito(CartaoCredito cc){
+			this.CartaoCredito = cc;
+		}
+
 		public int getCartaoCreditoID(){
 			return this.CartaoCreditoID;
 		}
 
-		public void setCartaoCredito(CartaoCredito cc){
-			this.CartaoCredito = cc;
+		public void setAvaliacao(int classEstadoEncomenda){
+			this.avaliação=classEstadoEncomenda;
 		}
 
 		public void setPrivate(int fornecedor, int cliente, int funcionario){
 			this.FornecedorID = fornecedor;
             this.ClienteID = cliente;
             this.FuncionarioID = funcionario;
-		}
-		public int getFuncionarioID(){
-			return this.FuncionarioID;
-		}
-
-		public void setAvaliacao(int classEstadoEncomenda){
-			this.avaliação=classEstadoEncomenda;
 		}
 	}
 }

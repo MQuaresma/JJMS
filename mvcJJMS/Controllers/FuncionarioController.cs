@@ -34,8 +34,8 @@ namespace mvcJJMS.Controllers{
 			foreach(Utilizador utilizador in utilizadores){
 				if(utilizador is Funcionario){
 					Funcionario func = (Funcionario)utilizador;
-					int fZona = func.zonaTrabalho;
-					nEncResp = func.nroEnc;
+					int fZona = func.ZonaTrabalho;
+					nEncResp = func.NroEnc;
 
 					if(idResp==-1 || fZona==dZona && nRespT>nEncResp){
 						idResp = func.UtilizadorID;
@@ -53,7 +53,7 @@ namespace mvcJJMS.Controllers{
 			string emailFunc = this._uController.GetUserEmail(idFunc);
 			string st = this._eController.getEstadoEncomendaS(idEncomenda);
 			string origem = this._eController.getLocalizacaoEncomenda(idEncomenda);
-			int idForn = _context.Encomendas.Find(idEncomenda).GetIdFornecedor();
+			int idForn = _context.Encomendas.Find(idEncomenda).getFornecedorID();
 			string destino = null;
 
 			if(st.Equals("com o fornecedor")) destino=this._fController.GetMoradaForn(idForn);

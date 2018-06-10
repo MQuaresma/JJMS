@@ -78,24 +78,24 @@ namespace mvcJJMS.Controllers{
 
         public string GetClienteMorada( int idCliente) {
 			Cliente cliente = _context.Clientes.Find(idCliente);
-			return cliente.morada;
+			return cliente.Morada;
 		}
 
         public string GetClienteTelefone( int idCliente) {
 			Cliente cliente = _context.Clientes.Find(idCliente);
-			return cliente.telefone;
+			return cliente.Telefone;
 		}
 
         public void UpdateMorada( int idCliente, string moradaInput) {
 			Cliente cliente = _context.Clientes.Find(idCliente);
-			cliente.morada = moradaInput;
+			cliente.Morada = moradaInput;
 			_context.SaveChanges();
 
 		}
 
 		public void UpdateTelefone( int idCliente,  string telefoneInput) {
 			Cliente cliente = _context.Clientes.Find(idCliente);
-			cliente.telefone = telefoneInput;
+			cliente.Telefone = telefoneInput;
 			_context.SaveChanges();
 		}
 
@@ -120,7 +120,7 @@ namespace mvcJJMS.Controllers{
 		public void GerarFatura( int idCliente,  int idEncomenda) {
 			Cliente cliente = _context.Clientes.Find(idCliente);
 			Encomenda enc = _context.Encomendas.Find(idEncomenda);
-			enc.GerarFatura(cliente);
+			enc.gerarFatura(cliente);
 		}
 
         public FILE GetFatura( int idCliente,  int idEncomenda) {
@@ -134,7 +134,7 @@ namespace mvcJJMS.Controllers{
 		}
 
         public async Task<List<Encomenda>> GetHistoricoEnc( int idCliente) {
-			return await _context.Encomendas.Where(e=>e.getClienteID()==idCliente).ToListAsync();
+			return await _context.Clientes.Find(idCliente).Encomendas.AsQueryable().ToListAsync();
 		}
 
         public bool ExisteEncomendaCliente( int idCliente,  int idEncomenda) {
@@ -144,7 +144,7 @@ namespace mvcJJMS.Controllers{
 
         public bool EstaBloqueado( int idCliente) {
 			Cliente cliente = _context.Clientes.Find(idCliente);
-			return cliente.bloqueado;
+			return cliente.Bloqueado;
 		}
 
 		public ViewResult EmailEmUso(){

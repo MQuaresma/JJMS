@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+
 namespace mvcJJMS.Models{
 	public abstract class Utilizador {
 		public int UtilizadorID{get;set;}
