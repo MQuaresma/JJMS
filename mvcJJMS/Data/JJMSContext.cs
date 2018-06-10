@@ -55,7 +55,7 @@ namespace mvcJJMS.Data{
         }
 
         public Funcionario newFuncionario(string nome, byte[] passwordH, string email, int zonaTrabalho){
-            return new Funcionario{Nome=nome,Password=passwordH,Email=email,ZonaTrabalho=zonaTrabalho,NroEnc=0};
+            return new Funcionario{Nome=nome,Password=passwordH,Email=email,ZonaTrabalho=zonaTrabalho,NroEnc=0,Avaliação=0,NumAvaliações=0};
         }
 
         public CartaoCredito newCartaoCredito(long numCartaoCredito, int mes, int ano, int cvv, string pais){

@@ -52,7 +52,12 @@
                             @Html.DisplayFor(modelItem => item.fatura)
                         </th>
                         <th>
-                            @Html.DisplayFor(modelItem => item.avaliação)
+                            @if(item.avaliação==0){
+                                <text>NA</text>;
+                            }
+                            else{ 
+                                @Html.DisplayFor(modelItem => item.avaliação)
+                            }
                         </th>
                         <th>
                             @Html.DisplayFor(modelItem => item.custo)

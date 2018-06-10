@@ -1,4 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 using mvcJJMS.Data;
 using mvcJJMS.Models;
 using System.Collections.Generic;
@@ -179,7 +181,8 @@ namespace mvcJJMS.Controllers{
             // Remove trailling forward slash
             idEncomendaS=idEncomendaS.Remove(idEncomendaS.Length-1);
             int idEncomenda=int.Parse(idEncomendaS);
-            avalia(idEncomenda,classServicoEntrega,classEstadoEncomenda);
+            
+            this.avalia(idEncomenda,classServicoEntrega,classEstadoEncomenda);
             
             return Sucesso();
         }
@@ -194,6 +197,7 @@ namespace mvcJJMS.Controllers{
             Funcionario funcionario= _fController.getFuncionario(idFun);
             enc.setAvaliacao(classEstadoEncomenda);
             funcionario.AtualizaAvaliacao(classServicoEntrega);
+            _context.SaveChanges();
 		}
 
         public ViewResult ClassificaoesInvalidas(){
@@ -214,9 +218,9 @@ namespace mvcJJMS.Controllers{
             return View("~/Views/Shared/SimpleMsg.cshtml");
         }
 
-        public ViewResult ConsultarHistorico(){
+        public async Task<IActionResult> ConsultarHistorico(){
             ViewBag.Title="Consultar Histórico";
-            return View();
+            return View("~/Views/ConsultarHistorico/Index.cshtml",await _context.Encomendas.Where(e => e.ClienteID==_uController.getUtilizadorID()).ToListAsync());
         }
 
         public ViewResult RequisitarEncomenda(){

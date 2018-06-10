@@ -6,7 +6,7 @@
 - [ ] Delegate task to employee
 - [x] FornecedorController: IdForn
 - [ ] FuncionarioController: GetZona
-- [ ] MenuClienteController: ConsultarHistorico
+- [x] MenuClienteController: ConsultarHistorico
 - [ ] MenuFuncionarioController: CalcularRota e ConsultarRota
 - [ ] Model: CartaoCredito: Pagamento
 - [x] Model: Cliente: TemEncomenda
