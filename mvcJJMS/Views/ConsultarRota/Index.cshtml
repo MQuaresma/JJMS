@@ -4,9 +4,16 @@
         <title>@ViewBag.Title</title>
     </head>
     <body>
-        <h1>@ViewBag.Title</h1>
-        <ol>
-            TODO
-        </ol> 
+       <h1>@ViewBag.Title</h1>
+        @using (Html.BeginForm("CalcularRotaRes", "MenuFuncionario", FormMethod.Post))
+        {
+            @Html.ValidationSummary(true)
+            <fieldset>
+                Id Encomenda: <input type="text" name="idEncS" id="idEncS" required />
+                <br>
+                Localização atual: <input type="text" name="origem" id="origem" required />
+            </fieldset>
+            <input type="submit" value="Consultar" />
+        } 
     </body>
 </html>
