@@ -30,10 +30,21 @@ namespace mvcJJMS.Controllers{
             return InformacaoEncomenda(idEncomenda, localizacao, estado);
         }
 
+
+		/// <summary>
+		/// Checks whether there's an order with the given identifier
+		/// </summary>
+		/// <param name="idEncomenda">Unique identifier for a single order</param>
+		/// <returns>TRUE if there is an order with the identifier else FALSE</returns>
 		public bool existeEncomenda(int idEncomenda) {
 			return _context.Encomendas.Find(idEncomenda)!=null;
         }
 
+		/// <summary>
+		/// Retrieves the current location of the order
+		/// </summary>
+		/// <param name="idEncomenda">Unique identifier for a single order</param>
+		/// <returns>Current location of the order</returns>
         public string getLocalizacaoEncomenda( int idEncomenda) {
 			Encomenda encomenda = _context.Encomendas.Find(idEncomenda);
 			int estado = encomenda.estado;
@@ -50,14 +61,21 @@ namespace mvcJJMS.Controllers{
 			}
 		}
 		
+		/// <summary>
+		/// Return the current status of the order in Integer format
+		/// </summary>
+		/// <param name="idEncomenda">Unique identifier for a single order</param>
+		/// <returns></returns>
 		public int getEstadoEncomendaI( int idEncomenda) {
 			Encomenda enc = _context.Encomendas.Find(idEncomenda);
 			return  enc.estado;
 		}
 
 		/// <summary>
-		/// Return the current status of the order in a String format
+		/// Same as getEstadoEncomendaI but returns a (descriptive) String status
 		/// </summary>
+		/// <param name="idEncomenda">Unique identifier for a single order</param>
+		/// <returns></returns>
 		public string getEstadoEncomendaS( int idEncomenda) {
 			Encomenda enc = _context.Encomendas.Find(idEncomenda);
 			int estado = enc.estado;
@@ -73,22 +91,50 @@ namespace mvcJJMS.Controllers{
 			}
 		}
 
+		/// <summary>
+		/// Updates the cost associated with a given order
+		/// </summary>
+		/// <param name="idEncomenda">Unique identifier for a single order</param>
+		/// <param name="custoInput">Cost of the order</param>
         public void UpdateCustoEnc( int idEncomenda,  float custoInput) {
 			Encomenda enc = _context.Encomendas.Find(idEncomenda);
 			enc.custo += custoInput;
 			_context.SaveChanges();
 		}
 
+		/// <summary>
+		/// Changes the status of an order
+		/// </summary>
+		/// <param name="idEncomenda">Unique identifier for a single order</param>
 		public void UpdateEstadoEnc( int idEncomenda) {
 			Encomenda enc = _context.Encomendas.Find(idEncomenda);
 			if(enc.estado>0 && enc.estado<4) enc.estado++;
 			_context.SaveChanges();
 		}
 
+		/// <summary>
+		/// Retrieves the employee currently responsible for the order
+		/// </summary>
+		/// <param name="idEncomenda">Unique identifier for a single order</param>
+		/// <returns>Unique identifier of the employee</returns>
         public int GetFuncionarioResp( int idEncomenda) {
 			Encomenda enc = _context.Encomendas.Find(idEncomenda);
 			return enc.getFuncionarioID();
 		}
+
+		/// <summary>
+		/// Registers a new order on the database
+		/// </summary>
+		/// <param name="idCliente">Unique identifier of the client</param>
+		/// <param name="fornecedor"></param>
+		/// <param name="morada">Destination of the order</param>
+		/// <param name="dia">Day of delivery</param>
+		/// <param name="hora">Time of delivery</param>
+		/// <param name="numCartCredito">Credit card number for payment</param>
+		/// <param name="mes">Month of expiration of the credit card</param>
+		/// <param name="ano">Year of expiration of the credit card</param>
+		/// <param name="cvv">Security code of credit card</param>
+		/// <param name="pais">Country of credit card</param>
         public void SetEncomenda(int idCliente,string fornecedor,string morada,Date dia,Time hora,long numCartCredito,int mes,int ano,int cvv,string pais) {
 			Encomenda nEncomenda = _context.newEncomenda(1,morada,dia,hora,_fController.IdForn(fornecedor),idCliente,1,numCartCredito);
 			CartaoCredito nCartaoCredito = _context.newCartaoCredito(numCartCredito,mes,ano,cvv,pais);
@@ -97,11 +143,21 @@ namespace mvcJJMS.Controllers{
 			_context.SaveChanges();
 		}
 
+		/// <summary>
+		/// Retrieves the destination address of the order
+		/// </summary>
+		/// <param name="idEncomenda">Unique identifier for a single order</param>
+		/// <returns>Destination address</returns>
         public string GetDestinoEnc( int idEncomenda) {
 			Encomenda enc = _context.Encomendas.Find(idEncomenda);
 			return enc.destino;
 		}
 
+		/// <summary>
+		/// Checks whether an order has been delivered
+		/// </summary>
+		/// <param name="idEncomenda">Unique identifier for a single order</param>
+		/// <returns>TRUE if delivered else FALSE</returns>
         public bool EncomendaEntregue( int idEncomenda) {
 			Encomenda enc = _context.Encomendas.Find(idEncomenda);
 			bool ret = false;
@@ -111,15 +167,29 @@ namespace mvcJJMS.Controllers{
 			return ret; 
 		}
 
+		/// <summary>
+		/// Retrieves the order associated with a given ID
+		/// </summary>
+		/// <param name="idEncomenda">Unique identifier for a single order</param>
+		/// <returns>Order corresponding to the ID</returns>
 		public Encomenda getEncomenda(int idEncomenda){
 			return _context.Encomendas.Find(idEncomenda);
 		}
 
+		/// <summary>
+		/// Retrieves the unique identifier of the order provider
+		/// </summary>
+		/// <param name="idEncomenda">Unique identifier for a single order</param>
+		/// <returns>Unique identifier of the order provider</returns>
 		public int getIdForn(int idEncomenda){
 			Encomenda enc = _context.Encomendas.Find(idEncomenda);
 			return enc.getFornecedorID();
 		}
 
+		/// <summary>
+		/// Returns the Distribution Center address
+		/// </summary>
+		/// <returns>Distribuition Center address</returns>
 		public string getMoradaCD(){
 			return this.moradaCD;
 		}
