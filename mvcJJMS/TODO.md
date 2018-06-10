@@ -28,8 +28,8 @@
 - [ ] UtilizadorController
 - [ ] MenuClienteController
 - [ ] ClienteController
-- [ ] MenuFuncionarioController
+- [x] MenuFuncionarioController
 - [ ] FuncionarioController
-- [ ] FornecedorController
+- [x] FornecedorController
 - [x] EncomendaController
-- [ ] CartaoController
+- [x] CartaoController
