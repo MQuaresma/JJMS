@@ -1,7 +1,7 @@
 # TODO
 
 ## Code/Implementation
-- [ ] Use common error views for different use cases
+- [x] Use common error views for different use cases
 - [ ] Check if all interfaces are mockup compliant
 - [ ] Delegate task to employee
 - [x] FornecedorController: IdForn

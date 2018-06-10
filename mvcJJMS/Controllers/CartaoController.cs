@@ -13,15 +13,15 @@ namespace mvcJJMS.Controllers{
 			_context=context;
 		}
 
-        public bool Luhn_check( int numCartCredito) {
+        public bool Luhn_check( long numCartCredito) {
 			string cc_number = numCartCredito.ToString();
-			int checksum = 0;
+			long checksum = 0;
 			int j = 1;
 			int i = cc_number.Length-1;
-			int calc;
+			long calc;
 
 			while(i>=0){
-				calc = Convert.ToInt32(cc_number.Substring(i,1))*j;
+				calc = Convert.ToInt64(cc_number.Substring(i,1))*j;
 				
 				if(calc>9){
 					checksum++;
@@ -36,11 +36,11 @@ namespace mvcJJMS.Controllers{
 			return true;
 		}
 
-        public bool CartaoValido( int numCartCredito,  int mes,  int ano,  int cvv,  string pais) {
+        public bool CartaoValido( long numCartCredito,  int mes,  int ano,  int cvv,  string pais) {
 			if(Luhn_check(numCartCredito)==false) return false;
 			
 			string cvvstring = cvv.ToString();
-			if(cvvstring.Length!=3 || cvvstring.Length!=4) return false;
+			if(cvvstring.Length!=3 && cvvstring.Length!=4) return false;
 
 			DateTime data = DateTime.Today;
 			int anoatual = data.Year;
