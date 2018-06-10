@@ -33,8 +33,14 @@ namespace mvcJJMS.Data{
                         .WithMany(m=>m.Encomendas)
                         .OnDelete(DeleteBehavior.Restrict);
 
-             modelBuilder.Entity<Encomenda>()
+            modelBuilder.Entity<Encomenda>()
                         .HasOne(m=>m.Fornecedor)
+                        .WithMany(m=>m.Encomendas)
+                        .OnDelete(DeleteBehavior.Restrict)
+                        .IsRequired();
+
+            modelBuilder.Entity<Encomenda>()
+                        .HasOne(m=>m.CartaoCredito)
                         .WithMany(m=>m.Encomendas)
                         .OnDelete(DeleteBehavior.Restrict)
                         .IsRequired();
@@ -52,12 +58,12 @@ namespace mvcJJMS.Data{
             return new Funcionario{Nome=nome,Password=passwordH,Email=email,ZonaTrabalho=zonaTrabalho,NroEnc=0};
         }
 
-        public CartaoCredito newCartaoCredito(int mes, int ano, int cvv, string pais){
-            return new CartaoCredito{mes=mes,ano=ano,cvv=cvv,pais=pais};
+        public CartaoCredito newCartaoCredito(long numCartaoCredito, int mes, int ano, int cvv, string pais){
+            return new CartaoCredito{CartaoCreditoID=numCartaoCredito,mes=mes,ano=ano,cvv=cvv,pais=pais};
         }
 
-        public Encomenda newEncomenda(int estado, string destino, Date dia, Time hora, int fornecedor, int cliente, int funcionario){
-            return new Encomenda{FornecedorID=fornecedor,ClienteID=cliente,FuncionarioID=funcionario,
+        public Encomenda newEncomenda(int estado, string destino, Date dia, Time hora, int fornecedor, int cliente, int funcionario, long cc){
+            return new Encomenda{FornecedorID=fornecedor,ClienteID=cliente,FuncionarioID=funcionario,CartaoCreditoID=cc,
                                 estado=estado,destino=destino,fatura=null,avaliação=0,custo=0,dia=dia,hora=hora};
         }
     }

@@ -42,11 +42,19 @@ namespace mvcJJMS.Data{
             foreach(Cliente c in clientes) context.Utilizadores.Add(c);
             context.SaveChanges();
 
+            var cartoesc = new CartaoCredito[]{
+                context.newCartaoCredito(3450126131722243,9,2020,295,"Portugal"),
+                context.newCartaoCredito(5161227325730052,7,2019,229,"Russia"),
+                context.newCartaoCredito(3459465147444819,10,2022,537,"US"),
+            };
+            foreach(CartaoCredito cc in cartoesc) context.Cartoes.Add(cc);
+            context.SaveChanges();
+
             var encomendas= new Encomenda[]{
-                context.newEncomenda(1,"Quinta da Rua","2018-05-28","05:45",1,6,1),
-                context.newEncomenda(2,"Quinta da Conde","2018-05-30","02:00",2,7,2),
-                context.newEncomenda(3,"Rua do Canto","2018-06-07","15:30",3,8,3),
-                context.newEncomenda(4,"Rua do Cais","2018-06-02","16:10",4,9,4),            
+                context.newEncomenda(1,"Quinta da Rua","2018-05-28","05:45",1,6,1,3450126131722243),
+                context.newEncomenda(2,"Quinta da Conde","2018-05-30","02:00",2,7,2,5161227325730052),
+                context.newEncomenda(3,"Rua do Canto","2018-06-07","15:30",3,8,3,3459465147444819),
+                context.newEncomenda(4,"Rua do Cais","2018-06-02","16:10",4,9,4,3450126131722243),            
             };
             foreach(Encomenda e in encomendas) context.Encomendas.Add(e);
             context.SaveChanges();
