@@ -14,21 +14,27 @@ namespace mvcJJMS.Models{
 		public Date dia{get;set;}
 		public Time hora{get;set;}
 		
+		
 		[ForeignKey("Fornecedor")]
 		public int FornecedorID;
 		public Fornecedor Fornecedor{get;set;}
 
+		
 		[ForeignKey("Cliente")]
 		public int ClienteID;
 		public Cliente Cliente{get;set;}
+		
 		
 		[ForeignKey("Funcionario")]
 		public int FuncionarioID;
 		public Funcionario Funcionario{get;set;}
 		
-		public int CartaoCreditoID;		
-		public CartaoCredito CartaoCredito;
+		
+		[ForeignKey("CartaoCredito")]
+		public long CartaoCreditoID;		
+		public CartaoCredito CartaoCredito{get;set;}
 
+		
 		public void gerarFatura(Cliente cliente) {
 			throw new System.Exception("Not implemented");
 		}
@@ -61,7 +67,7 @@ namespace mvcJJMS.Models{
 			this.CartaoCredito = cc;
 		}
 
-		public int getCartaoCreditoID(){
+		public long getCartaoCreditoID(){
 			return this.CartaoCreditoID;
 		}
 

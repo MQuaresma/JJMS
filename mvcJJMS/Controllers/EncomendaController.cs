@@ -90,26 +90,9 @@ namespace mvcJJMS.Controllers{
 			return enc.getFuncionarioID();
 		}
         public void SetEncomenda(int idCliente,string fornecedor,string morada,Date dia,Time hora,long numCartCredito,int mes,int ano,int cvv,string pais) {
-			Encomenda nEncomenda = new Encomenda();
-            nEncomenda.estado = 1;
-            nEncomenda.destino = morada;
-            nEncomenda.fatura = null;
-            nEncomenda.avaliação = 0;
-            nEncomenda.custo = 0;
-            nEncomenda.dia = dia;
-            nEncomenda.hora = hora;
-            nEncomenda.setFornecedorID(_fController.IdForn(fornecedor));
-            nEncomenda.setClienteID(idCliente);
-            nEncomenda.setFuncionarioID(1);
-
-			CartaoCredito nCartaoCredito = new CartaoCredito();
-			nCartaoCredito.CartaoCreditoID = numCartCredito;
-            nCartaoCredito.mes = mes;
-            nCartaoCredito.ano = ano;
-            nCartaoCredito.cvv = cvv;
-            nCartaoCredito.pais = pais;
-
-			nEncomenda.setCartaoCredito(nCartaoCredito);
+			Encomenda nEncomenda = _context.newEncomenda(1,morada,dia,hora,_fController.IdForn(fornecedor),idCliente,1,numCartCredito);
+			CartaoCredito nCartaoCredito = _context.newCartaoCredito(numCartCredito,mes,ano,cvv,pais);
+			_context.Cartoes.Add(nCartaoCredito);
 			_context.Encomendas.Add(nEncomenda);
 			_context.SaveChanges();
 		}
