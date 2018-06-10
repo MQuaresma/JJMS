@@ -7,7 +7,8 @@
 - [x] FornecedorController: IdForn
 - [ ] FuncionarioController: GetZona
 - [ ] MenuClienteController: ConsultarHistorico
-- [ ] MenuFuncionarioController: CalcularRota e ConsultarRota
+- [x] MenuFuncionarioController: CalcularRota e ConsultarRota
+- [ ] MenuFuncionarioController: ViewResult CalcularRota( string origem,  string destino)
 - [ ] Model: CartaoCredito: Pagamento
 - [x] Model: Cliente: TemEncomenda
 - [ ] Model: Encomenda: GerarFatura

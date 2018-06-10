@@ -120,6 +120,10 @@ namespace mvcJJMS.Controllers{
 			return enc.getFornecedorID();
 		}
 
+		public string getMoradaCD(){
+			return this.moradaCD;
+		}
+
 		public ViewResult CodigoInexistente(){
 			ViewBag.Title = "Código Inexistente";
 			ViewBag.Msg = "Não existe a encomenda com o código inserido"; 

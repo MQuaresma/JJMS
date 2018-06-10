@@ -12,12 +12,14 @@ namespace mvcJJMS.Controllers{
         private readonly FuncionarioController _fController;
         private readonly ClienteController _cController;
         private readonly FornecedorController _fornController;
-        public MenuFuncionarioController(JJMSContext context, EncomendaController eController, FuncionarioController fController, ClienteController cController, FornecedorController fornController){
+        private readonly UtilizadorController _uController;
+        public MenuFuncionarioController(JJMSContext context, EncomendaController eController, FuncionarioController fController, ClienteController cController, FornecedorController fornController, UtilizadorController uController){
 			this._context=context;
             this._eController=eController;
             this._fController=fController;
             this._cController=cController;
             this._fornController=fornController;
+            this._uController=uController;
 		}
 
         public ViewResult Index(){
@@ -33,14 +35,59 @@ namespace mvcJJMS.Controllers{
             return View(); 
         }
 
-        public int CalcularRota( string origem,  string destino) {
+        public ViewResult CalcularRota( string origem,  string destino) {
 			throw new System.Exception("Not implemented");
 		}
 
+        public ViewResult CalcularRota(int idEncomenda, string origem){
+            int stEnc = this._eController.getEstadoEncomendaI(idEncomenda);
+            string dest=null;
+
+            if(stEnc==1){
+                int idForn = this._eController.getIdForn(idEncomenda);
+                dest = this._fornController.GetMoradaForn(idForn);
+            }else if(stEnc==2) dest = this._eController.getMoradaCD();
+            else if(stEnc==3) dest = this._eController.GetDestinoEnc(idEncomenda);
+            
+            return CalcularRota(origem,dest);
+        }
+
         public ViewResult ConsultarRota(){
             ViewBag.Title="Consultar Rota";
-            return View(); 
+            return View("~/View/ConsultarRota/Index.cshtml"); 
         }
+
+        public ActionResult ConsultarRotaRes(string idEncS, string origem){
+            int idEnc = Convert.ToInt32(idEncS);
+            bool existeEnc = this._eController.existeEncomenda(idEnc);
+            bool ent = this._eController.EncomendaEntregue(idEnc);
+            
+            if(!existeEnc || ent) return EncomendaInexistente();
+
+            int idF = this._eController.GetFuncionarioResp(idEnc);
+            if(idF==-1 || this._uController.getUtilizadorID()!=idF) return EncomendaInvalida();
+
+            return CalcularRota(idEnc,origem);
+        }
+
+        public ViewResult EncomendaInexistente(){
+            ViewBag.Title="Encomenda Inexistente";
+            ViewBag.Msg = "Encomenda não existe.";
+            ViewBag.Func = "Index";
+            ViewBag.File = "MenuFuncionario";
+            ViewBag.ButtonName = "OK";
+            return View("~/Views/Shared/SimpleMsg.cshtml");
+        }
+
+        public ViewResult EncomendaInvalida(){
+            ViewBag.Title="Encomenda Inválida";
+            ViewBag.Msg = "Encomenda delegada a outro funcionário.";
+            ViewBag.Func = "Index";
+            ViewBag.File = "MenuFuncionario";
+            ViewBag.ButtonName = "OK";
+            return View("~/Views/Shared/SimpleMsg.cshtml");
+        }
+
         public ViewResult AtualizarEstado(){
             ViewBag.Title="Código da Encomenda";
             return View("~/Views/AtualizarEstado/Index.cshtml"); 
