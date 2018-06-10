@@ -13,7 +13,19 @@ namespace mvcJJMS.Controllers{
 		}
 
         public int IdForn( string nomeForn) {
-			throw new System.Exception("Not implemented");
+			bool found = false;
+			int id = -1;
+			string nome;
+			foreach (Fornecedor f in _context.Fornecedores){
+				if (!found){
+					nome = f.nome;
+					if (nomeForn.Equals(nome)){
+						found = true;
+						id = f.FornecedorID;
+					}
+				}
+			}
+			return id;
 		}
 
         public string GetMoradaForn(int idForn) {

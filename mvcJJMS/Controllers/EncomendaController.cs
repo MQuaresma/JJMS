@@ -15,11 +15,6 @@ namespace mvcJJMS.Controllers{
 		private readonly UtilizadorController _uController;
 		private readonly CartaoController _caController;
 
-		private int encIdForn;
-		private string encMorada;
-		private Date encDia;
-		private Time encHora;
-
 		public EncomendaController(JJMSContext context, FornecedorController fController, UtilizadorController uController, CartaoController caController){
 			_context=context;
 			_fController=fController;
@@ -93,17 +88,17 @@ namespace mvcJJMS.Controllers{
         public int GetFuncionarioResp( int idEncomenda) {
 			throw new System.Exception("Not implemented");
 		}
-        public void SetEncomenda(int numCartCredito,int mes,int ano,int cvv,string pais) {
+        public void SetEncomenda(int idCliente,string fornecedor,string morada,Date dia,Time hora,int numCartCredito,int mes,int ano,int cvv,string pais) {
 			Encomenda nEncomenda = new Encomenda();
             nEncomenda.estado = 1;
-            nEncomenda.destino = encMorada;
+            nEncomenda.destino = morada;
             nEncomenda.fatura = null;
             nEncomenda.avaliação = 0;
             nEncomenda.custo = 0;
-            nEncomenda.dia = encDia;
-            nEncomenda.hora = encHora;
-            nEncomenda.setFornecedorID(encIdForn);
-            nEncomenda.setClienteID(1);
+            nEncomenda.dia = dia;
+            nEncomenda.hora = hora;
+            nEncomenda.setFornecedorID(_fController.IdForn(fornecedor));
+            nEncomenda.setClienteID(idCliente);
             nEncomenda.setFuncionarioID(1);
 
 			CartaoCredito nCartaoCredito = new CartaoCredito();
@@ -115,6 +110,7 @@ namespace mvcJJMS.Controllers{
 
 			nEncomenda.setCartaoCredito(nCartaoCredito);
 			_context.Encomendas.Add(nEncomenda);
+			_context.SaveChanges();
 		}
 
         public string GetDestinoEnc( int idEncomenda) {
@@ -147,25 +143,25 @@ namespace mvcJJMS.Controllers{
 			return View("~/Views/TrackingEncomenda/InformacaoEncomenda.cshtml"); 
 		}
 
-		public ActionResult RequisitarEncomenda(string fornecedor,string morada, Date dia, Time hora){
+		public ActionResult RequisitarEncomenda(string fornecedor, string morada, Date dia, Time hora){
 			int idForn = _fController.IdForn(fornecedor);
 			if (idForn == -1) return FornecedorInvalido();
-			encIdForn = idForn;
-			encMorada = morada;
-			encDia = dia;
-			encHora = hora;
-			return InserirDadosPagamento();
+			return InserirDadosPagamento(fornecedor,morada,dia,hora);
 		}
 
-		public ViewResult InserirDadosPagamento(){
+		public ViewResult InserirDadosPagamento(string fornecedor, string morada, Date dia, Time hora){
 			ViewBag.Title = "Dados de Pagamento";
+			ViewBag.fornecedor = fornecedor;
+			ViewBag.morada = morada;
+			ViewBag.dia = dia;
+			ViewBag.hora = hora;
 			return View("~/Views/RequisitarEncomenda/InserirDadosPagamento.cshtml"); 
 		}
 
-		public ViewResult ProcDadosPagamento(int ncc,int mes,int ano,int cvv,string pais){
+		public ViewResult ProcDadosPagamento(string fornecedor,string morada,Date dia,Time hora,int ncc,int mes,int ano,int cvv,string pais){
 			bool cartao = _caController.CartaoValido(ncc,mes,ano,cvv,pais);
 			if (cartao == false) return DadosPagamentoInvalidos();
-			this.SetEncomenda(ncc,mes,ano,cvv,pais);
+			this.SetEncomenda(_uController.getUtilizadorID(),fornecedor,morada,dia,hora,ncc,mes,ano,cvv,pais);
 			return Sucesso();
 		}
 
