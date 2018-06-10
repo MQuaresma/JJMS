@@ -22,6 +22,11 @@ namespace mvcJJMS.Controllers{
 			_caController=caController;
 		}
 
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <param name="idEncomenda"></param>
+		/// <returns></returns>
         public ActionResult TrackingEncomenda(int idEncomenda) {
             if (existeEncomenda(idEncomenda) == false) 
                 return CodigoInexistente();

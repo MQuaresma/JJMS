@@ -26,10 +26,10 @@
 - [ ] Update logic database model to fit [Table-Per-Hierarchy](https://weblogs.asp.net/manavi/inheritance-mapping-strategies-with-entity-framework-code-first-ctp5-part-1-table-per-hierarchy-tph) structure of EF
 - [x] MenuPrincipalController
 - [x] UtilizadorController
-- [ ] MenuClienteController
-- [ ] ClienteController
+- [x] MenuClienteController
+- [x] ClienteController
 - [x] MenuFuncionarioController
-- [ ] FuncionarioController
+- [x] FuncionarioController
 - [x] FornecedorController
 - [x] EncomendaController
 - [x] CartaoController

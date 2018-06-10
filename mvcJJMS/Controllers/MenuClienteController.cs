@@ -35,6 +35,10 @@ namespace mvcJJMS.Controllers{
             return View("~/Views/MenuCliente/Index.cshtml"); 
         }
 
+        /// <summary>
+        /// Wrapper for the TrackingEncomenda method on the EncomendaController
+        /// </summary>
+        /// <returns>Redirects to the view where the user can insert the order ID</returns>
         public ViewResult TrackingEncomenda(){
             ViewBag.Title="Tracking Encomenda";
             ViewBag.Msg="Insira o código da sua encomenda:";
@@ -50,9 +54,6 @@ namespace mvcJJMS.Controllers{
             return View("~/Views/Shared/SimpleMsg.cshtml");
         }
 
-        /// <summary>
-		/// Performs a check on the validity of the provided order id
-		/// </summary>
         public ViewResult AvaliarServico(){
             ViewBag.Title="Avaliar Serviço";
             return View("~/Views/AvaliarServico/Index.cshtml");
@@ -68,6 +69,16 @@ namespace mvcJJMS.Controllers{
             return View("~/Views/AlterarDados/Index.cshtml");
         }
 
+
+        /// <summary>
+        /// Changes the user data associated with the user currently logged in
+        /// </summary>
+        /// <param name="nomeInput">New value for Nome</param>
+        /// <param name="passwordInput">New password</param>
+        /// <param name="emailInput">New user email</param>
+        /// <param name="moradaInput">New user address</param>
+        /// <param name="telefoneInput">New user phone number</param>
+        /// <returns>Redirects to a Sucess screen of an Error view</returns>
         public ActionResult AlterarDadosAlterar(string nomeInput, string passwordInput, string emailInput, string moradaInput, string telefoneInput){
             int idCliente=_uController.getUtilizadorID();
             string nome = this._uController.GetUserNome(idCliente);
@@ -144,6 +155,11 @@ namespace mvcJJMS.Controllers{
             return View("~/Views/Shared/SimpleMsg.cshtml");
         }
 
+        /// <summary>
+        /// Checks whether the order is eligible to be rated
+        /// </summary>
+        /// <param name="idEncomenda">Unique identifier for a single order</param>
+        /// <returns>Redirects to the Rating Menu or to an Error view</returns>
         public ActionResult checkEncomenda(int idEncomenda){
             if(!this._eController.existeEncomenda(idEncomenda)) return CodigoInexistente();
             else if(this._eController.getEstadoEncomendaI(idEncomenda)!=4) return EncomendaPorEntregar();
@@ -174,6 +190,14 @@ namespace mvcJJMS.Controllers{
             return View("~/Views/AvaliarServico/InserirClassificacoes.cshtml");
         }
 
+
+        /// <summary>
+        /// Wrapper to the avalia method
+        /// </summary>
+        /// <param name="idEncomendaS">Unique identifier for a single order in a string format</param>
+        /// <param name="classServicoEntrega">Rating relating to the employee</param>
+        /// <param name="classEstadoEncomenda">Rating relating to the order</param>
+        /// <returns>Redirects to the Sucess view or to an Error view if invalid ratings are given</returns>
         public ActionResult AvaliaS(string idEncomendaS, int classServicoEntrega,  int classEstadoEncomenda){
             if(!classificacoesValidas(classServicoEntrega, classEstadoEncomenda))
                 return ClassificaoesInvalidas();
@@ -187,10 +211,22 @@ namespace mvcJJMS.Controllers{
             return Sucesso();
         }
 
+        /// <summary>
+        /// Checks whether the ratings are within the predefined ranges
+        /// </summary>
+        /// <param name="classServicoEntrega">Rating relating to the employee</param>
+        /// <param name="classEstadoEncomenda">Rating relating to the order</param>
+        /// <returns>TRUE if the ratings are valid else FALSE</returns>
         public bool classificacoesValidas(int classServicoEntrega,  int classEstadoEncomenda){
             return (classServicoEntrega >= 0 && classServicoEntrega <= 10 && classEstadoEncomenda >= 0 && classEstadoEncomenda <= 5);
         }
 
+        /// <summary>
+        /// Registers a service rating referring to a given order
+        /// </summary>
+        /// <param name="idEncomenda">Unique identifier for a single order</param>
+        /// <param name="classServicoEntrega">Rating relating to the employee</param>
+        /// <param name="classEstadoEncomenda">Rating relating to the order</param>
         public void avalia( int idEncomenda,  int classServicoEntrega,  int classEstadoEncomenda) {
             Encomenda enc=_eController.getEncomenda(idEncomenda);
             int idFun=enc.getFuncionarioID();
@@ -218,11 +254,15 @@ namespace mvcJJMS.Controllers{
             return View("~/Views/Shared/SimpleMsg.cshtml");
         }
 
+        /// <summary>
+        /// Redirects to a screen containing all the orders associated with the currently logged in user
+        /// </summary>
+        /// <returns>Asynchronous redirection to a view containing the order in a table format</returns>
         public async Task<IActionResult> ConsultarHistorico(){
             ViewBag.Title="Consultar Histórico";
             return View("~/Views/ConsultarHistorico/Index.cshtml",await _context.Encomendas.Where(e => e.ClienteID==_uController.getUtilizadorID()).ToListAsync());
         }
-
+        
         public ViewResult RequisitarEncomenda(){
             int idU = _uController.getUtilizadorID();
             bool bloq = _cController.EstaBloqueado(idU);
