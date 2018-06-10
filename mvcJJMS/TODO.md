@@ -4,7 +4,13 @@
 - [ ] Use common error views for different use cases
 - [ ] Check if all interfaces are mockup compliant
 - [ ] Delegate task to employee
-
+- [ ] FornecedorController: IdForn
+- [ ] FuncionarioController: GetZona
+- [ ] MenuClienteController: ConsultarHistorico
+- [ ] MenuFuncionarioController: CalcularRota e ConsultarRota
+- [ ] Model: CartaoCredito: Pagamento
+- [ ] Model: Cliente: TemEncomenda
+- [ ] Model: Encomenda: GerarFatura
 
 ## Documentation
 - [ ] Change getEstadoEncomenda/getEstadoEnc to getEstadoEncomendaS and getEstadoEncomendaI on the diagrams

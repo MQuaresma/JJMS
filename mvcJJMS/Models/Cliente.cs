@@ -12,7 +12,7 @@ namespace mvcJJMS.Models{
 			throw new System.Exception("Not implemented");
 		}
 		public void Bloqueia() {
-			throw new System.Exception("Not implemented");
+			this.bloqueado = true;
 		}
 
 		public int getUtilizadorID(){

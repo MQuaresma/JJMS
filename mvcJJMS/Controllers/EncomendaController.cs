@@ -86,7 +86,8 @@ namespace mvcJJMS.Controllers{
 		}
 
         public int GetFuncionarioResp( int idEncomenda) {
-			throw new System.Exception("Not implemented");
+			Encomenda enc = _context.Encomendas.Find(idEncomenda);
+			return enc.getFuncionarioID();
 		}
         public void SetEncomenda(int idCliente,string fornecedor,string morada,Date dia,Time hora,int numCartCredito,int mes,int ano,int cvv,string pais) {
 			Encomenda nEncomenda = new Encomenda();
@@ -114,15 +115,17 @@ namespace mvcJJMS.Controllers{
 		}
 
         public string GetDestinoEnc( int idEncomenda) {
-			throw new System.Exception("Not implemented");
-		}
-
-        public int GetEstadoEnc( int idEncomenda) {
-			throw new System.Exception("Not implemented");
+			Encomenda enc = _context.Encomendas.Find(idEncomenda);
+			return enc.destino;
 		}
 
         public bool EncomendaEntregue( int idEncomenda) {
-			throw new System.Exception("Not implemented");
+			Encomenda enc = _context.Encomendas.Find(idEncomenda);
+			bool ret = false;
+			int estado = enc.estado;
+
+			if(estado==4) ret=true;
+			return ret; 
 		}
 
 		public Encomenda getEncomenda(int idEncomenda){
