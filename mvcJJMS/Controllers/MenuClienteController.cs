@@ -60,7 +60,6 @@ namespace mvcJJMS.Controllers{
             ViewBag.Title = "Alterar Dados";
             int idCliente=_uController.getUtilizadorID();
             ViewBag.nome = this._uController.GetUserNome(idCliente);
-            ViewBag.password = System.Text.Encoding.UTF8.GetString(this._uController.GetUserPassword(idCliente));
             ViewBag.email = this._uController.GetUserEmail(idCliente);
             ViewBag.morada = this._cController.GetClienteMorada(idCliente);
             ViewBag.telefone = this._cController.GetClienteTelefone(idCliente);
@@ -84,12 +83,11 @@ namespace mvcJJMS.Controllers{
             if(!telVal) return TelefoneInvalido();
 
             bool passVal = true;
-            byte[] passwordInputHash = UtilizadorController.hashFunction(passwordInput);
-            if(!passwordInputHash.SequenceEqual(password)) passVal = this._cController.passwordSegura(passwordInput);
+            if(passwordInput!=null) passVal = this._cController.passwordSegura(passwordInput);
             if(!passVal) return PasswordInsegura();
 
             if(!nomeInput.Equals(nome)) this._uController.UpdateNome(idCliente,nomeInput); 
-            if(!passwordInputHash.SequenceEqual(password)) this._uController.UpdatePassword(idCliente,passwordInput);
+            if(passwordInput!=null) this._uController.UpdatePassword(idCliente,passwordInput);
             if(!emailInput.Equals(email)) this._uController.UpdateEmail(idCliente,emailInput);
             if(!moradaInput.Equals(morada)) this._cController.UpdateMorada(idCliente,moradaInput);
             if(!telefoneInput.Equals(telefone)) this._cController.UpdateTelefone(idCliente,telefoneInput);
