@@ -23,6 +23,15 @@ namespace mvcJJMS.Controllers{
 			_uController=uController;
 		}
 
+		/// <summary>
+		/// Checks input and if all is right, save the Cliente to the DataBase
+		/// </summary>
+		/// <param name="user"></param>
+		/// <param name="password"></param>
+		/// <param name="email"></param>
+		/// <param name="morada"></param>
+		/// <param name="telefone"></param>
+		/// <returns>returns the correspondent Action</returns>
 		public ActionResult Registar(string user,string password, string email, string morada, string telefone){
 			if(_uController.emailAssociado(email)){
 				return EmailEmUso();
@@ -44,6 +53,11 @@ namespace mvcJJMS.Controllers{
 			return Sucesso();
 		}
 
+		/// <summary>
+		/// Checks if a string is a valid phone number
+		/// </summary>
+		/// <param name="telefone">phone number to analyze</param>
+		/// <returns>TRUE if the string is a valid phone numer, else FALSE</returns>
 		public bool telefoneValido( string telefone) {
 			if (telefone.Length != 9) return false;
 			foreach (char c in telefone){
@@ -52,6 +66,11 @@ namespace mvcJJMS.Controllers{
 			return true;
 		}
 
+		/// <summary>
+		/// Checks if a password is safe enough for the company
+		/// </summary>
+		/// <param name="password">password to analyze</param>
+		/// <returns>TRUE if the password is safe, else FALSE</returns>		
 		public bool passwordSegura( string password) {
 			if (password.Length < 8) return false;
 			int numeros = 0;
@@ -66,6 +85,11 @@ namespace mvcJJMS.Controllers{
 			return true;
 		}   
 
+		/// <summary>
+		/// Checks if a string is a valid email
+		/// </summary>
+		/// <param name="email">string email to analyze</param>
+		/// <returns>TRUE if the string is a email, else FALSE</returns>
 		public bool emailValido( string email){
 			MailAddress address;
 			try{
@@ -76,16 +100,31 @@ namespace mvcJJMS.Controllers{
 			return true;
 		} 
 
+		/// <summary>
+		/// Retrieves the address associated with a client
+		/// </summary>
+		/// <param name="idCliente">Unique identifier for a client</param>
+		/// <returns>Client address</returns>
         public string GetClienteMorada( int idCliente) {
 			Cliente cliente = _context.Clientes.Find(idCliente);
 			return cliente.Morada;
 		}
 
+		/// <summary>
+		/// Retrieves the phone number associated with a client
+		/// </summary>
+		/// <param name="idCliente">Unique identifier for a client</param>
+		/// <returns>Client phone number</returns>
         public string GetClienteTelefone( int idCliente) {
 			Cliente cliente = _context.Clientes.Find(idCliente);
 			return cliente.Telefone;
 		}
 
+		/// <summary>
+		/// Updates the address of a client
+		/// </summary>
+		/// <param name="idCliente">Unique identifier for a client</param>
+		/// <param name="moradaInput">New address</param>
         public void UpdateMorada( int idCliente, string moradaInput) {
 			Cliente cliente = _context.Clientes.Find(idCliente);
 			cliente.Morada = moradaInput;
@@ -93,18 +132,33 @@ namespace mvcJJMS.Controllers{
 
 		}
 
+		/// <summary>
+		/// Updates the phone number of a client
+		/// </summary>
+		/// <param name="idCliente">Unique identifier for a client</param>
+		/// <param name="telefoneInput">New phone number</param>
 		public void UpdateTelefone( int idCliente,  string telefoneInput) {
 			Cliente cliente = _context.Clientes.Find(idCliente);
 			cliente.Telefone = telefoneInput;
 			_context.SaveChanges();
 		}
 
+		/// <summary>
+		/// Blocks a particular client
+		/// </summary>
+		/// <param name="idCliente">Unique identifier for a client to block</param>
 		public void Bloquear( int idCliente) {
 			Cliente cliente = _context.Clientes.Find(idCliente);
 			cliente.Bloqueia();
 			_context.SaveChanges();
 		}
 
+		/// <summary>
+		/// Performs payment for a given order
+		/// </summary>
+		/// <param name="idCliente">Unique identifier for a client</param>
+		/// <param name="idEncomenda">Unique identifier for a single order</param>
+		/// <returns>TRUE if payment is successful, else FALSE</returns>
 		public bool TransfereMontante( int idCliente,  int idEncomenda) {
 			bool existe = ExisteEncomendaCliente(idCliente,idEncomenda);
 			bool suc = false;
@@ -117,12 +171,23 @@ namespace mvcJJMS.Controllers{
 			return suc;
 		}
 
+		/// <summary>
+		/// Generates order details for a given order
+		/// </summary>
+		/// <param name="idCliente">Unique identifier for a client</param>
+		/// <param name="idEncomenda">Unique identifier for a single order</param>
 		public void GerarFatura( int idCliente,  int idEncomenda) {
 			Cliente cliente = _context.Clientes.Find(idCliente);
 			Encomenda enc = _context.Encomendas.Find(idEncomenda);
 			enc.gerarFatura(cliente);
 		}
 
+		/// <summary>
+		/// Retrieves order details associated with a given order
+		/// </summary>
+		/// <param name="idCliente">Unique identifier for a client</param>
+		/// <param name="idEncomenda">Unique identifier for a single order</param>
+		/// <returns>Order details if they exist, else NULL</returns>
         public FILE GetFatura( int idCliente,  int idEncomenda) {
 			bool existe = ExisteEncomendaCliente(idCliente,idEncomenda);
 			
@@ -133,15 +198,31 @@ namespace mvcJJMS.Controllers{
 			}else return null;
 		}
 
+		/// <summary>
+		/// Retrieves a client's order history
+		/// </summary>
+		/// <param name="idCliente">Unique identifier for a client</param>
+		/// <returns>Order history of the given client</returns>
         public async Task<List<Encomenda>> GetHistoricoEnc( int idCliente) {
 			return await _context.Clientes.Find(idCliente).Encomendas.AsQueryable().ToListAsync();
 		}
 
+		/// <summary>
+		/// Checks if a given order is associated with a certain client
+		/// </summary>
+		/// <param name="idCliente">Unique identifier for a client</param>
+		/// <param name="idEncomenda">Unique identifier for a single order</param>
+		/// <returns>TRUE if the order is associated, else FALSE</returns>
         public bool ExisteEncomendaCliente( int idCliente,  int idEncomenda) {
 			Cliente cliente = _context.Clientes.Find(idCliente);
 			return cliente.TemEncomenda(idEncomenda);
 		}
 
+		/// <summary>
+		/// Checks if a given client is blocked
+		/// </summary>
+		/// <param name="idCliente">Unique identifier for a client</param>
+		/// <returns>TRUE if the client is blocked, else FALSE</returns>
         public bool EstaBloqueado( int idCliente) {
 			Cliente cliente = _context.Clientes.Find(idCliente);
 			return cliente.Bloqueado;
@@ -203,6 +284,11 @@ namespace mvcJJMS.Controllers{
             return View("~/Views/Shared/SimpleMsg.cshtml");
 		}
 
+		/// <summary>
+		/// Performs payment for a given order and client, if the payment isn't successfully it blocks the client
+		/// </summary>
+		/// <param name="idCliente">Unique identifier for a client</param>
+		/// <param name="idEncomenda">Unique identifier for a single order</param>
 		public void PagarServiço(int idCliente, int idEncomenda){
 			bool sucesso = TransfereMontante(idCliente,idEncomenda);
 			if(!sucesso) Bloquear(idCliente);

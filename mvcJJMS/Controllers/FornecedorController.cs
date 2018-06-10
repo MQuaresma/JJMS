@@ -12,6 +12,11 @@ namespace mvcJJMS.Controllers{
 			_context=context;
 		}
 
+		/// <summary>
+		/// obtain the id of Fornecedor with nomeForn
+		/// </summary>
+		/// <param name="nomeForn"></param>
+		/// <returns>returns id of Fornecedor or -1 if not exists</returns>
         public int IdForn( string nomeForn) {
 			bool found = false;
 			int id = -1;
@@ -28,6 +33,11 @@ namespace mvcJJMS.Controllers{
 			return id;
 		}
 
+		/// <summary>
+		/// obtains adress of Fornecedor with the id idForn
+		/// </summary>
+		/// <param name="idForn"></param>
+		/// <returns>returns adress of Fornecedor</returns>
         public string GetMoradaForn(int idForn) {
 			Fornecedor forn = _context.Fornecedores.Find(idForn);
 			return forn.morada;

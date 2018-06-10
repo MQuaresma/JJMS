@@ -13,6 +13,11 @@ namespace mvcJJMS.Controllers{
 			_context=context;
 		}
 
+		/// <summary>
+		/// checks if a number of credit card respects the luhn algoritm
+		/// </summary>
+		/// <param name="numCartCredito"></param>
+		/// <returns>true if is valid, false if not</returns>
         public bool Luhn_check( long numCartCredito) {
 			string cc_number = numCartCredito.ToString();
 			long checksum = 0;
@@ -36,6 +41,15 @@ namespace mvcJJMS.Controllers{
 			return true;
 		}
 
+		/// <summary>
+		/// Verify is CartaoCredito is valid, aplies luhn algoritm, checks validate and if cvv have 3 or 4 of length
+		/// </summary>
+		/// <param name="numCartCredito"></param>
+		/// <param name="mes"></param>
+		/// <param name="ano"></param>
+		/// <param name="cvv"></param>
+		/// <param name="pais"></param>
+		/// <returns>true if CartaoCredito is valid, false if not</returns>
         public bool CartaoValido( long numCartCredito,  int mes,  int ano,  int cvv,  string pais) {
 			if(Luhn_check(numCartCredito)==false) return false;
 			

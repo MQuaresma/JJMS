@@ -19,11 +19,22 @@ namespace mvcJJMS.Controllers{
 			_eController=eController;
 			_fController=fController;
 		}
-        
+
+		/// <summary>
+		/// return Funcionario(emplyee) with id idFuncionario
+		/// </summary>
+		/// <param name="idFuncionario"></param>
+		/// <returns>return Funcionario</returns>
 		public Funcionario getFuncionario(int idFuncionario){
 			return _context.Funcionarios.Find(idFuncionario);
 		}
 
+		/// <summary>
+		/// choose an employee to deliver the order with id idEncomenda with destino(destiny) adress
+		/// </summary>
+		/// <param name="idEncomenda"></param>
+		/// <param name="destino"></param>
+		/// <returns>return the id of Funcionario(employee) choosen</returns>
         public int DelegarFuncionario( int idEncomenda,  string destino) {
 			int idResp = -1;
 			int nEncResp = 0;
@@ -49,6 +60,11 @@ namespace mvcJJMS.Controllers{
 			return idResp;
 		}
 
+		/// <summary>
+		/// sends a email to the choosen employee that will deliver the order with id idEncomenda
+		/// </summary>
+		/// <param name="idFunc"></param>
+		/// <param name="idEncomenda"></param>
         public void EnviarEmail( int idFunc, int idEncomenda) {
 			string emailFunc = this._uController.GetUserEmail(idFunc);
 			string st = this._eController.getEstadoEncomendaS(idEncomenda);
@@ -70,6 +86,11 @@ namespace mvcJJMS.Controllers{
 			client.Send(mail);
 		}
 
+		/// <summary>
+		/// choose the action zone for an employee(Not implemented yet)
+		/// </summary>
+		/// <param name="morada"></param>
+		/// <returns>returns the code of the area</returns>
         public int GetZona( string morada) {
 			throw new System.Exception("Not implemented");
 		}

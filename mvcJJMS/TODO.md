@@ -29,7 +29,7 @@
 - [x] MenuClienteController
 - [x] ClienteController
 - [x] MenuFuncionarioController
-- [ ] FuncionarioController
+- [x] FuncionarioController
 - [x] FornecedorController
 - [x] EncomendaController
 - [x] CartaoController
