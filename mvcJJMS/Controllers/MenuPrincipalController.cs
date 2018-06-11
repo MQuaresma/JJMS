@@ -10,7 +10,7 @@ namespace mvcJJMS.Controllers{
         }
 
         /// <summary>
-        /// Wrapper for the <see cref="UtilizadorController.Login"/> method
+        /// Wrapper for the <see cref="UtilizadorController.Autenticar"/> method
         /// </summary>
         /// <returns>View of the login page</returns>
         public ViewResult Login(){
