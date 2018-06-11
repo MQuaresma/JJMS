@@ -10,7 +10,7 @@ namespace mvcJJMS.Controllers{
         }
 
         /// <summary>
-        /// Wrapper for the Login method on the UtilizadorController class
+        /// Wrapper for the <see cref="UtilizadorController.Login"/> method
         /// </summary>
         /// <returns>View of the login page</returns>
         public ViewResult Login(){
@@ -19,7 +19,7 @@ namespace mvcJJMS.Controllers{
         }
 
         /// <summary>
-        /// Wrapper for the Registar method on the ClienteController class
+        /// Wrapper for the <see cref="ClienteController.Registar"/> method
         /// </summary>
         /// <returns>View of the registration page</returns>
         public ViewResult Registar(){

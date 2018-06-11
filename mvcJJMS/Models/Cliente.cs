@@ -2,6 +2,9 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace mvcJJMS.Models{
+	/// <summary>
+	/// Represents a user of type Client
+	/// </summary>
 	public class Cliente : Utilizador  {
 		public string Morada{get;set;}	
 		public string Telefone{get;set;}

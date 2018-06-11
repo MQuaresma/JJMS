@@ -1,0 +1,332 @@
+\hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller}{}\section{mvc\+J\+J\+M\+S.\+Controllers.\+Encomenda\+Controller Class Reference}
+\label{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller}\index{mvc\+J\+J\+M\+S.\+Controllers.\+Encomenda\+Controller@{mvc\+J\+J\+M\+S.\+Controllers.\+Encomenda\+Controller}}
+Inheritance diagram for mvc\+J\+J\+M\+S.\+Controllers.\+Encomenda\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a23ae8934385ef0e18316920583381eb2}\label{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a23ae8934385ef0e18316920583381eb2}} 
+{\bfseries Encomenda\+Controller} (\mbox{\hyperlink{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context}{J\+J\+M\+S\+Context}} context, \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_fornecedor_controller}{Fornecedor\+Controller}} f\+Controller, \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller}{Utilizador\+Controller}} u\+Controller, \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_cartao_controller}{Cartao\+Controller}} ca\+Controller)
+\item 
+Action\+Result \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a4394d01a5090ea7711fc97a9d7478581}{Tracking\+Encomenda}} (int id\+Encomenda)
+\item 
+bool \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a52ed51732bae82bd099506519656170b}{existe\+Encomenda}} (int id\+Encomenda)
+\begin{DoxyCompactList}\small\item\em Checks whether there\textquotesingle{}s an order with the given identifier \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a76a4a0b0f36cb8d70f3342b601e5d8bb}{get\+Localizacao\+Encomenda}} (int id\+Encomenda)
+\begin{DoxyCompactList}\small\item\em Retrieves the current location of the order \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a650422f9822c10979a38f9b7de902146}{get\+Estado\+EncomendaI}} (int id\+Encomenda)
+\begin{DoxyCompactList}\small\item\em Return the current status of the order in Integer format \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a9a1c47299b334b34c9df35dd4f644184}{get\+Estado\+EncomendaS}} (int id\+Encomenda)
+\begin{DoxyCompactList}\small\item\em Same as get\+Estado\+EncomendaI but returns a (descriptive) String status \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a9f2e8359f35f8d5e737c3a1d9ff7b1c1}{Update\+Custo\+Enc}} (int id\+Encomenda, float custo\+Input)
+\begin{DoxyCompactList}\small\item\em Updates the cost associated with a given order \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a36abeee72b22518276b9af3d4b7ed48f}{Update\+Estado\+Enc}} (int id\+Encomenda)
+\begin{DoxyCompactList}\small\item\em Changes the status of an order \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a29d51d82112bcd56e12b4c2ae5220f43}{Get\+Funcionario\+Resp}} (int id\+Encomenda)
+\begin{DoxyCompactList}\small\item\em Retrieves the employee currently responsible for the order \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a88efec95120dea4ca5b3ad0e6add6abe}{Set\+Encomenda}} (int id\+Cliente, string fornecedor, string morada, Date dia, Time hora, long num\+Cart\+Credito, int mes, int ano, int cvv, string pais)
+\begin{DoxyCompactList}\small\item\em Registers a new order on the database \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a17045273a7db6110840c352ccf2942f2}{Get\+Destino\+Enc}} (int id\+Encomenda)
+\begin{DoxyCompactList}\small\item\em Retrieves the destination address of the order \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a7aa095cf3c1afa66cb3b53cf58d0973d}{Encomenda\+Entregue}} (int id\+Encomenda)
+\begin{DoxyCompactList}\small\item\em Checks whether an order has been delivered \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmvc_j_j_m_s_1_1_models_1_1_encomenda}{Encomenda}} \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_adbeb0c2e410bf9d8706de7b75daf05eb}{get\+Encomenda}} (int id\+Encomenda)
+\begin{DoxyCompactList}\small\item\em Retrieves the order associated with a given ID \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a27c059ba95c4c7fcd3f3c1d0d2bf51a9}{get\+Id\+Forn}} (int id\+Encomenda)
+\begin{DoxyCompactList}\small\item\em Retrieves the unique identifier of the order provider \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a2754bcfc4246dcc86737356fb5ff925a}{get\+Morada\+CD}} ()
+\begin{DoxyCompactList}\small\item\em Returns the Distribution Center address \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_ab511489501a36b25d8211cd9ee87284b}\label{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_ab511489501a36b25d8211cd9ee87284b}} 
+View\+Result {\bfseries Codigo\+Inexistente} ()
+\item 
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a106850b52d6c0495216ff69b82490eee}\label{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a106850b52d6c0495216ff69b82490eee}} 
+View\+Result {\bfseries Informacao\+Encomenda} (int encomenda, string localizacao, string estado)
+\item 
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a975c0c2e5081227c02fdfdb7e3e159d0}\label{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a975c0c2e5081227c02fdfdb7e3e159d0}} 
+Action\+Result {\bfseries Requisitar\+Encomenda} (string fornecedor, string morada, Date dia, Time hora)
+\item 
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a9898fcedd4648f7a73d85dfc6e58ea6e}\label{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a9898fcedd4648f7a73d85dfc6e58ea6e}} 
+View\+Result {\bfseries Inserir\+Dados\+Pagamento} (string fornecedor, string morada, Date dia, Time hora)
+\item 
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a5e9ff72acf751edbbace575060e434f1}\label{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a5e9ff72acf751edbbace575060e434f1}} 
+View\+Result {\bfseries Proc\+Dados\+Pagamento} (string fornecedor, string morada, Date dia, Time hora, string nccS, int mes, int ano, int cvv, string pais)
+\item 
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a0ed9836d7404d96d73effb30f5bb38c0}\label{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a0ed9836d7404d96d73effb30f5bb38c0}} 
+View\+Result {\bfseries Dados\+Pagamento\+Invalidos} ()
+\item 
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_af1ffc3ade26ffaeb8a51456d7f4af930}\label{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_af1ffc3ade26ffaeb8a51456d7f4af930}} 
+View\+Result {\bfseries Fornecedor\+Invalido} ()
+\item 
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_ab027738b2e4dfce7c7f19c6cf13cf078}\label{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_ab027738b2e4dfce7c7f19c6cf13cf078}} 
+View\+Result {\bfseries Sucesso} ()
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a7aa095cf3c1afa66cb3b53cf58d0973d}\label{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a7aa095cf3c1afa66cb3b53cf58d0973d}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller}!Encomenda\+Entregue@{Encomenda\+Entregue}}
+\index{Encomenda\+Entregue@{Encomenda\+Entregue}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller}}
+\subsubsection{\texorpdfstring{Encomenda\+Entregue()}{EncomendaEntregue()}}
+{\footnotesize\ttfamily bool mvc\+J\+J\+M\+S.\+Controllers.\+Encomenda\+Controller.\+Encomenda\+Entregue (\begin{DoxyParamCaption}\item[{int}]{id\+Encomenda }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks whether an order has been delivered 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Encomenda} & Unique identifier for a single order\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE if delivered else F\+A\+L\+SE
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a52ed51732bae82bd099506519656170b}\label{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a52ed51732bae82bd099506519656170b}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller}!existe\+Encomenda@{existe\+Encomenda}}
+\index{existe\+Encomenda@{existe\+Encomenda}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller}}
+\subsubsection{\texorpdfstring{existe\+Encomenda()}{existeEncomenda()}}
+{\footnotesize\ttfamily bool mvc\+J\+J\+M\+S.\+Controllers.\+Encomenda\+Controller.\+existe\+Encomenda (\begin{DoxyParamCaption}\item[{int}]{id\+Encomenda }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks whether there\textquotesingle{}s an order with the given identifier 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Encomenda} & Unique identifier for a single order\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE if there is an order with the identifier else F\+A\+L\+SE
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a17045273a7db6110840c352ccf2942f2}\label{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a17045273a7db6110840c352ccf2942f2}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller}!Get\+Destino\+Enc@{Get\+Destino\+Enc}}
+\index{Get\+Destino\+Enc@{Get\+Destino\+Enc}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller}}
+\subsubsection{\texorpdfstring{Get\+Destino\+Enc()}{GetDestinoEnc()}}
+{\footnotesize\ttfamily string mvc\+J\+J\+M\+S.\+Controllers.\+Encomenda\+Controller.\+Get\+Destino\+Enc (\begin{DoxyParamCaption}\item[{int}]{id\+Encomenda }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the destination address of the order 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Encomenda} & Unique identifier for a single order\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Destination address
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_adbeb0c2e410bf9d8706de7b75daf05eb}\label{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_adbeb0c2e410bf9d8706de7b75daf05eb}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller}!get\+Encomenda@{get\+Encomenda}}
+\index{get\+Encomenda@{get\+Encomenda}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller}}
+\subsubsection{\texorpdfstring{get\+Encomenda()}{getEncomenda()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmvc_j_j_m_s_1_1_models_1_1_encomenda}{Encomenda}} mvc\+J\+J\+M\+S.\+Controllers.\+Encomenda\+Controller.\+get\+Encomenda (\begin{DoxyParamCaption}\item[{int}]{id\+Encomenda }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the order associated with a given ID 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Encomenda} & Unique identifier for a single order\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Order corresponding to the ID
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a650422f9822c10979a38f9b7de902146}\label{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a650422f9822c10979a38f9b7de902146}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller}!get\+Estado\+EncomendaI@{get\+Estado\+EncomendaI}}
+\index{get\+Estado\+EncomendaI@{get\+Estado\+EncomendaI}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller}}
+\subsubsection{\texorpdfstring{get\+Estado\+Encomenda\+I()}{getEstadoEncomendaI()}}
+{\footnotesize\ttfamily int mvc\+J\+J\+M\+S.\+Controllers.\+Encomenda\+Controller.\+get\+Estado\+EncomendaI (\begin{DoxyParamCaption}\item[{int}]{id\+Encomenda }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Return the current status of the order in Integer format 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Encomenda} & Unique identifier for a single order\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a9a1c47299b334b34c9df35dd4f644184}\label{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a9a1c47299b334b34c9df35dd4f644184}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller}!get\+Estado\+EncomendaS@{get\+Estado\+EncomendaS}}
+\index{get\+Estado\+EncomendaS@{get\+Estado\+EncomendaS}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller}}
+\subsubsection{\texorpdfstring{get\+Estado\+Encomenda\+S()}{getEstadoEncomendaS()}}
+{\footnotesize\ttfamily string mvc\+J\+J\+M\+S.\+Controllers.\+Encomenda\+Controller.\+get\+Estado\+EncomendaS (\begin{DoxyParamCaption}\item[{int}]{id\+Encomenda }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Same as get\+Estado\+EncomendaI but returns a (descriptive) String status 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Encomenda} & Unique identifier for a single order\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a29d51d82112bcd56e12b4c2ae5220f43}\label{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a29d51d82112bcd56e12b4c2ae5220f43}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller}!Get\+Funcionario\+Resp@{Get\+Funcionario\+Resp}}
+\index{Get\+Funcionario\+Resp@{Get\+Funcionario\+Resp}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller}}
+\subsubsection{\texorpdfstring{Get\+Funcionario\+Resp()}{GetFuncionarioResp()}}
+{\footnotesize\ttfamily int mvc\+J\+J\+M\+S.\+Controllers.\+Encomenda\+Controller.\+Get\+Funcionario\+Resp (\begin{DoxyParamCaption}\item[{int}]{id\+Encomenda }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the employee currently responsible for the order 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Encomenda} & Unique identifier for a single order\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Unique identifier of the employee
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a27c059ba95c4c7fcd3f3c1d0d2bf51a9}\label{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a27c059ba95c4c7fcd3f3c1d0d2bf51a9}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller}!get\+Id\+Forn@{get\+Id\+Forn}}
+\index{get\+Id\+Forn@{get\+Id\+Forn}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller}}
+\subsubsection{\texorpdfstring{get\+Id\+Forn()}{getIdForn()}}
+{\footnotesize\ttfamily int mvc\+J\+J\+M\+S.\+Controllers.\+Encomenda\+Controller.\+get\+Id\+Forn (\begin{DoxyParamCaption}\item[{int}]{id\+Encomenda }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the unique identifier of the order provider 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Encomenda} & Unique identifier for a single order\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Unique identifier of the order provider
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a76a4a0b0f36cb8d70f3342b601e5d8bb}\label{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a76a4a0b0f36cb8d70f3342b601e5d8bb}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller}!get\+Localizacao\+Encomenda@{get\+Localizacao\+Encomenda}}
+\index{get\+Localizacao\+Encomenda@{get\+Localizacao\+Encomenda}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller}}
+\subsubsection{\texorpdfstring{get\+Localizacao\+Encomenda()}{getLocalizacaoEncomenda()}}
+{\footnotesize\ttfamily string mvc\+J\+J\+M\+S.\+Controllers.\+Encomenda\+Controller.\+get\+Localizacao\+Encomenda (\begin{DoxyParamCaption}\item[{int}]{id\+Encomenda }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the current location of the order 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Encomenda} & Unique identifier for a single order\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Current location of the order
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a2754bcfc4246dcc86737356fb5ff925a}\label{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a2754bcfc4246dcc86737356fb5ff925a}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller}!get\+Morada\+CD@{get\+Morada\+CD}}
+\index{get\+Morada\+CD@{get\+Morada\+CD}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller}}
+\subsubsection{\texorpdfstring{get\+Morada\+C\+D()}{getMoradaCD()}}
+{\footnotesize\ttfamily string mvc\+J\+J\+M\+S.\+Controllers.\+Encomenda\+Controller.\+get\+Morada\+CD (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the Distribution Center address 
+
+\begin{DoxyReturn}{Returns}
+Distribuition Center address
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a88efec95120dea4ca5b3ad0e6add6abe}\label{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a88efec95120dea4ca5b3ad0e6add6abe}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller}!Set\+Encomenda@{Set\+Encomenda}}
+\index{Set\+Encomenda@{Set\+Encomenda}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller}}
+\subsubsection{\texorpdfstring{Set\+Encomenda()}{SetEncomenda()}}
+{\footnotesize\ttfamily void mvc\+J\+J\+M\+S.\+Controllers.\+Encomenda\+Controller.\+Set\+Encomenda (\begin{DoxyParamCaption}\item[{int}]{id\+Cliente,  }\item[{string}]{fornecedor,  }\item[{string}]{morada,  }\item[{Date}]{dia,  }\item[{Time}]{hora,  }\item[{long}]{num\+Cart\+Credito,  }\item[{int}]{mes,  }\item[{int}]{ano,  }\item[{int}]{cvv,  }\item[{string}]{pais }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Registers a new order on the database 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Cliente} & Unique identifier of the client\\
+\hline
+{\em fornecedor} & \\
+\hline
+{\em morada} & Destination of the order\\
+\hline
+{\em dia} & Day of delivery\\
+\hline
+{\em hora} & Time of delivery\\
+\hline
+{\em num\+Cart\+Credito} & Credit card number for payment\\
+\hline
+{\em mes} & Month of expiration of the credit card\\
+\hline
+{\em ano} & Year of expiration of the credit card\\
+\hline
+{\em cvv} & Security code of credit card\\
+\hline
+{\em pais} & Country of credit card\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a4394d01a5090ea7711fc97a9d7478581}\label{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a4394d01a5090ea7711fc97a9d7478581}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller}!Tracking\+Encomenda@{Tracking\+Encomenda}}
+\index{Tracking\+Encomenda@{Tracking\+Encomenda}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller}}
+\subsubsection{\texorpdfstring{Tracking\+Encomenda()}{TrackingEncomenda()}}
+{\footnotesize\ttfamily Action\+Result mvc\+J\+J\+M\+S.\+Controllers.\+Encomenda\+Controller.\+Tracking\+Encomenda (\begin{DoxyParamCaption}\item[{int}]{id\+Encomenda }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Encomenda} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a9f2e8359f35f8d5e737c3a1d9ff7b1c1}\label{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a9f2e8359f35f8d5e737c3a1d9ff7b1c1}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller}!Update\+Custo\+Enc@{Update\+Custo\+Enc}}
+\index{Update\+Custo\+Enc@{Update\+Custo\+Enc}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller}}
+\subsubsection{\texorpdfstring{Update\+Custo\+Enc()}{UpdateCustoEnc()}}
+{\footnotesize\ttfamily void mvc\+J\+J\+M\+S.\+Controllers.\+Encomenda\+Controller.\+Update\+Custo\+Enc (\begin{DoxyParamCaption}\item[{int}]{id\+Encomenda,  }\item[{float}]{custo\+Input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates the cost associated with a given order 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Encomenda} & Unique identifier for a single order\\
+\hline
+{\em custo\+Input} & Cost of the order\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a36abeee72b22518276b9af3d4b7ed48f}\label{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller_a36abeee72b22518276b9af3d4b7ed48f}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller}!Update\+Estado\+Enc@{Update\+Estado\+Enc}}
+\index{Update\+Estado\+Enc@{Update\+Estado\+Enc}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Encomenda\+Controller}}
+\subsubsection{\texorpdfstring{Update\+Estado\+Enc()}{UpdateEstadoEnc()}}
+{\footnotesize\ttfamily void mvc\+J\+J\+M\+S.\+Controllers.\+Encomenda\+Controller.\+Update\+Estado\+Enc (\begin{DoxyParamCaption}\item[{int}]{id\+Encomenda }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Changes the status of an order 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Encomenda} & Unique identifier for a single order\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Controllers/Encomenda\+Controller.\+cs\end{DoxyCompactItemize}

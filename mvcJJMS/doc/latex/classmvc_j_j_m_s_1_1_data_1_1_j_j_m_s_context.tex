@@ -1,0 +1,268 @@
+\hypertarget{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context}{}\section{mvc\+J\+J\+M\+S.\+Data.\+J\+J\+M\+S\+Context Class Reference}
+\label{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context}\index{mvc\+J\+J\+M\+S.\+Data.\+J\+J\+M\+S\+Context@{mvc\+J\+J\+M\+S.\+Data.\+J\+J\+M\+S\+Context}}
+
+
+Represents a connection to the database with the associated connection string  
+
+
+Inheritance diagram for mvc\+J\+J\+M\+S.\+Data.\+J\+J\+M\+S\+Context\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context_ab338143e761b1a841c224145bbc0380c}\label{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context_ab338143e761b1a841c224145bbc0380c}} 
+{\bfseries J\+J\+M\+S\+Context} (Db\+Context\+Options$<$ \mbox{\hyperlink{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context}{J\+J\+M\+S\+Context}} $>$ options)
+\item 
+\mbox{\hyperlink{classmvc_j_j_m_s_1_1_models_1_1_fornecedor}{Fornecedor}} \mbox{\hyperlink{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context_aa71841c7b21e94f09c58cbb72c5e7efa}{new\+Fornecedor}} (string nome, string morada)
+\begin{DoxyCompactList}\small\item\em Wrapper for creating a new Fornecedor object \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmvc_j_j_m_s_1_1_models_1_1_cliente}{Cliente}} \mbox{\hyperlink{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context_a1daadf80a1157014333476bc1dde9d86}{new\+Cliente}} (string nome, byte\mbox{[}$\,$\mbox{]} passwordH, string email, string morada, string telefone)
+\begin{DoxyCompactList}\small\item\em Wrapper for creating a new Cliente object \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmvc_j_j_m_s_1_1_models_1_1_funcionario}{Funcionario}} \mbox{\hyperlink{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context_a2024d653b72abde9d56963ee934605f6}{new\+Funcionario}} (string nome, byte\mbox{[}$\,$\mbox{]} passwordH, string email, int zona\+Trabalho)
+\begin{DoxyCompactList}\small\item\em Wrapper for creating a new Funcionario object \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmvc_j_j_m_s_1_1_models_1_1_cartao_credito}{Cartao\+Credito}} \mbox{\hyperlink{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context_ae62a0d5dd75b07b98cc1d6f8e608b256}{new\+Cartao\+Credito}} (long num\+Cartao\+Credito, int mes, int ano, int cvv, string pais)
+\begin{DoxyCompactList}\small\item\em Wrapper for creating a new Cartao\+Credito object \end{DoxyCompactList}\item 
+\mbox{\hyperlink{classmvc_j_j_m_s_1_1_models_1_1_encomenda}{Encomenda}} \mbox{\hyperlink{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context_ab41e73771fc76a06f3bbbd83df523438}{new\+Encomenda}} (int estado, string destino, Date dia, Time hora, int fornecedor, int cliente, int funcionario, long cc)
+\begin{DoxyCompactList}\small\item\em Wrapper for creating a new Encomenda object \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+override void \mbox{\hyperlink{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context_aadc81d0f274fa7d1909d94c7363e5f4a}{On\+Model\+Creating}} (Model\+Builder model\+Builder)
+\begin{DoxyCompactList}\small\item\em Registers class attributes as foreign keys and their \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Properties}
+\begin{DoxyCompactItemize}
+\item 
+Db\+Set$<$ \mbox{\hyperlink{classmvc_j_j_m_s_1_1_models_1_1_cliente}{Cliente}} $>$ \mbox{\hyperlink{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context_af090c3e4b61638096cf0085f313a8bde}{Clientes}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Database table containing client info \end{DoxyCompactList}\item 
+Db\+Set$<$ \mbox{\hyperlink{classmvc_j_j_m_s_1_1_models_1_1_funcionario}{Funcionario}} $>$ \mbox{\hyperlink{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context_a8bf23800fa7d55f90d47fb4e227d1fe2}{Funcionarios}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Database table containing employee info \end{DoxyCompactList}\item 
+Db\+Set$<$ \mbox{\hyperlink{classmvc_j_j_m_s_1_1_models_1_1_fornecedor}{Fornecedor}} $>$ \mbox{\hyperlink{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context_a46f580334ca10f6fb677d92e21d0778a}{Fornecedores}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Database table containing provider info \end{DoxyCompactList}\item 
+Db\+Set$<$ \mbox{\hyperlink{classmvc_j_j_m_s_1_1_models_1_1_encomenda}{Encomenda}} $>$ \mbox{\hyperlink{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context_ad0850c01749a0a69a17ecb59e0d2ed76}{Encomendas}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Database table containing order info \end{DoxyCompactList}\item 
+Db\+Set$<$ \mbox{\hyperlink{classmvc_j_j_m_s_1_1_models_1_1_cartao_credito}{Cartao\+Credito}} $>$ \mbox{\hyperlink{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context_aa0df06a1a57e42ddb59661a7f8b38a61}{Cartoes}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Database table containing credit card info \end{DoxyCompactList}\item 
+Db\+Set$<$ \mbox{\hyperlink{classmvc_j_j_m_s_1_1_models_1_1_utilizador}{Utilizador}} $>$ \mbox{\hyperlink{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context_a6c5c99292b7657f90a4b24d9da67e4ed}{Utilizadores}}\hspace{0.3cm}{\ttfamily  \mbox{[}get, set\mbox{]}}
+\begin{DoxyCompactList}\small\item\em Database table containing user info, both employee and client \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Represents a connection to the database with the associated connection string 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context_ae62a0d5dd75b07b98cc1d6f8e608b256}\label{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context_ae62a0d5dd75b07b98cc1d6f8e608b256}} 
+\index{mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context@{mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context}!new\+Cartao\+Credito@{new\+Cartao\+Credito}}
+\index{new\+Cartao\+Credito@{new\+Cartao\+Credito}!mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context@{mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context}}
+\subsubsection{\texorpdfstring{new\+Cartao\+Credito()}{newCartaoCredito()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmvc_j_j_m_s_1_1_models_1_1_cartao_credito}{Cartao\+Credito}} mvc\+J\+J\+M\+S.\+Data.\+J\+J\+M\+S\+Context.\+new\+Cartao\+Credito (\begin{DoxyParamCaption}\item[{long}]{num\+Cartao\+Credito,  }\item[{int}]{mes,  }\item[{int}]{ano,  }\item[{int}]{cvv,  }\item[{string}]{pais }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Wrapper for creating a new Cartao\+Credito object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+Cartao\+Credito} & Credit card number\\
+\hline
+{\em mes} & Expiration month\\
+\hline
+{\em ano} & Expiration year\\
+\hline
+{\em cvv} & Card verification value\\
+\hline
+{\em pais} & Country of the credit card bank\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Cartao\+Credito object
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context_a1daadf80a1157014333476bc1dde9d86}\label{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context_a1daadf80a1157014333476bc1dde9d86}} 
+\index{mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context@{mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context}!new\+Cliente@{new\+Cliente}}
+\index{new\+Cliente@{new\+Cliente}!mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context@{mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context}}
+\subsubsection{\texorpdfstring{new\+Cliente()}{newCliente()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmvc_j_j_m_s_1_1_models_1_1_cliente}{Cliente}} mvc\+J\+J\+M\+S.\+Data.\+J\+J\+M\+S\+Context.\+new\+Cliente (\begin{DoxyParamCaption}\item[{string}]{nome,  }\item[{byte \mbox{[}$\,$\mbox{]}}]{passwordH,  }\item[{string}]{email,  }\item[{string}]{morada,  }\item[{string}]{telefone }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Wrapper for creating a new Cliente object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome} & Username of the client\\
+\hline
+{\em passwordH} & Client password\\
+\hline
+{\em email} & Client email\\
+\hline
+{\em morada} & Client address\\
+\hline
+{\em telefone} & Client phone number\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Cliente object
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context_ab41e73771fc76a06f3bbbd83df523438}\label{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context_ab41e73771fc76a06f3bbbd83df523438}} 
+\index{mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context@{mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context}!new\+Encomenda@{new\+Encomenda}}
+\index{new\+Encomenda@{new\+Encomenda}!mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context@{mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context}}
+\subsubsection{\texorpdfstring{new\+Encomenda()}{newEncomenda()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmvc_j_j_m_s_1_1_models_1_1_encomenda}{Encomenda}} mvc\+J\+J\+M\+S.\+Data.\+J\+J\+M\+S\+Context.\+new\+Encomenda (\begin{DoxyParamCaption}\item[{int}]{estado,  }\item[{string}]{destino,  }\item[{Date}]{dia,  }\item[{Time}]{hora,  }\item[{int}]{fornecedor,  }\item[{int}]{cliente,  }\item[{int}]{funcionario,  }\item[{long}]{cc }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Wrapper for creating a new Encomenda object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em estado} & Current status on the delivery process\\
+\hline
+{\em destino} & Destination address\\
+\hline
+{\em dia} & Delivery day\\
+\hline
+{\em hora} & Delivery time\\
+\hline
+{\em fornecedor} & ID of the product provider\\
+\hline
+{\em cliente} & ID of the client that ordered the product\\
+\hline
+{\em funcionario} & ID of the employee currently responsible\\
+\hline
+{\em cc} & Credit card number associated with the order\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Encomenda object
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context_aa71841c7b21e94f09c58cbb72c5e7efa}\label{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context_aa71841c7b21e94f09c58cbb72c5e7efa}} 
+\index{mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context@{mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context}!new\+Fornecedor@{new\+Fornecedor}}
+\index{new\+Fornecedor@{new\+Fornecedor}!mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context@{mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context}}
+\subsubsection{\texorpdfstring{new\+Fornecedor()}{newFornecedor()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmvc_j_j_m_s_1_1_models_1_1_fornecedor}{Fornecedor}} mvc\+J\+J\+M\+S.\+Data.\+J\+J\+M\+S\+Context.\+new\+Fornecedor (\begin{DoxyParamCaption}\item[{string}]{nome,  }\item[{string}]{morada }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Wrapper for creating a new Fornecedor object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome} & Name of the provider\\
+\hline
+{\em morada} & Address of the provider\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Fornecedor object
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context_a2024d653b72abde9d56963ee934605f6}\label{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context_a2024d653b72abde9d56963ee934605f6}} 
+\index{mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context@{mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context}!new\+Funcionario@{new\+Funcionario}}
+\index{new\+Funcionario@{new\+Funcionario}!mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context@{mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context}}
+\subsubsection{\texorpdfstring{new\+Funcionario()}{newFuncionario()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmvc_j_j_m_s_1_1_models_1_1_funcionario}{Funcionario}} mvc\+J\+J\+M\+S.\+Data.\+J\+J\+M\+S\+Context.\+new\+Funcionario (\begin{DoxyParamCaption}\item[{string}]{nome,  }\item[{byte \mbox{[}$\,$\mbox{]}}]{passwordH,  }\item[{string}]{email,  }\item[{int}]{zona\+Trabalho }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Wrapper for creating a new Funcionario object 
+
+
+\begin{DoxyParams}{Parameters}
+{\em nome} & Username of the employee\\
+\hline
+{\em passwordH} & Employee password\\
+\hline
+{\em email} & Employee email\\
+\hline
+{\em zona\+Trabalho} & Identifier of the work zone that the employee is assigned\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Funcionario object
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context_aadc81d0f274fa7d1909d94c7363e5f4a}\label{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context_aadc81d0f274fa7d1909d94c7363e5f4a}} 
+\index{mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context@{mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context}!On\+Model\+Creating@{On\+Model\+Creating}}
+\index{On\+Model\+Creating@{On\+Model\+Creating}!mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context@{mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context}}
+\subsubsection{\texorpdfstring{On\+Model\+Creating()}{OnModelCreating()}}
+{\footnotesize\ttfamily override void mvc\+J\+J\+M\+S.\+Data.\+J\+J\+M\+S\+Context.\+On\+Model\+Creating (\begin{DoxyParamCaption}\item[{Model\+Builder}]{model\+Builder }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+Registers class attributes as foreign keys and their 
+
+
+\begin{DoxyParams}{Parameters}
+{\em model\+Builder} & \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Property Documentation}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context_aa0df06a1a57e42ddb59661a7f8b38a61}\label{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context_aa0df06a1a57e42ddb59661a7f8b38a61}} 
+\index{mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context@{mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context}!Cartoes@{Cartoes}}
+\index{Cartoes@{Cartoes}!mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context@{mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context}}
+\subsubsection{\texorpdfstring{Cartoes}{Cartoes}}
+{\footnotesize\ttfamily Db\+Set$<$\mbox{\hyperlink{classmvc_j_j_m_s_1_1_models_1_1_cartao_credito}{Cartao\+Credito}}$>$ mvc\+J\+J\+M\+S.\+Data.\+J\+J\+M\+S\+Context.\+Cartoes\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Database table containing credit card info 
+
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context_af090c3e4b61638096cf0085f313a8bde}\label{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context_af090c3e4b61638096cf0085f313a8bde}} 
+\index{mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context@{mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context}!Clientes@{Clientes}}
+\index{Clientes@{Clientes}!mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context@{mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context}}
+\subsubsection{\texorpdfstring{Clientes}{Clientes}}
+{\footnotesize\ttfamily Db\+Set$<$\mbox{\hyperlink{classmvc_j_j_m_s_1_1_models_1_1_cliente}{Cliente}}$>$ mvc\+J\+J\+M\+S.\+Data.\+J\+J\+M\+S\+Context.\+Clientes\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Database table containing client info 
+
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context_ad0850c01749a0a69a17ecb59e0d2ed76}\label{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context_ad0850c01749a0a69a17ecb59e0d2ed76}} 
+\index{mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context@{mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context}!Encomendas@{Encomendas}}
+\index{Encomendas@{Encomendas}!mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context@{mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context}}
+\subsubsection{\texorpdfstring{Encomendas}{Encomendas}}
+{\footnotesize\ttfamily Db\+Set$<$\mbox{\hyperlink{classmvc_j_j_m_s_1_1_models_1_1_encomenda}{Encomenda}}$>$ mvc\+J\+J\+M\+S.\+Data.\+J\+J\+M\+S\+Context.\+Encomendas\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Database table containing order info 
+
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context_a46f580334ca10f6fb677d92e21d0778a}\label{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context_a46f580334ca10f6fb677d92e21d0778a}} 
+\index{mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context@{mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context}!Fornecedores@{Fornecedores}}
+\index{Fornecedores@{Fornecedores}!mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context@{mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context}}
+\subsubsection{\texorpdfstring{Fornecedores}{Fornecedores}}
+{\footnotesize\ttfamily Db\+Set$<$\mbox{\hyperlink{classmvc_j_j_m_s_1_1_models_1_1_fornecedor}{Fornecedor}}$>$ mvc\+J\+J\+M\+S.\+Data.\+J\+J\+M\+S\+Context.\+Fornecedores\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Database table containing provider info 
+
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context_a8bf23800fa7d55f90d47fb4e227d1fe2}\label{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context_a8bf23800fa7d55f90d47fb4e227d1fe2}} 
+\index{mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context@{mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context}!Funcionarios@{Funcionarios}}
+\index{Funcionarios@{Funcionarios}!mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context@{mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context}}
+\subsubsection{\texorpdfstring{Funcionarios}{Funcionarios}}
+{\footnotesize\ttfamily Db\+Set$<$\mbox{\hyperlink{classmvc_j_j_m_s_1_1_models_1_1_funcionario}{Funcionario}}$>$ mvc\+J\+J\+M\+S.\+Data.\+J\+J\+M\+S\+Context.\+Funcionarios\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Database table containing employee info 
+
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context_a6c5c99292b7657f90a4b24d9da67e4ed}\label{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context_a6c5c99292b7657f90a4b24d9da67e4ed}} 
+\index{mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context@{mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context}!Utilizadores@{Utilizadores}}
+\index{Utilizadores@{Utilizadores}!mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context@{mvc\+J\+J\+M\+S\+::\+Data\+::\+J\+J\+M\+S\+Context}}
+\subsubsection{\texorpdfstring{Utilizadores}{Utilizadores}}
+{\footnotesize\ttfamily Db\+Set$<$\mbox{\hyperlink{classmvc_j_j_m_s_1_1_models_1_1_utilizador}{Utilizador}}$>$ mvc\+J\+J\+M\+S.\+Data.\+J\+J\+M\+S\+Context.\+Utilizadores\hspace{0.3cm}{\ttfamily [get]}, {\ttfamily [set]}}
+
+
+
+Database table containing user info, both employee and client 
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Data/J\+J\+M\+S\+Context.\+cs\end{DoxyCompactItemize}

@@ -1,0 +1,225 @@
+\hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller}{}\section{mvc\+J\+J\+M\+S.\+Controllers.\+Utilizador\+Controller Class Reference}
+\label{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller}\index{mvc\+J\+J\+M\+S.\+Controllers.\+Utilizador\+Controller@{mvc\+J\+J\+M\+S.\+Controllers.\+Utilizador\+Controller}}
+Inheritance diagram for mvc\+J\+J\+M\+S.\+Controllers.\+Utilizador\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_a1d833224478b16de3a404928df7c6fb0}\label{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_a1d833224478b16de3a404928df7c6fb0}} 
+{\bfseries Utilizador\+Controller} (\mbox{\hyperlink{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context}{J\+J\+M\+S\+Context}} context)
+\item 
+Action\+Result \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_af8335bb74fe7e7b4cbab85a176775c30}{Login}} (string email, string password)
+\begin{DoxyCompactList}\small\item\em Logs a user into the system \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_a8243cd298846e34fb97c3c7d2d691174}{get\+Utilizador\+ID}} ()
+\begin{DoxyCompactList}\small\item\em Returns the ID of the user currently logged in \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_abc0b8e9e7e35ee0c6f910a4fc63bb6d2}{email\+Associado}} (string email)
+\begin{DoxyCompactList}\small\item\em Checks whether there\textquotesingle{}s a registered user with the given email \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_a6250c090d89e8a6cea8347d9186daeb0}{Get\+User\+Nome}} (int id\+User)
+\begin{DoxyCompactList}\small\item\em Retrieves the username associated with the given user ID \end{DoxyCompactList}\item 
+byte \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_a71ba7901a09e013703d461927ab9ff80}{Get\+User\+Password}} (int id\+User)
+\begin{DoxyCompactList}\small\item\em Retrieves the password associated with the given user ID \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_a11bcddd35c8eeaaea9a7baf761b8f877}{Get\+User\+Email}} (int id\+User)
+\begin{DoxyCompactList}\small\item\em Retrieves the email associated with the given user ID \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_ae6ce52cd52288d470fb4d57da79dbffb}{Update\+Nome}} (int id\+User, string nome\+Input)
+\begin{DoxyCompactList}\small\item\em Updates the username associated with the given user ID \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_a9dec9a63e5d6e07567c884db33e69ef3}{Update\+Password}} (int id\+User, string password\+Input)
+\begin{DoxyCompactList}\small\item\em Updates the password associated with the given user ID \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_a11aabb148f5c11805d2fc9955a44a91d}{Update\+Email}} (int id\+User, string email\+Input)
+\begin{DoxyCompactList}\small\item\em Updates the email associated with the given user ID \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_a2be8952c2ef886358ba107f962199a00}\label{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_a2be8952c2ef886358ba107f962199a00}} 
+View\+Result {\bfseries Email\+Inexistente} ()
+\item 
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_ac0481a2c0ce4068349866c229abaa9eb}\label{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_ac0481a2c0ce4068349866c229abaa9eb}} 
+View\+Result {\bfseries Password\+Invalida} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static byte \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_a72e105c651070200f84c3718fdf3c8cc}{ hash\+Function}} (string input)
+\begin{DoxyCompactList}\small\item\em Performas a sha384 hash on the input string \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_abc0b8e9e7e35ee0c6f910a4fc63bb6d2}\label{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_abc0b8e9e7e35ee0c6f910a4fc63bb6d2}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller}!email\+Associado@{email\+Associado}}
+\index{email\+Associado@{email\+Associado}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller}}
+\subsubsection{\texorpdfstring{email\+Associado()}{emailAssociado()}}
+{\footnotesize\ttfamily bool mvc\+J\+J\+M\+S.\+Controllers.\+Utilizador\+Controller.\+email\+Associado (\begin{DoxyParamCaption}\item[{string}]{email }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks whether there\textquotesingle{}s a registered user with the given email 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & Email address to check for\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE if there is a user registered with the email else F\+A\+L\+SE
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_a11bcddd35c8eeaaea9a7baf761b8f877}\label{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_a11bcddd35c8eeaaea9a7baf761b8f877}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller}!Get\+User\+Email@{Get\+User\+Email}}
+\index{Get\+User\+Email@{Get\+User\+Email}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller}}
+\subsubsection{\texorpdfstring{Get\+User\+Email()}{GetUserEmail()}}
+{\footnotesize\ttfamily string mvc\+J\+J\+M\+S.\+Controllers.\+Utilizador\+Controller.\+Get\+User\+Email (\begin{DoxyParamCaption}\item[{int}]{id\+User }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the email associated with the given user ID 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+User} & Unique identifier of the user\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Email associated with the identifier
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_a6250c090d89e8a6cea8347d9186daeb0}\label{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_a6250c090d89e8a6cea8347d9186daeb0}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller}!Get\+User\+Nome@{Get\+User\+Nome}}
+\index{Get\+User\+Nome@{Get\+User\+Nome}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller}}
+\subsubsection{\texorpdfstring{Get\+User\+Nome()}{GetUserNome()}}
+{\footnotesize\ttfamily string mvc\+J\+J\+M\+S.\+Controllers.\+Utilizador\+Controller.\+Get\+User\+Nome (\begin{DoxyParamCaption}\item[{int}]{id\+User }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the username associated with the given user ID 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+User} & Unique identifier of the user\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Username associated with the identifier
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_a71ba7901a09e013703d461927ab9ff80}\label{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_a71ba7901a09e013703d461927ab9ff80}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller}!Get\+User\+Password@{Get\+User\+Password}}
+\index{Get\+User\+Password@{Get\+User\+Password}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller}}
+\subsubsection{\texorpdfstring{Get\+User\+Password()}{GetUserPassword()}}
+{\footnotesize\ttfamily byte \mbox{[}$\,$\mbox{]} mvc\+J\+J\+M\+S.\+Controllers.\+Utilizador\+Controller.\+Get\+User\+Password (\begin{DoxyParamCaption}\item[{int}]{id\+User }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the password associated with the given user ID 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+User} & Unique identifier of the user\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Hashed byte array of user password
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_a8243cd298846e34fb97c3c7d2d691174}\label{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_a8243cd298846e34fb97c3c7d2d691174}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller}!get\+Utilizador\+ID@{get\+Utilizador\+ID}}
+\index{get\+Utilizador\+ID@{get\+Utilizador\+ID}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller}}
+\subsubsection{\texorpdfstring{get\+Utilizador\+I\+D()}{getUtilizadorID()}}
+{\footnotesize\ttfamily int mvc\+J\+J\+M\+S.\+Controllers.\+Utilizador\+Controller.\+get\+Utilizador\+ID (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Returns the ID of the user currently logged in 
+
+\begin{DoxyReturn}{Returns}
+Unique identifier of the user
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_af8335bb74fe7e7b4cbab85a176775c30}\label{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_af8335bb74fe7e7b4cbab85a176775c30}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller}!Login@{Login}}
+\index{Login@{Login}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller}}
+\subsubsection{\texorpdfstring{Login()}{Login()}}
+{\footnotesize\ttfamily Action\+Result mvc\+J\+J\+M\+S.\+Controllers.\+Utilizador\+Controller.\+Login (\begin{DoxyParamCaption}\item[{string}]{email,  }\item[{string}]{password }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Logs a user into the system 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & User email\\
+\hline
+{\em password} & User password\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Redirects to a Menu or an Error view
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_a11aabb148f5c11805d2fc9955a44a91d}\label{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_a11aabb148f5c11805d2fc9955a44a91d}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller}!Update\+Email@{Update\+Email}}
+\index{Update\+Email@{Update\+Email}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller}}
+\subsubsection{\texorpdfstring{Update\+Email()}{UpdateEmail()}}
+{\footnotesize\ttfamily void mvc\+J\+J\+M\+S.\+Controllers.\+Utilizador\+Controller.\+Update\+Email (\begin{DoxyParamCaption}\item[{int}]{id\+User,  }\item[{string}]{email\+Input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates the email associated with the given user ID 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+User} & Unique identifier of the user\\
+\hline
+{\em email\+Input} & New email\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_ae6ce52cd52288d470fb4d57da79dbffb}\label{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_ae6ce52cd52288d470fb4d57da79dbffb}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller}!Update\+Nome@{Update\+Nome}}
+\index{Update\+Nome@{Update\+Nome}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller}}
+\subsubsection{\texorpdfstring{Update\+Nome()}{UpdateNome()}}
+{\footnotesize\ttfamily void mvc\+J\+J\+M\+S.\+Controllers.\+Utilizador\+Controller.\+Update\+Nome (\begin{DoxyParamCaption}\item[{int}]{id\+User,  }\item[{string}]{nome\+Input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates the username associated with the given user ID 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+User} & Unique identifier of the user\\
+\hline
+{\em nome\+Input} & New username\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_a9dec9a63e5d6e07567c884db33e69ef3}\label{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_a9dec9a63e5d6e07567c884db33e69ef3}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller}!Update\+Password@{Update\+Password}}
+\index{Update\+Password@{Update\+Password}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller}}
+\subsubsection{\texorpdfstring{Update\+Password()}{UpdatePassword()}}
+{\footnotesize\ttfamily void mvc\+J\+J\+M\+S.\+Controllers.\+Utilizador\+Controller.\+Update\+Password (\begin{DoxyParamCaption}\item[{int}]{id\+User,  }\item[{string}]{password\+Input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates the password associated with the given user ID 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+User} & Unique identifier of the user\\
+\hline
+{\em password\+Input} & New password\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_a72e105c651070200f84c3718fdf3c8cc}\label{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_a72e105c651070200f84c3718fdf3c8cc}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller}! hash\+Function@{ hash\+Function}}
+\index{ hash\+Function@{ hash\+Function}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller}}
+\subsubsection{\texorpdfstring{ hash\+Function()}{ hashFunction()}}
+{\footnotesize\ttfamily static byte \mbox{[}$\,$\mbox{]} mvc\+J\+J\+M\+S.\+Controllers.\+Utilizador\+Controller.\+ hash\+Function (\begin{DoxyParamCaption}\item[{string}]{input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Performas a sha384 hash on the input string 
+
+
+\begin{DoxyParams}{Parameters}
+{\em input} & String to perform the hash on\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+S\+H\+A384 hash output
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Controllers/Utilizador\+Controller.\+cs\end{DoxyCompactItemize}
