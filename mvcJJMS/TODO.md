@@ -12,12 +12,13 @@
 - [ ] Model: CartaoCredito: Pagamento
 - [x] Model: Cliente: TemEncomenda
 - [ ] Model: Encomenda: GerarFatura
+- [ ] Mobile interface
 
 ## Testing
-- [ ] Login
-- [ ] Registration
-- [ ] Arrange an order
-- [ ] Change user data
+- [x] Login
+- [x] Registration
+- [x] Arrange an order
+- [x] Change user data
 
 
 ## Documentation
