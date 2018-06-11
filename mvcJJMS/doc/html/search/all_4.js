@@ -1,7 +1,6 @@
 var searchData=
 [
   ['emailassociado',['emailAssociado',['../classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller.html#abc0b8e9e7e35ee0c6f910a4fc63bb6d2',1,'mvcJJMS::Controllers::UtilizadorController']]],
-  ['emailvalido',['emailValido',['../classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller.html#a0f8b63358a35d40ad0bdda9442d9a677',1,'mvcJJMS::Controllers::ClienteController']]],
   ['encomenda',['Encomenda',['../classmvc_j_j_m_s_1_1_models_1_1_encomenda.html',1,'mvcJJMS::Models']]],
   ['encomendacontroller',['EncomendaController',['../classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller.html',1,'mvcJJMS::Controllers']]],
   ['encomendaentregue',['EncomendaEntregue',['../classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller.html#a7aa095cf3c1afa66cb3b53cf58d0973d',1,'mvcJJMS::Controllers::EncomendaController']]],
