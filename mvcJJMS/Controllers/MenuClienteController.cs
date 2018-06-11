@@ -162,8 +162,8 @@ namespace mvcJJMS.Controllers{
         /// <param name="idEncomenda">Unique identifier for a single order</param>
         /// <returns>Redirects to the Rating Menu or to an Error view</returns>
         public ActionResult checkEncomenda(int idEncomenda){
-            if(!this._eController.existeEncomenda(idEncomenda)) return CodigoInexistente();
-            else if(this._eController.getEstadoEncomendaI(idEncomenda)!=4) return EncomendaPorEntregar();
+            if(!this._cController.ExisteEncomendaCliente(this._uController.getUtilizadorID(),idEncomenda)) return CodigoInexistente();
+            else if(this._eController.EncomendaEntregue(idEncomenda)) return EncomendaPorEntregar();
             return InserirClassificacoes(idEncomenda);
         }
 

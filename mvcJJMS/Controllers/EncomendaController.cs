@@ -236,6 +236,7 @@ namespace mvcJJMS.Controllers{
 			bool cartao = _caController.CartaoValido(ncc,mes,ano,cvv,pais);
 			if (cartao == false) return DadosPagamentoInvalidos();
 			this.SetEncomenda(_uController.getUtilizadorID(),fornecedor,morada,dia,hora,ncc,mes,ano,cvv,pais);
+			//TODO DelegarFuncionario(idEncomenda); do MenuFuncionarioController
 			return Sucesso();
 		}
 
