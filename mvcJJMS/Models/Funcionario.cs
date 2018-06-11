@@ -17,7 +17,7 @@ namespace mvcJJMS.Models{
 		/// </summary>
 		/// <param name="classificacao"></param>
 		public void AtualizaAvaliacao(int classificacao) {
-			this.Avaliação=((this.Avaliação*this.NumAvaliações++)+classificacao)/this.NumAvaliações;
+			this.Avaliação=((this.Avaliação*this.NumAvaliações)+classificacao)/this.NumAvaliações++;
 		}
 	}
 }

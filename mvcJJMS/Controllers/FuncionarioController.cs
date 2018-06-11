@@ -92,7 +92,7 @@ namespace mvcJJMS.Controllers{
 		/// <param name="morada"></param>
 		/// <returns>returns the code of the area</returns>
         public int GetZona( string morada) {
-			throw new System.Exception("Not implemented");
+			return 1; //dummy (not implemented)
 		}
     }
 }
