@@ -22,7 +22,31 @@ namespace mvcJJMS.Controllers{
 		/// <param name="email">User email</param>
 		/// <param name="password">User password</param>
 		/// <returns>Redirects to a Menu or an Error view</returns>
-        public ActionResult Login(string email, string password) {
+        public ActionResult Autenticar(string email, string password) {
+			int login=this.Login(email,password);
+
+			switch(login){
+				case 0:
+                    return RedirectToAction("Index", "MenuCliente");
+                case 1:
+                    return RedirectToAction("Index", "MenuFuncionario");
+                case 2:
+                    return this.EmailInexistente();
+                case 3:
+                    return this.PasswordInvalida();
+				default:
+					return RedirectToAction("Index","MenuPrincipal");
+			}
+		}
+
+		/// <summary>
+		/// Checks if the given credentials are valid
+		/// </summary>
+		/// <param name="email">User email</param>
+		/// <param name="password">User password</param>
+		/// <returns>0 if the User is a client, 1 if the User is an employee, 
+		/// 		 2 if the email is invalid, 3 if the password is invalid</returns>
+		public int Login(string email, string password){
 			List<Utilizador> uts = _context.Utilizadores.ToList();
 			bool found = false;
 			int ret=2;
@@ -40,18 +64,7 @@ namespace mvcJJMS.Controllers{
 					}
 				}
 			}
-			switch(ret){
-				case 0:
-                    return RedirectToAction("Index", "MenuCliente");
-                case 1:
-                    return RedirectToAction("Index", "MenuFuncionario");
-                case 2:
-                    return this.EmailInexistente();
-                case 3:
-                    return this.PasswordInvalida();
-				default:
-					return RedirectToAction("Index","MenuPrincipal");
-			}
+			return ret;
 		}
 
 		/// <summary>

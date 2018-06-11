@@ -204,7 +204,7 @@ namespace mvcJJMS.Controllers{
 		/// <param name="idCliente">Unique identifier for a client</param>
 		/// <returns>Order history of the given client</returns>
         public async Task<List<Encomenda>> GetHistoricoEnc( int idCliente) {
-			return await _context.Clientes.Find(idCliente).Encomendas.AsQueryable().ToListAsync();
+			return await _context.Encomendas.Where(e => e.ClienteID==idCliente).ToListAsync();
 		}
 
 		/// <summary>

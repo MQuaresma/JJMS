@@ -87,9 +87,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a1d833224478b16de3a404928df7c6fb0"><td class="memItemLeft" align="right" valign="top"><a id="a1d833224478b16de3a404928df7c6fb0"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>UtilizadorController</b> (<a class="el" href="classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context.html">JJMSContext</a> context)</td></tr>
 <tr class="separator:a1d833224478b16de3a404928df7c6fb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8335bb74fe7e7b4cbab85a176775c30"><td class="memItemLeft" align="right" valign="top">ActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller.html#af8335bb74fe7e7b4cbab85a176775c30">Login</a> (string email, string password)</td></tr>
-<tr class="memdesc:af8335bb74fe7e7b4cbab85a176775c30"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a user into the system  <a href="#af8335bb74fe7e7b4cbab85a176775c30">More...</a><br /></td></tr>
-<tr class="separator:af8335bb74fe7e7b4cbab85a176775c30"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af5e72a30b41eb17d41cf14d3f0afd177"><td class="memItemLeft" align="right" valign="top">ActionResult&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller.html#af5e72a30b41eb17d41cf14d3f0afd177">Autenticar</a> (string email, string password)</td></tr>
+<tr class="memdesc:af5e72a30b41eb17d41cf14d3f0afd177"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a user into the system  <a href="#af5e72a30b41eb17d41cf14d3f0afd177">More...</a><br /></td></tr>
+<tr class="separator:af5e72a30b41eb17d41cf14d3f0afd177"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0adbf91e0872321efd757daea0b6759"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller.html#ad0adbf91e0872321efd757daea0b6759">Login</a> (string email, string password)</td></tr>
+<tr class="memdesc:ad0adbf91e0872321efd757daea0b6759"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks if the given credentials are valid  <a href="#ad0adbf91e0872321efd757daea0b6759">More...</a><br /></td></tr>
+<tr class="separator:ad0adbf91e0872321efd757daea0b6759"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8243cd298846e34fb97c3c7d2d691174"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller.html#a8243cd298846e34fb97c3c7d2d691174">getUtilizadorID</a> ()</td></tr>
 <tr class="memdesc:a8243cd298846e34fb97c3c7d2d691174"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the ID of the user currently logged in  <a href="#a8243cd298846e34fb97c3c7d2d691174">More...</a><br /></td></tr>
 <tr class="separator:a8243cd298846e34fb97c3c7d2d691174"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -128,6 +131,52 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a72e105c651070200f84c3718fdf3c8cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="af5e72a30b41eb17d41cf14d3f0afd177"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af5e72a30b41eb17d41cf14d3f0afd177">&#9670;&nbsp;</a></span>Autenticar()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ActionResult mvcJJMS.Controllers.UtilizadorController.Autenticar </td>
+          <td>(</td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>email</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string&#160;</td>
+          <td class="paramname"><em>password</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Logs a user into the system </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">email</td><td>User email</td></tr>
+    <tr><td class="paramname">password</td><td>User password</td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>Redirects to a Menu or an Error view</dd></dl>
+
+</div>
+</div>
 <a id="abc0b8e9e7e35ee0c6f910a4fc63bb6d2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#abc0b8e9e7e35ee0c6f910a4fc63bb6d2">&#9670;&nbsp;</a></span>emailAssociado()</h2>
 
@@ -296,8 +345,8 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="af8335bb74fe7e7b4cbab85a176775c30"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8335bb74fe7e7b4cbab85a176775c30">&#9670;&nbsp;</a></span>Login()</h2>
+<a id="ad0adbf91e0872321efd757daea0b6759"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0adbf91e0872321efd757daea0b6759">&#9670;&nbsp;</a></span>Login()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -306,7 +355,7 @@ Static Public Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">ActionResult mvcJJMS.Controllers.UtilizadorController.Login </td>
+          <td class="memname">int mvcJJMS.Controllers.UtilizadorController.Login </td>
           <td>(</td>
           <td class="paramtype">string&#160;</td>
           <td class="paramname"><em>email</em>, </td>
@@ -330,7 +379,7 @@ Static Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>Logs a user into the system </p>
+<p>Checks if the given credentials are valid </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">email</td><td>User email</td></tr>
@@ -338,7 +387,7 @@ Static Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>Redirects to a Menu or an Error view</dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>0 if the User is a client, 1 if the User is an employee, 2 if the email is invalid, 3 if the password is invalid</dd></dl>
 
 </div>
 </div>

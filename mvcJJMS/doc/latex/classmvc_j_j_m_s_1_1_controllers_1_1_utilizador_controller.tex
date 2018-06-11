@@ -12,8 +12,10 @@ Inheritance diagram for mvc\+J\+J\+M\+S.\+Controllers.\+Utilizador\+Controller\+
 \mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_a1d833224478b16de3a404928df7c6fb0}\label{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_a1d833224478b16de3a404928df7c6fb0}} 
 {\bfseries Utilizador\+Controller} (\mbox{\hyperlink{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context}{J\+J\+M\+S\+Context}} context)
 \item 
-Action\+Result \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_af8335bb74fe7e7b4cbab85a176775c30}{Login}} (string email, string password)
+Action\+Result \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_af5e72a30b41eb17d41cf14d3f0afd177}{Autenticar}} (string email, string password)
 \begin{DoxyCompactList}\small\item\em Logs a user into the system \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_ad0adbf91e0872321efd757daea0b6759}{Login}} (string email, string password)
+\begin{DoxyCompactList}\small\item\em Checks if the given credentials are valid \end{DoxyCompactList}\item 
 int \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_a8243cd298846e34fb97c3c7d2d691174}{get\+Utilizador\+ID}} ()
 \begin{DoxyCompactList}\small\item\em Returns the ID of the user currently logged in \end{DoxyCompactList}\item 
 bool \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_abc0b8e9e7e35ee0c6f910a4fc63bb6d2}{email\+Associado}} (string email)
@@ -44,6 +46,26 @@ static byte \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controlle
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_af5e72a30b41eb17d41cf14d3f0afd177}\label{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_af5e72a30b41eb17d41cf14d3f0afd177}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller}!Autenticar@{Autenticar}}
+\index{Autenticar@{Autenticar}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller}}
+\subsubsection{\texorpdfstring{Autenticar()}{Autenticar()}}
+{\footnotesize\ttfamily Action\+Result mvc\+J\+J\+M\+S.\+Controllers.\+Utilizador\+Controller.\+Autenticar (\begin{DoxyParamCaption}\item[{string}]{email,  }\item[{string}]{password }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Logs a user into the system 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & User email\\
+\hline
+{\em password} & User password\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Redirects to a Menu or an Error view
+\end{DoxyReturn}
 \mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_abc0b8e9e7e35ee0c6f910a4fc63bb6d2}\label{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_abc0b8e9e7e35ee0c6f910a4fc63bb6d2}} 
 \index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller}!email\+Associado@{email\+Associado}}
 \index{email\+Associado@{email\+Associado}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller}}
@@ -129,15 +151,15 @@ Returns the ID of the user currently logged in
 \begin{DoxyReturn}{Returns}
 Unique identifier of the user
 \end{DoxyReturn}
-\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_af8335bb74fe7e7b4cbab85a176775c30}\label{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_af8335bb74fe7e7b4cbab85a176775c30}} 
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_ad0adbf91e0872321efd757daea0b6759}\label{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_ad0adbf91e0872321efd757daea0b6759}} 
 \index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller}!Login@{Login}}
 \index{Login@{Login}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller}}
 \subsubsection{\texorpdfstring{Login()}{Login()}}
-{\footnotesize\ttfamily Action\+Result mvc\+J\+J\+M\+S.\+Controllers.\+Utilizador\+Controller.\+Login (\begin{DoxyParamCaption}\item[{string}]{email,  }\item[{string}]{password }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily int mvc\+J\+J\+M\+S.\+Controllers.\+Utilizador\+Controller.\+Login (\begin{DoxyParamCaption}\item[{string}]{email,  }\item[{string}]{password }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
-Logs a user into the system 
+Checks if the given credentials are valid 
 
 
 \begin{DoxyParams}{Parameters}
@@ -147,7 +169,7 @@ Logs a user into the system
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-Redirects to a Menu or an Error view
+0 if the User is a client, 1 if the User is an employee, 2 if the email is invalid, 3 if the password is invalid
 \end{DoxyReturn}
 \mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_a11aabb148f5c11805d2fc9955a44a91d}\label{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller_a11aabb148f5c11805d2fc9955a44a91d}} 
 \index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Utilizador\+Controller}!Update\+Email@{Update\+Email}}

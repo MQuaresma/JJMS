@@ -261,7 +261,7 @@ namespace mvcJJMS.Controllers{
         /// <returns>Asynchronous redirection to a view containing the order in a table format</returns>
         public async Task<IActionResult> ConsultarHistorico(){
             ViewBag.Title="Consultar Histórico";
-            return View("~/Views/ConsultarHistorico/Index.cshtml",await _context.Encomendas.Where(e => e.ClienteID==_uController.getUtilizadorID()).ToListAsync());
+            return View("~/Views/ConsultarHistorico/Index.cshtml",await _cController.GetHistoricoEnc(_uController.getUtilizadorID()));
         }
         
         public ViewResult RequisitarEncomenda(){
