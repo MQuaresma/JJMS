@@ -42,9 +42,6 @@ namespace mvcJJMS.Controllers{
 			if(this.passwordSegura(password)==false){
 				return PasswordInsegura();
 			}
-			if(this.emailValido(email)==false){
-				return EmailInvalido();
-			}
 
 			Cliente nCliente = _context.newCliente(user,UtilizadorController.hashFunction(password),email,morada,telefone);
 			_context.Clientes.Add(nCliente);
@@ -84,21 +81,6 @@ namespace mvcJJMS.Controllers{
 			if (numeros == 0 || letras == 0 || simbolos == 0) return false;
 			return true;
 		}   
-
-		/// <summary>
-		/// Checks if a string is a valid email
-		/// </summary>
-		/// <param name="email">string email to analyze</param>
-		/// <returns>TRUE if the string is a email, else FALSE</returns>
-		public bool emailValido( string email){
-			MailAddress address;
-			try{
-				address = new MailAddress(email);
-			}catch (FormatException){
-				return false;
-			}
-			return true;
-		} 
 
 		/// <summary>
 		/// Retrieves the address associated with a client
