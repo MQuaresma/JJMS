@@ -1,0 +1,70 @@
+\hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_cartao_controller}{}\section{mvc\+J\+J\+M\+S.\+Controllers.\+Cartao\+Controller Class Reference}
+\label{classmvc_j_j_m_s_1_1_controllers_1_1_cartao_controller}\index{mvc\+J\+J\+M\+S.\+Controllers.\+Cartao\+Controller@{mvc\+J\+J\+M\+S.\+Controllers.\+Cartao\+Controller}}
+Inheritance diagram for mvc\+J\+J\+M\+S.\+Controllers.\+Cartao\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmvc_j_j_m_s_1_1_controllers_1_1_cartao_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_cartao_controller_acd5089f69da95c88587b994307362ade}\label{classmvc_j_j_m_s_1_1_controllers_1_1_cartao_controller_acd5089f69da95c88587b994307362ade}} 
+{\bfseries Cartao\+Controller} (\mbox{\hyperlink{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context}{J\+J\+M\+S\+Context}} context)
+\item 
+bool \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_cartao_controller_a1e60f8ebecc93f7210c7e8a143c2e965}{Luhn\+\_\+check}} (long num\+Cart\+Credito)
+\begin{DoxyCompactList}\small\item\em checks if a number of credit card respects the luhn algoritm \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_cartao_controller_a1e57d6690edbfa272d61c72e3e2f945b}{Cartao\+Valido}} (long num\+Cart\+Credito, int mes, int ano, int cvv, string pais)
+\begin{DoxyCompactList}\small\item\em Verify is Cartao\+Credito is valid, aplies luhn algoritm, checks validate and if cvv have 3 or 4 of length \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_cartao_controller_a1e57d6690edbfa272d61c72e3e2f945b}\label{classmvc_j_j_m_s_1_1_controllers_1_1_cartao_controller_a1e57d6690edbfa272d61c72e3e2f945b}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cartao\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cartao\+Controller}!Cartao\+Valido@{Cartao\+Valido}}
+\index{Cartao\+Valido@{Cartao\+Valido}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cartao\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cartao\+Controller}}
+\subsubsection{\texorpdfstring{Cartao\+Valido()}{CartaoValido()}}
+{\footnotesize\ttfamily bool mvc\+J\+J\+M\+S.\+Controllers.\+Cartao\+Controller.\+Cartao\+Valido (\begin{DoxyParamCaption}\item[{long}]{num\+Cart\+Credito,  }\item[{int}]{mes,  }\item[{int}]{ano,  }\item[{int}]{cvv,  }\item[{string}]{pais }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Verify is Cartao\+Credito is valid, aplies luhn algoritm, checks validate and if cvv have 3 or 4 of length 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+Cart\+Credito} & \\
+\hline
+{\em mes} & \\
+\hline
+{\em ano} & \\
+\hline
+{\em cvv} & \\
+\hline
+{\em pais} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if Cartao\+Credito is valid, false if not
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_cartao_controller_a1e60f8ebecc93f7210c7e8a143c2e965}\label{classmvc_j_j_m_s_1_1_controllers_1_1_cartao_controller_a1e60f8ebecc93f7210c7e8a143c2e965}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cartao\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cartao\+Controller}!Luhn\+\_\+check@{Luhn\+\_\+check}}
+\index{Luhn\+\_\+check@{Luhn\+\_\+check}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cartao\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cartao\+Controller}}
+\subsubsection{\texorpdfstring{Luhn\+\_\+check()}{Luhn\_check()}}
+{\footnotesize\ttfamily bool mvc\+J\+J\+M\+S.\+Controllers.\+Cartao\+Controller.\+Luhn\+\_\+check (\begin{DoxyParamCaption}\item[{long}]{num\+Cart\+Credito }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+checks if a number of credit card respects the luhn algoritm 
+
+
+\begin{DoxyParams}{Parameters}
+{\em num\+Cart\+Credito} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if is valid, false if not
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Controllers/Cartao\+Controller.\+cs\end{DoxyCompactItemize}

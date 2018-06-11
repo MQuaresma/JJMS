@@ -1,0 +1,103 @@
+\hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_funcionario_controller}{}\section{mvc\+J\+J\+M\+S.\+Controllers.\+Funcionario\+Controller Class Reference}
+\label{classmvc_j_j_m_s_1_1_controllers_1_1_funcionario_controller}\index{mvc\+J\+J\+M\+S.\+Controllers.\+Funcionario\+Controller@{mvc\+J\+J\+M\+S.\+Controllers.\+Funcionario\+Controller}}
+Inheritance diagram for mvc\+J\+J\+M\+S.\+Controllers.\+Funcionario\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmvc_j_j_m_s_1_1_controllers_1_1_funcionario_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_funcionario_controller_a757c0fb82ba396715b90fc32f6d9a0a2}\label{classmvc_j_j_m_s_1_1_controllers_1_1_funcionario_controller_a757c0fb82ba396715b90fc32f6d9a0a2}} 
+{\bfseries Funcionario\+Controller} (\mbox{\hyperlink{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context}{J\+J\+M\+S\+Context}} context, \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller}{Utilizador\+Controller}} u\+Controller, \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller}{Encomenda\+Controller}} e\+Controller, \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_fornecedor_controller}{Fornecedor\+Controller}} f\+Controller)
+\item 
+\mbox{\hyperlink{classmvc_j_j_m_s_1_1_models_1_1_funcionario}{Funcionario}} \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_funcionario_controller_a921dda2edb269dfe9a32be22d5abe2ad}{get\+Funcionario}} (int id\+Funcionario)
+\begin{DoxyCompactList}\small\item\em return Funcionario(emplyee) with id id\+Funcionario \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_funcionario_controller_a1f66cb42a2fb59a0eaacbcc570cea3ad}{Delegar\+Funcionario}} (int id\+Encomenda, string destino)
+\begin{DoxyCompactList}\small\item\em choose an employee to deliver the order with id id\+Encomenda with destino(destiny) adress \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_funcionario_controller_a248cbcd4b3b00e2979d7f6b1ce926505}{Enviar\+Email}} (int id\+Func, int id\+Encomenda)
+\begin{DoxyCompactList}\small\item\em sends a email to the choosen employee that will deliver the order with id id\+Encomenda \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_funcionario_controller_a3fc608b887a43ddf67041f09bab3aae5}{Get\+Zona}} (string morada)
+\begin{DoxyCompactList}\small\item\em choose the action zone for an employee(\+Not implemented yet) \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_funcionario_controller_a1f66cb42a2fb59a0eaacbcc570cea3ad}\label{classmvc_j_j_m_s_1_1_controllers_1_1_funcionario_controller_a1f66cb42a2fb59a0eaacbcc570cea3ad}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Funcionario\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Funcionario\+Controller}!Delegar\+Funcionario@{Delegar\+Funcionario}}
+\index{Delegar\+Funcionario@{Delegar\+Funcionario}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Funcionario\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Funcionario\+Controller}}
+\subsubsection{\texorpdfstring{Delegar\+Funcionario()}{DelegarFuncionario()}}
+{\footnotesize\ttfamily int mvc\+J\+J\+M\+S.\+Controllers.\+Funcionario\+Controller.\+Delegar\+Funcionario (\begin{DoxyParamCaption}\item[{int}]{id\+Encomenda,  }\item[{string}]{destino }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+choose an employee to deliver the order with id id\+Encomenda with destino(destiny) adress 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Encomenda} & \\
+\hline
+{\em destino} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return the id of Funcionario(employee) choosen
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_funcionario_controller_a248cbcd4b3b00e2979d7f6b1ce926505}\label{classmvc_j_j_m_s_1_1_controllers_1_1_funcionario_controller_a248cbcd4b3b00e2979d7f6b1ce926505}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Funcionario\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Funcionario\+Controller}!Enviar\+Email@{Enviar\+Email}}
+\index{Enviar\+Email@{Enviar\+Email}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Funcionario\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Funcionario\+Controller}}
+\subsubsection{\texorpdfstring{Enviar\+Email()}{EnviarEmail()}}
+{\footnotesize\ttfamily void mvc\+J\+J\+M\+S.\+Controllers.\+Funcionario\+Controller.\+Enviar\+Email (\begin{DoxyParamCaption}\item[{int}]{id\+Func,  }\item[{int}]{id\+Encomenda }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+sends a email to the choosen employee that will deliver the order with id id\+Encomenda 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Func} & \\
+\hline
+{\em id\+Encomenda} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_funcionario_controller_a921dda2edb269dfe9a32be22d5abe2ad}\label{classmvc_j_j_m_s_1_1_controllers_1_1_funcionario_controller_a921dda2edb269dfe9a32be22d5abe2ad}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Funcionario\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Funcionario\+Controller}!get\+Funcionario@{get\+Funcionario}}
+\index{get\+Funcionario@{get\+Funcionario}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Funcionario\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Funcionario\+Controller}}
+\subsubsection{\texorpdfstring{get\+Funcionario()}{getFuncionario()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classmvc_j_j_m_s_1_1_models_1_1_funcionario}{Funcionario}} mvc\+J\+J\+M\+S.\+Controllers.\+Funcionario\+Controller.\+get\+Funcionario (\begin{DoxyParamCaption}\item[{int}]{id\+Funcionario }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+return Funcionario(emplyee) with id id\+Funcionario 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Funcionario} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return Funcionario
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_funcionario_controller_a3fc608b887a43ddf67041f09bab3aae5}\label{classmvc_j_j_m_s_1_1_controllers_1_1_funcionario_controller_a3fc608b887a43ddf67041f09bab3aae5}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Funcionario\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Funcionario\+Controller}!Get\+Zona@{Get\+Zona}}
+\index{Get\+Zona@{Get\+Zona}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Funcionario\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Funcionario\+Controller}}
+\subsubsection{\texorpdfstring{Get\+Zona()}{GetZona()}}
+{\footnotesize\ttfamily int mvc\+J\+J\+M\+S.\+Controllers.\+Funcionario\+Controller.\+Get\+Zona (\begin{DoxyParamCaption}\item[{string}]{morada }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+choose the action zone for an employee(\+Not implemented yet) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em morada} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns the code of the area
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Controllers/Funcionario\+Controller.\+cs\end{DoxyCompactItemize}

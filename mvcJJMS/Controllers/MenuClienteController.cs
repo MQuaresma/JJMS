@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using System.Threading.Tasks;
+using System;
 using mvcJJMS.Data;
 using mvcJJMS.Models;
 using System.Collections.Generic;
@@ -269,6 +270,8 @@ namespace mvcJJMS.Controllers{
             if (bloq) return ClienteBloqueado();
             else{
                 ViewBag.Title="Requisitar Encomenda";
+                //Prevent the user from selecting a past date
+                ViewBag.Tomorrow=DateTime.Today.AddDays(1).ToString("yyyy-MM-d");
                 return View("~/Views/RequisitarEncomenda/Index.cshtml"); 
             }
         }

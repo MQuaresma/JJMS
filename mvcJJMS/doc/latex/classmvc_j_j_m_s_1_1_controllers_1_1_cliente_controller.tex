@@ -1,0 +1,367 @@
+\hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller}{}\section{mvc\+J\+J\+M\+S.\+Controllers.\+Cliente\+Controller Class Reference}
+\label{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller}\index{mvc\+J\+J\+M\+S.\+Controllers.\+Cliente\+Controller@{mvc\+J\+J\+M\+S.\+Controllers.\+Cliente\+Controller}}
+Inheritance diagram for mvc\+J\+J\+M\+S.\+Controllers.\+Cliente\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a55a36c3b859c2bbabf552b1526c18cef}\label{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a55a36c3b859c2bbabf552b1526c18cef}} 
+{\bfseries Cliente\+Controller} (\mbox{\hyperlink{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context}{J\+J\+M\+S\+Context}} context, \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller}{Utilizador\+Controller}} u\+Controller)
+\item 
+Action\+Result \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a31325ea0231ffa6f09996a9f61f1731b}{Registar}} (string user, string password, string email, string morada, string telefone)
+\begin{DoxyCompactList}\small\item\em Checks input and if all is right, save the Cliente to the Data\+Base \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a55f13fda1a4342595d427b8bfc9a2978}{telefone\+Valido}} (string telefone)
+\begin{DoxyCompactList}\small\item\em Checks if a string is a valid phone number \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a0027e8277cd9552a1122e12547ec10c6}{password\+Segura}} (string password)
+\begin{DoxyCompactList}\small\item\em Checks if a password is safe enough for the company \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a0f8b63358a35d40ad0bdda9442d9a677}{email\+Valido}} (string email)
+\begin{DoxyCompactList}\small\item\em Checks if a string is a valid email \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a6925f8c7f2234512eceb9e027c987ca9}{Get\+Cliente\+Morada}} (int id\+Cliente)
+\begin{DoxyCompactList}\small\item\em Retrieves the address associated with a client \end{DoxyCompactList}\item 
+string \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_ac50b76017495e8df860bffad1e7ea29f}{Get\+Cliente\+Telefone}} (int id\+Cliente)
+\begin{DoxyCompactList}\small\item\em Retrieves the phone number associated with a client \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a27719253428ef9593690de0afdba5596}{Update\+Morada}} (int id\+Cliente, string morada\+Input)
+\begin{DoxyCompactList}\small\item\em Updates the address of a client \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_aefbf9f1512ccb78afa9acaef47b95b98}{Update\+Telefone}} (int id\+Cliente, string telefone\+Input)
+\begin{DoxyCompactList}\small\item\em Updates the phone number of a client \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a75678bb2dcb7f48853343d9bf898d64a}{Bloquear}} (int id\+Cliente)
+\begin{DoxyCompactList}\small\item\em Blocks a particular client \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a71e4b089bf6844fd8440ae4571bb6ae0}{Transfere\+Montante}} (int id\+Cliente, int id\+Encomenda)
+\begin{DoxyCompactList}\small\item\em Performs payment for a given order \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a626d408a5094fabc40454be45b143ab2}{Gerar\+Fatura}} (int id\+Cliente, int id\+Encomenda)
+\begin{DoxyCompactList}\small\item\em Generates order details for a given order \end{DoxyCompactList}\item 
+F\+I\+LE \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_afa8996759fcf65477a9aac44cd0c9810}{Get\+Fatura}} (int id\+Cliente, int id\+Encomenda)
+\begin{DoxyCompactList}\small\item\em Retrieves order details associated with a given order \end{DoxyCompactList}\item 
+async Task$<$ List$<$ \mbox{\hyperlink{classmvc_j_j_m_s_1_1_models_1_1_encomenda}{Encomenda}} $>$ $>$ \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a2023d96fe1797ec7673210da1233dfe2}{Get\+Historico\+Enc}} (int id\+Cliente)
+\begin{DoxyCompactList}\small\item\em Retrieves a client\textquotesingle{}s order history \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a5ab387b5c0be1e73a0ec1c468cc3ac5e}{Existe\+Encomenda\+Cliente}} (int id\+Cliente, int id\+Encomenda)
+\begin{DoxyCompactList}\small\item\em Checks if a given order is associated with a certain client \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_ab916e41bf8757268e95796c1cf86d3df}{Esta\+Bloqueado}} (int id\+Cliente)
+\begin{DoxyCompactList}\small\item\em Checks if a given client is blocked \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_abe5a6649f29f0a35046839bad04523ef}\label{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_abe5a6649f29f0a35046839bad04523ef}} 
+View\+Result {\bfseries Email\+Em\+Uso} ()
+\item 
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a5fcddb32b175cb22a90b8dbaca7a45bb}\label{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a5fcddb32b175cb22a90b8dbaca7a45bb}} 
+View\+Result {\bfseries Password\+Insegura} ()
+\item 
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_aa66f3fb47fd4c21a67514ef6a38a8390}\label{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_aa66f3fb47fd4c21a67514ef6a38a8390}} 
+View\+Result {\bfseries Email\+Invalido} ()
+\item 
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_ab65d2ba3cdb037df769d23b70216749d}\label{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_ab65d2ba3cdb037df769d23b70216749d}} 
+View\+Result {\bfseries Sucesso} ()
+\item 
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a8d1e06b92f61ed481fa342837fcd2e7f}\label{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a8d1e06b92f61ed481fa342837fcd2e7f}} 
+View\+Result {\bfseries Telefone\+Invalido} ()
+\item 
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a0043cef3a9faa31c164bfba141b5d22b}\label{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a0043cef3a9faa31c164bfba141b5d22b}} 
+View\+Result {\bfseries Cancelar} ()
+\item 
+void \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_ac3bcc6f76f48dfc5553f1686e2f44dd5}{Pagar\+Serviço}} (int id\+Cliente, int id\+Encomenda)
+\begin{DoxyCompactList}\small\item\em Performs payment for a given order and client, if the payment isn\textquotesingle{}t successfully it blocks the client \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a75678bb2dcb7f48853343d9bf898d64a}\label{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a75678bb2dcb7f48853343d9bf898d64a}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller}!Bloquear@{Bloquear}}
+\index{Bloquear@{Bloquear}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller}}
+\subsubsection{\texorpdfstring{Bloquear()}{Bloquear()}}
+{\footnotesize\ttfamily void mvc\+J\+J\+M\+S.\+Controllers.\+Cliente\+Controller.\+Bloquear (\begin{DoxyParamCaption}\item[{int}]{id\+Cliente }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Blocks a particular client 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Cliente} & Unique identifier for a client to block\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a0f8b63358a35d40ad0bdda9442d9a677}\label{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a0f8b63358a35d40ad0bdda9442d9a677}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller}!email\+Valido@{email\+Valido}}
+\index{email\+Valido@{email\+Valido}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller}}
+\subsubsection{\texorpdfstring{email\+Valido()}{emailValido()}}
+{\footnotesize\ttfamily bool mvc\+J\+J\+M\+S.\+Controllers.\+Cliente\+Controller.\+email\+Valido (\begin{DoxyParamCaption}\item[{string}]{email }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if a string is a valid email 
+
+
+\begin{DoxyParams}{Parameters}
+{\em email} & string email to analyze\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE if the string is a email, else F\+A\+L\+SE
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_ab916e41bf8757268e95796c1cf86d3df}\label{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_ab916e41bf8757268e95796c1cf86d3df}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller}!Esta\+Bloqueado@{Esta\+Bloqueado}}
+\index{Esta\+Bloqueado@{Esta\+Bloqueado}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller}}
+\subsubsection{\texorpdfstring{Esta\+Bloqueado()}{EstaBloqueado()}}
+{\footnotesize\ttfamily bool mvc\+J\+J\+M\+S.\+Controllers.\+Cliente\+Controller.\+Esta\+Bloqueado (\begin{DoxyParamCaption}\item[{int}]{id\+Cliente }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if a given client is blocked 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Cliente} & Unique identifier for a client\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE if the client is blocked, else F\+A\+L\+SE
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a5ab387b5c0be1e73a0ec1c468cc3ac5e}\label{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a5ab387b5c0be1e73a0ec1c468cc3ac5e}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller}!Existe\+Encomenda\+Cliente@{Existe\+Encomenda\+Cliente}}
+\index{Existe\+Encomenda\+Cliente@{Existe\+Encomenda\+Cliente}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller}}
+\subsubsection{\texorpdfstring{Existe\+Encomenda\+Cliente()}{ExisteEncomendaCliente()}}
+{\footnotesize\ttfamily bool mvc\+J\+J\+M\+S.\+Controllers.\+Cliente\+Controller.\+Existe\+Encomenda\+Cliente (\begin{DoxyParamCaption}\item[{int}]{id\+Cliente,  }\item[{int}]{id\+Encomenda }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if a given order is associated with a certain client 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Cliente} & Unique identifier for a client\\
+\hline
+{\em id\+Encomenda} & Unique identifier for a single order\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE if the order is associated, else F\+A\+L\+SE
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a626d408a5094fabc40454be45b143ab2}\label{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a626d408a5094fabc40454be45b143ab2}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller}!Gerar\+Fatura@{Gerar\+Fatura}}
+\index{Gerar\+Fatura@{Gerar\+Fatura}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller}}
+\subsubsection{\texorpdfstring{Gerar\+Fatura()}{GerarFatura()}}
+{\footnotesize\ttfamily void mvc\+J\+J\+M\+S.\+Controllers.\+Cliente\+Controller.\+Gerar\+Fatura (\begin{DoxyParamCaption}\item[{int}]{id\+Cliente,  }\item[{int}]{id\+Encomenda }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Generates order details for a given order 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Cliente} & Unique identifier for a client\\
+\hline
+{\em id\+Encomenda} & Unique identifier for a single order\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a6925f8c7f2234512eceb9e027c987ca9}\label{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a6925f8c7f2234512eceb9e027c987ca9}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller}!Get\+Cliente\+Morada@{Get\+Cliente\+Morada}}
+\index{Get\+Cliente\+Morada@{Get\+Cliente\+Morada}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller}}
+\subsubsection{\texorpdfstring{Get\+Cliente\+Morada()}{GetClienteMorada()}}
+{\footnotesize\ttfamily string mvc\+J\+J\+M\+S.\+Controllers.\+Cliente\+Controller.\+Get\+Cliente\+Morada (\begin{DoxyParamCaption}\item[{int}]{id\+Cliente }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the address associated with a client 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Cliente} & Unique identifier for a client\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Client address
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_ac50b76017495e8df860bffad1e7ea29f}\label{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_ac50b76017495e8df860bffad1e7ea29f}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller}!Get\+Cliente\+Telefone@{Get\+Cliente\+Telefone}}
+\index{Get\+Cliente\+Telefone@{Get\+Cliente\+Telefone}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller}}
+\subsubsection{\texorpdfstring{Get\+Cliente\+Telefone()}{GetClienteTelefone()}}
+{\footnotesize\ttfamily string mvc\+J\+J\+M\+S.\+Controllers.\+Cliente\+Controller.\+Get\+Cliente\+Telefone (\begin{DoxyParamCaption}\item[{int}]{id\+Cliente }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves the phone number associated with a client 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Cliente} & Unique identifier for a client\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Client phone number
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_afa8996759fcf65477a9aac44cd0c9810}\label{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_afa8996759fcf65477a9aac44cd0c9810}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller}!Get\+Fatura@{Get\+Fatura}}
+\index{Get\+Fatura@{Get\+Fatura}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller}}
+\subsubsection{\texorpdfstring{Get\+Fatura()}{GetFatura()}}
+{\footnotesize\ttfamily F\+I\+LE mvc\+J\+J\+M\+S.\+Controllers.\+Cliente\+Controller.\+Get\+Fatura (\begin{DoxyParamCaption}\item[{int}]{id\+Cliente,  }\item[{int}]{id\+Encomenda }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves order details associated with a given order 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Cliente} & Unique identifier for a client\\
+\hline
+{\em id\+Encomenda} & Unique identifier for a single order\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Order details if they exist, else N\+U\+LL
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a2023d96fe1797ec7673210da1233dfe2}\label{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a2023d96fe1797ec7673210da1233dfe2}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller}!Get\+Historico\+Enc@{Get\+Historico\+Enc}}
+\index{Get\+Historico\+Enc@{Get\+Historico\+Enc}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller}}
+\subsubsection{\texorpdfstring{Get\+Historico\+Enc()}{GetHistoricoEnc()}}
+{\footnotesize\ttfamily async Task$<$List$<$\mbox{\hyperlink{classmvc_j_j_m_s_1_1_models_1_1_encomenda}{Encomenda}}$>$ $>$ mvc\+J\+J\+M\+S.\+Controllers.\+Cliente\+Controller.\+Get\+Historico\+Enc (\begin{DoxyParamCaption}\item[{int}]{id\+Cliente }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Retrieves a client\textquotesingle{}s order history 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Cliente} & Unique identifier for a client\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Order history of the given client
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_ac3bcc6f76f48dfc5553f1686e2f44dd5}\label{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_ac3bcc6f76f48dfc5553f1686e2f44dd5}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller}!Pagar\+Serviço@{Pagar\+Serviço}}
+\index{Pagar\+Serviço@{Pagar\+Serviço}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller}}
+\subsubsection{\texorpdfstring{Pagar\+Serviço()}{PagarServiço()}}
+{\footnotesize\ttfamily void mvc\+J\+J\+M\+S.\+Controllers.\+Cliente\+Controller.\+Pagar\+Serviço (\begin{DoxyParamCaption}\item[{int}]{id\+Cliente,  }\item[{int}]{id\+Encomenda }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Performs payment for a given order and client, if the payment isn\textquotesingle{}t successfully it blocks the client 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Cliente} & Unique identifier for a client\\
+\hline
+{\em id\+Encomenda} & Unique identifier for a single order\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a0027e8277cd9552a1122e12547ec10c6}\label{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a0027e8277cd9552a1122e12547ec10c6}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller}!password\+Segura@{password\+Segura}}
+\index{password\+Segura@{password\+Segura}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller}}
+\subsubsection{\texorpdfstring{password\+Segura()}{passwordSegura()}}
+{\footnotesize\ttfamily bool mvc\+J\+J\+M\+S.\+Controllers.\+Cliente\+Controller.\+password\+Segura (\begin{DoxyParamCaption}\item[{string}]{password }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if a password is safe enough for the company 
+
+
+\begin{DoxyParams}{Parameters}
+{\em password} & password to analyze\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE if the password is safe, else F\+A\+L\+SE
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a31325ea0231ffa6f09996a9f61f1731b}\label{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a31325ea0231ffa6f09996a9f61f1731b}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller}!Registar@{Registar}}
+\index{Registar@{Registar}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller}}
+\subsubsection{\texorpdfstring{Registar()}{Registar()}}
+{\footnotesize\ttfamily Action\+Result mvc\+J\+J\+M\+S.\+Controllers.\+Cliente\+Controller.\+Registar (\begin{DoxyParamCaption}\item[{string}]{user,  }\item[{string}]{password,  }\item[{string}]{email,  }\item[{string}]{morada,  }\item[{string}]{telefone }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks input and if all is right, save the Cliente to the Data\+Base 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user} & \\
+\hline
+{\em password} & \\
+\hline
+{\em email} & \\
+\hline
+{\em morada} & \\
+\hline
+{\em telefone} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+returns the correspondent Action
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a55f13fda1a4342595d427b8bfc9a2978}\label{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a55f13fda1a4342595d427b8bfc9a2978}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller}!telefone\+Valido@{telefone\+Valido}}
+\index{telefone\+Valido@{telefone\+Valido}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller}}
+\subsubsection{\texorpdfstring{telefone\+Valido()}{telefoneValido()}}
+{\footnotesize\ttfamily bool mvc\+J\+J\+M\+S.\+Controllers.\+Cliente\+Controller.\+telefone\+Valido (\begin{DoxyParamCaption}\item[{string}]{telefone }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if a string is a valid phone number 
+
+
+\begin{DoxyParams}{Parameters}
+{\em telefone} & phone number to analyze\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE if the string is a valid phone numer, else F\+A\+L\+SE
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a71e4b089bf6844fd8440ae4571bb6ae0}\label{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a71e4b089bf6844fd8440ae4571bb6ae0}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller}!Transfere\+Montante@{Transfere\+Montante}}
+\index{Transfere\+Montante@{Transfere\+Montante}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller}}
+\subsubsection{\texorpdfstring{Transfere\+Montante()}{TransfereMontante()}}
+{\footnotesize\ttfamily bool mvc\+J\+J\+M\+S.\+Controllers.\+Cliente\+Controller.\+Transfere\+Montante (\begin{DoxyParamCaption}\item[{int}]{id\+Cliente,  }\item[{int}]{id\+Encomenda }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Performs payment for a given order 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Cliente} & Unique identifier for a client\\
+\hline
+{\em id\+Encomenda} & Unique identifier for a single order\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+T\+R\+UE if payment is successful, else F\+A\+L\+SE
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a27719253428ef9593690de0afdba5596}\label{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_a27719253428ef9593690de0afdba5596}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller}!Update\+Morada@{Update\+Morada}}
+\index{Update\+Morada@{Update\+Morada}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller}}
+\subsubsection{\texorpdfstring{Update\+Morada()}{UpdateMorada()}}
+{\footnotesize\ttfamily void mvc\+J\+J\+M\+S.\+Controllers.\+Cliente\+Controller.\+Update\+Morada (\begin{DoxyParamCaption}\item[{int}]{id\+Cliente,  }\item[{string}]{morada\+Input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates the address of a client 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Cliente} & Unique identifier for a client\\
+\hline
+{\em morada\+Input} & New address\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_aefbf9f1512ccb78afa9acaef47b95b98}\label{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller_aefbf9f1512ccb78afa9acaef47b95b98}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller}!Update\+Telefone@{Update\+Telefone}}
+\index{Update\+Telefone@{Update\+Telefone}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Cliente\+Controller}}
+\subsubsection{\texorpdfstring{Update\+Telefone()}{UpdateTelefone()}}
+{\footnotesize\ttfamily void mvc\+J\+J\+M\+S.\+Controllers.\+Cliente\+Controller.\+Update\+Telefone (\begin{DoxyParamCaption}\item[{int}]{id\+Cliente,  }\item[{string}]{telefone\+Input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Updates the phone number of a client 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Cliente} & Unique identifier for a client\\
+\hline
+{\em telefone\+Input} & New phone number\\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Controllers/Cliente\+Controller.\+cs\end{DoxyCompactItemize}

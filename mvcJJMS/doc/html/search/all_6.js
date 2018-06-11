@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['gerarfatura',['gerarFatura',['../classmvc_j_j_m_s_1_1_models_1_1_encomenda.html#ad9b0bcfd5eba91703a412e5fd30718e0',1,'mvcJJMS.Models.Encomenda.gerarFatura()'],['../classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller.html#a626d408a5094fabc40454be45b143ab2',1,'mvcJJMS.Controllers.ClienteController.GerarFatura()']]],
+  ['getcartaocreditoid',['getCartaoCreditoID',['../classmvc_j_j_m_s_1_1_models_1_1_encomenda.html#a8d320ae133bda1cc87a7d8d5fe616c52',1,'mvcJJMS::Models::Encomenda']]],
+  ['getclienteid',['getClienteID',['../classmvc_j_j_m_s_1_1_models_1_1_encomenda.html#a2e776d2ce3ef684e288f83bf688d0dab',1,'mvcJJMS::Models::Encomenda']]],
+  ['getclientemorada',['GetClienteMorada',['../classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller.html#a6925f8c7f2234512eceb9e027c987ca9',1,'mvcJJMS::Controllers::ClienteController']]],
+  ['getclientetelefone',['GetClienteTelefone',['../classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller.html#ac50b76017495e8df860bffad1e7ea29f',1,'mvcJJMS::Controllers::ClienteController']]],
+  ['getdestinoenc',['GetDestinoEnc',['../classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller.html#a17045273a7db6110840c352ccf2942f2',1,'mvcJJMS::Controllers::EncomendaController']]],
+  ['getencomenda',['getEncomenda',['../classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller.html#adbeb0c2e410bf9d8706de7b75daf05eb',1,'mvcJJMS::Controllers::EncomendaController']]],
+  ['getestadoencomendai',['getEstadoEncomendaI',['../classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller.html#a650422f9822c10979a38f9b7de902146',1,'mvcJJMS::Controllers::EncomendaController']]],
+  ['getestadoencomendas',['getEstadoEncomendaS',['../classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller.html#a9a1c47299b334b34c9df35dd4f644184',1,'mvcJJMS::Controllers::EncomendaController']]],
+  ['getfatura',['GetFatura',['../classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller.html#afa8996759fcf65477a9aac44cd0c9810',1,'mvcJJMS::Controllers::ClienteController']]],
+  ['getfornecedorid',['getFornecedorID',['../classmvc_j_j_m_s_1_1_models_1_1_encomenda.html#ab05a84f1422750eb0af952c41e0963bf',1,'mvcJJMS::Models::Encomenda']]],
+  ['getfuncionario',['getFuncionario',['../classmvc_j_j_m_s_1_1_controllers_1_1_funcionario_controller.html#a921dda2edb269dfe9a32be22d5abe2ad',1,'mvcJJMS::Controllers::FuncionarioController']]],
+  ['getfuncionarioid',['getFuncionarioID',['../classmvc_j_j_m_s_1_1_models_1_1_encomenda.html#a65a991e592a8f489577b8cbdc2203d9e',1,'mvcJJMS::Models::Encomenda']]],
+  ['getfuncionarioresp',['GetFuncionarioResp',['../classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller.html#a29d51d82112bcd56e12b4c2ae5220f43',1,'mvcJJMS::Controllers::EncomendaController']]],
+  ['gethistoricoenc',['GetHistoricoEnc',['../classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller.html#a2023d96fe1797ec7673210da1233dfe2',1,'mvcJJMS::Controllers::ClienteController']]],
+  ['getidforn',['getIdForn',['../classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller.html#a27c059ba95c4c7fcd3f3c1d0d2bf51a9',1,'mvcJJMS::Controllers::EncomendaController']]],
+  ['getlocalizacaoencomenda',['getLocalizacaoEncomenda',['../classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller.html#a76a4a0b0f36cb8d70f3342b601e5d8bb',1,'mvcJJMS::Controllers::EncomendaController']]],
+  ['getmoradacd',['getMoradaCD',['../classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller.html#a2754bcfc4246dcc86737356fb5ff925a',1,'mvcJJMS::Controllers::EncomendaController']]],
+  ['getmoradaforn',['GetMoradaForn',['../classmvc_j_j_m_s_1_1_controllers_1_1_fornecedor_controller.html#a2f7a5b563e072a228f1b9fe5da68afb4',1,'mvcJJMS::Controllers::FornecedorController']]],
+  ['getnome',['getNome',['../classmvc_j_j_m_s_1_1_models_1_1_fornecedor.html#adbbebab32a2d6ba5cb4f14c3089b9373',1,'mvcJJMS::Models::Fornecedor']]],
+  ['getuseremail',['GetUserEmail',['../classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller.html#a11bcddd35c8eeaaea9a7baf761b8f877',1,'mvcJJMS::Controllers::UtilizadorController']]],
+  ['getusernome',['GetUserNome',['../classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller.html#a6250c090d89e8a6cea8347d9186daeb0',1,'mvcJJMS::Controllers::UtilizadorController']]],
+  ['getuserpassword',['GetUserPassword',['../classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller.html#a71ba7901a09e013703d461927ab9ff80',1,'mvcJJMS::Controllers::UtilizadorController']]],
+  ['getutilizadorid',['getUtilizadorID',['../classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller.html#a8243cd298846e34fb97c3c7d2d691174',1,'mvcJJMS.Controllers.UtilizadorController.getUtilizadorID()'],['../classmvc_j_j_m_s_1_1_models_1_1_cliente.html#af711f052377f6684bc93ac4886d20a78',1,'mvcJJMS.Models.Cliente.getUtilizadorID()']]],
+  ['getzona',['GetZona',['../classmvc_j_j_m_s_1_1_controllers_1_1_funcionario_controller.html#a3fc608b887a43ddf67041f09bab3aae5',1,'mvcJJMS::Controllers::FuncionarioController']]]
+];

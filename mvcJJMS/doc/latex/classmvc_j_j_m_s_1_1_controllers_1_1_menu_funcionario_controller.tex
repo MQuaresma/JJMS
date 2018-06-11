@@ -1,0 +1,183 @@
+\hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller}{}\section{mvc\+J\+J\+M\+S.\+Controllers.\+Menu\+Funcionario\+Controller Class Reference}
+\label{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller}\index{mvc\+J\+J\+M\+S.\+Controllers.\+Menu\+Funcionario\+Controller@{mvc\+J\+J\+M\+S.\+Controllers.\+Menu\+Funcionario\+Controller}}
+Inheritance diagram for mvc\+J\+J\+M\+S.\+Controllers.\+Menu\+Funcionario\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller_a1ec34512098549061ef57e7b8ef07945}\label{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller_a1ec34512098549061ef57e7b8ef07945}} 
+{\bfseries Menu\+Funcionario\+Controller} (\mbox{\hyperlink{classmvc_j_j_m_s_1_1_data_1_1_j_j_m_s_context}{J\+J\+M\+S\+Context}} context, \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_encomenda_controller}{Encomenda\+Controller}} e\+Controller, \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_funcionario_controller}{Funcionario\+Controller}} f\+Controller, \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_cliente_controller}{Cliente\+Controller}} c\+Controller, \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_fornecedor_controller}{Fornecedor\+Controller}} forn\+Controller, \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_utilizador_controller}{Utilizador\+Controller}} u\+Controller)
+\item 
+View\+Result \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller_acdc18ba7b60c90728254ff66cf523c10}{Index}} ()
+\begin{DoxyCompactList}\small\item\em Show the menu of Funcionario(employee) \end{DoxyCompactList}\item 
+View\+Result \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller_aa3969c230e6f472ebe0241d6399e29c9}{Calcular\+Rota}} (string origem, string destino)
+\begin{DoxyCompactList}\small\item\em Calculates the route between origem(source) adress and destino(destiny) adress \end{DoxyCompactList}\item 
+View\+Result \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller_aafa0339ff14c5dfd9bb25a36efa89538}{Calcular\+Rota}} (int id\+Encomenda, string origem)
+\begin{DoxyCompactList}\small\item\em Obtain route for an Encomenda(order) where Funcionario(employee) is at origem adress \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller_a579dc46926cba210b05c6b3dca4061a5}\label{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller_a579dc46926cba210b05c6b3dca4061a5}} 
+View\+Result {\bfseries Consultar\+Rota} ()
+\item 
+Action\+Result \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller_a6b3d80d3a3c8ec6cffddf1a21ca6606f}{Consultar\+Rota\+Res}} (string id\+EncS, string origem)
+\begin{DoxyCompactList}\small\item\em Allow Funcionario(employee) to consult a route for an Encomenda(order) with id\+EncS, verify if Encomenda(order) is a valid one and if is returns the route \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller_a79f757c8123a389769358fa4a39011fd}\label{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller_a79f757c8123a389769358fa4a39011fd}} 
+View\+Result {\bfseries Encomenda\+Inexistente} ()
+\item 
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller_a2144dac1033881d1b96d2a2f24308104}\label{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller_a2144dac1033881d1b96d2a2f24308104}} 
+View\+Result {\bfseries Encomenda\+Invalida} ()
+\item 
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller_a2b03ef8c9cf04a249eced8f43ae34d04}\label{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller_a2b03ef8c9cf04a249eced8f43ae34d04}} 
+View\+Result {\bfseries Atualizar\+Estado} ()
+\item 
+View\+Result \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller_ad45a069bdf6baf93b0851b7eef2d9088}{Atualizar\+Estado\+Custo}} (string id\+Encomenda)
+\begin{DoxyCompactList}\small\item\em Checks if Encomenda(order) with id\+Encomenda is valid and return the correpondent view \end{DoxyCompactList}\item 
+Action\+Result \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller_a9eaa1e9f78c031cb0431158442e5f0c2}{Atualizar\+Estado\+Res}} (string id\+Encomenda, string custo\+Input)
+\begin{DoxyCompactList}\small\item\em checks cost(custo\+Input) and updates state and total cost of order with id id\+Encomenda, and depending the state delegate a employee or activate the payment of the service \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller_a0015d1625c1d944fdf5356668e4bf5c3}\label{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller_a0015d1625c1d944fdf5356668e4bf5c3}} 
+View\+Result {\bfseries Atualizado\+Com\+Sucesso} ()
+\item 
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller_a8cc1bf95b689ed613164331ac110f54b}\label{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller_a8cc1bf95b689ed613164331ac110f54b}} 
+View\+Result {\bfseries Custo\+Invalido} ()
+\item 
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller_ad9a542852b6a8ea1d9535f022c8a1142}\label{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller_ad9a542852b6a8ea1d9535f022c8a1142}} 
+View\+Result {\bfseries Nao\+Existe\+Encomenda} ()
+\item 
+void \mbox{\hyperlink{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller_a28c1cd92d5ef866174d66b5b61b95bc6}{Delegar\+Funcionario}} (int id\+Encomenda)
+\begin{DoxyCompactList}\small\item\em Delegates an Funcionario(employee) for the Encomenda(order) with id id\+Encomenda \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller_ad45a069bdf6baf93b0851b7eef2d9088}\label{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller_ad45a069bdf6baf93b0851b7eef2d9088}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Menu\+Funcionario\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Menu\+Funcionario\+Controller}!Atualizar\+Estado\+Custo@{Atualizar\+Estado\+Custo}}
+\index{Atualizar\+Estado\+Custo@{Atualizar\+Estado\+Custo}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Menu\+Funcionario\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Menu\+Funcionario\+Controller}}
+\subsubsection{\texorpdfstring{Atualizar\+Estado\+Custo()}{AtualizarEstadoCusto()}}
+{\footnotesize\ttfamily View\+Result mvc\+J\+J\+M\+S.\+Controllers.\+Menu\+Funcionario\+Controller.\+Atualizar\+Estado\+Custo (\begin{DoxyParamCaption}\item[{string}]{id\+Encomenda }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Checks if Encomenda(order) with id\+Encomenda is valid and return the correpondent view 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Encomenda} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return the correspondent view
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller_a9eaa1e9f78c031cb0431158442e5f0c2}\label{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller_a9eaa1e9f78c031cb0431158442e5f0c2}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Menu\+Funcionario\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Menu\+Funcionario\+Controller}!Atualizar\+Estado\+Res@{Atualizar\+Estado\+Res}}
+\index{Atualizar\+Estado\+Res@{Atualizar\+Estado\+Res}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Menu\+Funcionario\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Menu\+Funcionario\+Controller}}
+\subsubsection{\texorpdfstring{Atualizar\+Estado\+Res()}{AtualizarEstadoRes()}}
+{\footnotesize\ttfamily Action\+Result mvc\+J\+J\+M\+S.\+Controllers.\+Menu\+Funcionario\+Controller.\+Atualizar\+Estado\+Res (\begin{DoxyParamCaption}\item[{string}]{id\+Encomenda,  }\item[{string}]{custo\+Input }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+checks cost(custo\+Input) and updates state and total cost of order with id id\+Encomenda, and depending the state delegate a employee or activate the payment of the service 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Encomenda} & \\
+\hline
+{\em custo\+Input} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return the correspondent action
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller_aa3969c230e6f472ebe0241d6399e29c9}\label{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller_aa3969c230e6f472ebe0241d6399e29c9}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Menu\+Funcionario\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Menu\+Funcionario\+Controller}!Calcular\+Rota@{Calcular\+Rota}}
+\index{Calcular\+Rota@{Calcular\+Rota}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Menu\+Funcionario\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Menu\+Funcionario\+Controller}}
+\subsubsection{\texorpdfstring{Calcular\+Rota()}{CalcularRota()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily View\+Result mvc\+J\+J\+M\+S.\+Controllers.\+Menu\+Funcionario\+Controller.\+Calcular\+Rota (\begin{DoxyParamCaption}\item[{string}]{origem,  }\item[{string}]{destino }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Calculates the route between origem(source) adress and destino(destiny) adress 
+
+
+\begin{DoxyParams}{Parameters}
+{\em origem} & \\
+\hline
+{\em destino} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return route
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller_aafa0339ff14c5dfd9bb25a36efa89538}\label{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller_aafa0339ff14c5dfd9bb25a36efa89538}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Menu\+Funcionario\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Menu\+Funcionario\+Controller}!Calcular\+Rota@{Calcular\+Rota}}
+\index{Calcular\+Rota@{Calcular\+Rota}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Menu\+Funcionario\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Menu\+Funcionario\+Controller}}
+\subsubsection{\texorpdfstring{Calcular\+Rota()}{CalcularRota()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily View\+Result mvc\+J\+J\+M\+S.\+Controllers.\+Menu\+Funcionario\+Controller.\+Calcular\+Rota (\begin{DoxyParamCaption}\item[{int}]{id\+Encomenda,  }\item[{string}]{origem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Obtain route for an Encomenda(order) where Funcionario(employee) is at origem adress 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Encomenda} & \\
+\hline
+{\em origem} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return route
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller_a6b3d80d3a3c8ec6cffddf1a21ca6606f}\label{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller_a6b3d80d3a3c8ec6cffddf1a21ca6606f}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Menu\+Funcionario\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Menu\+Funcionario\+Controller}!Consultar\+Rota\+Res@{Consultar\+Rota\+Res}}
+\index{Consultar\+Rota\+Res@{Consultar\+Rota\+Res}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Menu\+Funcionario\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Menu\+Funcionario\+Controller}}
+\subsubsection{\texorpdfstring{Consultar\+Rota\+Res()}{ConsultarRotaRes()}}
+{\footnotesize\ttfamily Action\+Result mvc\+J\+J\+M\+S.\+Controllers.\+Menu\+Funcionario\+Controller.\+Consultar\+Rota\+Res (\begin{DoxyParamCaption}\item[{string}]{id\+EncS,  }\item[{string}]{origem }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Allow Funcionario(employee) to consult a route for an Encomenda(order) with id\+EncS, verify if Encomenda(order) is a valid one and if is returns the route 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+EncS} & \\
+\hline
+{\em origem} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+return route
+\end{DoxyReturn}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller_a28c1cd92d5ef866174d66b5b61b95bc6}\label{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller_a28c1cd92d5ef866174d66b5b61b95bc6}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Menu\+Funcionario\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Menu\+Funcionario\+Controller}!Delegar\+Funcionario@{Delegar\+Funcionario}}
+\index{Delegar\+Funcionario@{Delegar\+Funcionario}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Menu\+Funcionario\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Menu\+Funcionario\+Controller}}
+\subsubsection{\texorpdfstring{Delegar\+Funcionario()}{DelegarFuncionario()}}
+{\footnotesize\ttfamily void mvc\+J\+J\+M\+S.\+Controllers.\+Menu\+Funcionario\+Controller.\+Delegar\+Funcionario (\begin{DoxyParamCaption}\item[{int}]{id\+Encomenda }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Delegates an Funcionario(employee) for the Encomenda(order) with id id\+Encomenda 
+
+
+\begin{DoxyParams}{Parameters}
+{\em id\+Encomenda} & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller_acdc18ba7b60c90728254ff66cf523c10}\label{classmvc_j_j_m_s_1_1_controllers_1_1_menu_funcionario_controller_acdc18ba7b60c90728254ff66cf523c10}} 
+\index{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Menu\+Funcionario\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Menu\+Funcionario\+Controller}!Index@{Index}}
+\index{Index@{Index}!mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Menu\+Funcionario\+Controller@{mvc\+J\+J\+M\+S\+::\+Controllers\+::\+Menu\+Funcionario\+Controller}}
+\subsubsection{\texorpdfstring{Index()}{Index()}}
+{\footnotesize\ttfamily View\+Result mvc\+J\+J\+M\+S.\+Controllers.\+Menu\+Funcionario\+Controller.\+Index (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Show the menu of Funcionario(employee) 
+
+\begin{DoxyReturn}{Returns}
+Menu\+Funcionario
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Controllers/Menu\+Funcionario\+Controller.\+cs\end{DoxyCompactItemize}

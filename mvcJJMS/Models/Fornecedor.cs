@@ -1,6 +1,10 @@
 using System.Collections.Generic;
 
 namespace mvcJJMS.Models{
+	
+	/// <summary>
+	/// Represents a provider from which Clients can order products
+	/// </summary>
 	public class Fornecedor {
 		public int FornecedorID{get;set;}
 		public string nome{get;set;}
